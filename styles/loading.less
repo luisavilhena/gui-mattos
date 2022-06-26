@@ -1,0 +1,350 @@
+@import './structure.less';
+
+.loading {
+	z-index: 9999;
+	font-family: "CircularStd";
+	position: fixed;
+	top:0;
+	background-color: @green;
+	height: 100vh;
+	width: 100%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	.loading_first-line,
+	.loading_second-line,
+	.loading_first-line_studio,
+	.loading_first-line_viridiana,
+	.loading_second-line_interiors,
+	.loading_second-line_e,
+	.loading_second-line_design {
+		display: flex;
+		.letter {
+			margin-right: 1px;
+			margin-left: 1px;
+		}
+	}
+	.loading_first-line {
+		letter-spacing: 4px;
+		margin-bottom: 2px;
+		.loading_first-line_studio,
+		.loading_first-line_viridiana {
+			font-size: 35px;
+		}
+		.loading_first-line_studio {
+			margin-right: 15px;
+		}
+	}
+	.loading_second-line {
+		.loading_second-line_interiors,
+		.loading_second-line_e,
+		.loading_second-line_design {
+			font-size: 23px;
+		}
+		.loading_second-line_interiors,
+		.loading_second-line_e, {
+			margin-right: 15px;
+		}
+	}
+	.loading_viridiana_v {
+		animation: animation1 0.5s linear;
+
+		@keyframes animation1 {
+		  0% {
+		    color: @purple;
+		  }
+		  // 70% {
+		  //   color: @purple;
+		  // }
+		  100% {
+		    color: @purple;
+		  }
+		}
+	}
+	.loading_viridiana_a2,
+	.loading_studio_s,
+	.loading_interiors_i,
+	.loading_design_n {
+		animation: animation2 1s linear;
+
+		@keyframes animation2 {
+		  0% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  50% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  51% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		  100% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		}
+	}
+	.loading_studio_d,
+	.loading_interiors_i2 {
+		animation: animation3 1.5s linear;
+
+		@keyframes animation3 {
+		  0% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  70% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  71% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		  100% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		}
+	}
+	.loading_viridiana_r,
+	.loading_interiors_o {
+		animation: animation4 2s linear;
+
+		@keyframes animation4 {
+		  0% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  75% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  76% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		  100% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		}
+	}
+	.loading_interiors_r,
+	.loading_design_d,
+	.loading_studio_t {
+		animation: animation5 2.5s linear;
+
+		@keyframes animation5 {
+		  0% {
+		    color: transparent;
+		    transition: color 0s;
+		  }
+		  86% {
+		  	color: transparent;
+		  	transition: color 0s;
+		  }
+		  87% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		  100% {
+		  	color: @purple;
+		  	transition: color 0s;
+		  }
+		}
+	}
+	.loading_viridiana_i,
+	.loading_interiors_n,
+	.loading_design_s,
+	.loading_interiors_t {
+		animation: animation6 3s linear;
+
+		@keyframes animation6 {
+			0% {
+			  color: transparent;
+			  transition: color 0s;
+			}
+			86% {
+				color: transparent;
+				transition: color 0s;
+			}
+			87% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+		}
+	}
+	.loading_studio_i,
+	.loading_design_g,
+	.loading_interiors_n,
+	.loading_viridiana_i3{
+		animation: animation7 3.5s linear;
+
+		@keyframes animation7 {
+			0% {
+			  color: transparent;
+			  transition: color 0s;
+			}
+			86% {
+				color: transparent;
+				transition: color 0s;
+			}
+			87% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+
+		}
+	}
+	.loading_viridiana_d,
+	.loading_interiors_r2,
+	.loading_viridiana_a,
+	.loading_design_i, {
+		animation: animation8 4s linear;
+
+		@keyframes animation8 {
+			0% {
+			  color: transparent;
+			  transition: color 0s;
+			}
+			88% {
+				color: transparent;
+				transition: color 0s;
+			}
+			89% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+		}
+	}
+	.loading_viridiana_i2,
+	.loading_interiors_s,
+	.loading_interiors_n, {
+		animation: animation8 4.5s linear;
+
+		@keyframes animation8 {
+			0% {
+			 color: transparent;
+			 transition: color 0s;
+			}
+			86% {
+				color: transparent;
+				transition: color 0s;
+			}
+			95% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+		}
+	}
+	.loading_viridiana_n,
+	.loading_interiors_i2,
+	.loading_interiors_e,
+	.loading_studio_o, {
+		animation: animation9 5s linear;
+
+		@keyframes animation9 {
+			0% {
+			  color: transparent;
+			  transition: color 0s;
+			}
+			86% {
+				color: transparent;
+				transition: color 0s;
+			}
+			87% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+		}
+	}
+	.loading_studio_u,
+	.loading_design_e {
+		animation: animation10 5.5s linear;
+
+		@keyframes animation10 {
+			0% {
+			  color: transparent;
+			  transition: color 0s;
+			}
+			86% {
+				color: transparent;
+				transition: color 0s;
+			}
+			87% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+		}
+	}
+	.loading_e {
+		animation: animation8 6.2s linear;
+
+		@keyframes animation8 {
+			0% {
+			  color: transparent;
+			  transition: color 0s;
+			}
+			86% {
+				color: transparent;
+				transition: color 0s;
+			}
+			87% {
+				color: @purple;
+				transition: color 0s;
+			}
+			100% {
+				color: @purple;
+				transition: color 0s;
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) { 
+	.loading {
+		.loading_first-line {
+			.loading_first-line_studio,
+			.loading_first-line_viridiana {
+				font-size: 25px;
+			}
+		}
+		.loading_second-line {
+			.loading_second-line_interiors,
+			.loading_second-line_e,
+			.loading_second-line_design {
+				font-size: 18px;
+
+			}
+		}
+	}
+}

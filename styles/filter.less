@@ -1,0 +1,131 @@
+#page-filter {
+	min-height: 52vh;
+}
+div.caf-post-layout-container {
+	ul {
+		li {
+			a {
+				background-color: transparent;
+	
+				&.active {
+					
+
+				}
+			}
+
+		}
+	}
+
+}
+.data-target-div1 {
+	#caf-filter-layout1 {
+		li a.active,
+		li a {
+			background-color: transparent;
+			color: @orange;
+			font-size: 16px;
+			position: relative;
+		}
+		li a.active:after{
+			content:'';
+			position: absolute;
+			border-bottom: 1px solid #18191F;
+	    width: 100%;
+	    top: 100%;
+	    left: 0;
+		}
+	} 
+}
+.caf-row {
+	justify-content: space-between;
+}
+#manage-ajax-response{
+	padding: 0;
+}
+
+#caf-post-layout1 {
+	.caf-meta-content {
+		display: none;
+		a.caf-read-more  {
+			display: none;
+		}
+	}
+	.caf-featured-img-box {
+		height: 280px;
+		border-radius: 20px;
+	}
+	.manage-layout1 {
+		position: relative;
+		box-shadow: none;
+	}
+	#manage-post-area {
+		background: transparent !important;
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+	}
+}
+#caf-post-layout1 .caf-content-read-more {
+	display: none;
+}
+.caf-col-md-4 {
+	max-width: 30%;
+	padding-right: 0px;
+  padding-left: 0px;
+}
+.data-target-div1 #caf-post-layout1 .caf-post-title{
+		background-color: @orange;
+		margin-bottom: 10px;
+		border-radius: 10px;
+	h2 {
+		color: white;
+	}
+}
+.data-target-div1 #caf-post-layout1 .caf-content {
+	background-color: @orange;
+	border-radius: 10px;
+	color: white;
+	display: inline-flex;
+}
+.caf-row.loading {
+	display: none;
+}
+@media screen and (max-width: @screen-md) {
+	.caf-filter-layout1 a {
+		padding: 0;
+		margin-right: 10px;
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	.caf-col-md-4 {
+		max-width: 100%;
+	}
+	#caf-post-layout1 .caf-featured-img-box {
+		height: 200px;
+	}
+	#caf-post-layout1 {
+		#manage-post-area {
+			bottom:0;
+			left: 0;
+			.caf-post-title {
+				padding: 5px 5px;
+				margin-bottom: 5px;
+				h2 {
+					font-size: 12px;
+					line-height: 13px;
+				}
+			}
+			.caf-content {
+				padding: 5px 5px;
+				font-size: 10px;
+
+			}
+		}
+	}
+
+
+
+}
+
+

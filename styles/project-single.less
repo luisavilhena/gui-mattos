@@ -1,0 +1,149 @@
+#project-single {
+	.project-single__header {
+		.project-single__header__btn {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			.button {
+				cursor: pointer;
+				position: absolute;
+				background-color: transparent;
+				border: none;
+				top: 0;
+				left: 0;
+				width: 50px;
+				height: 50px;
+			}
+			span {
+				background-color: @gray;
+				width: 1px;
+				height: 30px;
+				margin-left: 20px;
+			}
+			.arrow-1 {
+				transform: rotate(45deg)
+			}
+			.arrow-2 {
+				margin-top: -9px;
+				transform: rotate(-45deg)
+			}
+			&:hover {
+				span {
+					background-color: @purple; 
+					width: 2px;
+				}
+			}
+		}
+		.project-single__header__img {
+			border: 1px solid black;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+			width: @width-column;
+			margin: 0 auto 20px auto;
+			// img {
+			// 	width: @width-column;
+			// 	border: 1px solid black;
+			// }
+		}
+	}
+	.structure-block {
+		p {
+			text-align: justify;
+		}
+	}
+	.post-password-form {
+		width: @width-column;
+		margin: 20px auto;
+		input[type="submit"] {
+			border: 1px solid black;
+			border-radius: 0;
+			background-color: @light-pink;
+			padding: 10px;
+			text-align: left;
+			text-transform: uppercase;
+			cursor: pointer;
+			font-size: 9px;
+		}
+		input::placeholder {
+			font-size: 9px;
+		}
+		p:nth-of-type(2n) {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			label {
+				color: transparent !important;
+			}
+			input[type="password"]{
+				font-size: 9px;
+				width: 100%;
+				box-sizing: border-box;
+				background-color: @light-pink;
+		    padding: 10px;
+		    border: black 1px solid;
+		    border-bottom: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: @screen-lg) {
+	#project-single {
+		.project-single__header {
+			.project-single__header__img {
+				width: @width-column-lg;
+
+				img {
+				}
+			}
+		}
+		.post-password-form {
+			width: @width-column-lg;
+			p:nth-of-type(2n) { 
+				input[type="password"]{
+					// width: 95.6%;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-md) {
+	#project-single {
+		.project-single__header {
+			.project-single__header__img {
+				width: @width-column-md;
+
+				img {
+				}
+			}
+		}
+		.post-password-form {
+			width: @width-column-lg;
+			p:nth-of-type(2n) { 
+				input[type="password"]{
+					// width: 95.6%;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	#project-single {
+		.project-single__header {
+			.project-single__header__img {
+				width: @width-column-sm;
+				img {
+				}
+			}
+		}
+		.post-password-form {
+			width: @width-column-sm;
+			p:nth-of-type(2n) { 
+				input[type="password"]{
+					// width: 94.5%;
+				}
+			}
+		}
+	}
+}

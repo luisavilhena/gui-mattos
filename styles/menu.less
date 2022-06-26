@@ -1,0 +1,251 @@
+ul#main-menu {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: row;
+	font-style: normal;
+	li {
+		a {
+			font-size: 16px;
+			color: @black;
+		}
+	}
+
+	> li {
+		position: relative;
+		display: flex;
+		padding-right: 5px;
+		margin-right: 40px;
+		padding-bottom: 20px;
+		margin-top: 20px;
+		> a {
+			position: relative;
+			text-decoration: none;
+			font-family: 'Roboto', sans-serif;
+			text-transform: lowercase;
+			font-size: 20px;
+			white-space: nowrap;
+		}
+		&:hover {
+			a {
+				color: @orange;
+			}
+			ul.sub-menu {
+				background-color: white;
+				top: 30px;
+				transition: background-color 1s;
+				border: @orange 1px solid;
+				display: block;
+				> li {
+					a {
+					}
+				}
+				> li:hover {
+					background-color: @light-pink;
+					transition: background-color 1s;
+				}
+			}
+		}
+		> ul.sub-menu {
+			background-color: transparent;
+			border-radius: 5px;
+			position: absolute;
+			top: -300px;
+			width: 200px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			z-index: 0;
+			> li {
+				box-sizing: border-box;
+				padding: 10px 30px 10px 10px;
+				width: 100%;
+				a {
+					text-decoration: none;
+					position: relative;
+					display: block;
+					text-transform: lowercase;
+				}
+			}
+			> li:last-of-type {
+				margin-bottom: 5px;
+			}
+			> li:first-of-type {
+				margin-top: 5px;
+			}
+		}
+	}
+	>li:first-of-type {
+		padding-left: 0px;
+		
+	}
+	>li:last-of-type {
+		margin-right: 0px;
+		padding-right: 0px;
+	}
+	> li:first-of-type,
+	> li:nth-of-type(2) {
+		font-family: 'Material Icons';
+		&:after {
+			content: '\e5c5';
+			font-size: 27px;
+			font-family: 'Material Icons';
+			color: @black;
+			display: block;
+			position: absolute;
+			right: -20px;
+			top: -5px;
+			transform: rotate(0deg);
+			transition: transform 0.5s;
+		}
+		&:hover {
+			&:after {
+				transform: rotate(180deg);
+				transition: transform 0.5s;
+				color: @orange;
+			}
+		}
+	}
+}
+#mobile-menu-trigger {
+	display: none;
+}
+
+// @media screen and (max-width: @screen-lg) {
+// 	ul#main-menu {
+// 		> li {
+// 			padding-right: 30px;
+// 		}
+// 		> li:nth-of-type(2) {
+// 			&:after {
+// 				right: 7px;
+// 			}
+// 		}
+// 	}
+// }
+
+@media screen and (max-width: @screen-sm) {
+	ul#main-menu {
+		background-color: white;
+		display: none;
+		flex-direction: column;
+		min-height: 100vh;
+		li {
+			padding-left: 0px;
+			padding-bottom: 40px;
+			a {
+				font-size: 14px;
+			}
+			>ul.sub-menu {
+				display: none;
+				position: relative;
+			}
+		}
+		> li:first-of-type,
+		> li:nth-of-type(2) {
+			&:after {
+				transition: none
+			}
+			&:hover {
+				&:after {
+					transition: none;
+				}
+			}
+		}
+		li:hover {
+			>ul.sub-menu {
+				display: block;
+				position: relative;
+				left: 0;
+				border: none;
+
+				li {
+					padding: 20px 0;
+				}
+			}
+			&:after {
+				right: auto;
+				left: 115px;
+			}
+		}
+		> li{
+			&:after {
+				right: auto;
+				left: 115px;
+			}
+		}
+	}
+	#mobile-menu-trigger {
+		position: fixed;
+		left: 15px;
+	  display: flex;
+
+	  background-color: transparent;
+	  border: none;
+
+	  z-index: 100;
+
+	  transition: right 0.6s;
+	  cursor: pointer;
+
+		span {
+	    display: block;
+	    margin-bottom: 6px;
+	    height: 2px;
+	    width: 26px;
+	    opacity: 1;
+	    transform: rotate(0deg);
+	    background-color: @orange;
+	  }
+	  > div {
+	  	display: flex;
+	  	flex-direction: column;
+		  > span:nth-child(1){
+		  	transform: rotate(0deg);
+		  	transition: transform 0.6s;
+		  }
+	    > span:nth-child(3){
+	  		visibility: visible;
+	  		transform: visibility 0.6s;
+	    }
+		  > span:nth-child(2){
+				transform: rotate(0deg);
+				transition: transform 0.6s;
+		  }
+	  }
+	}
+	.menu-open {
+	  #mobile-menu-trigger {
+	  	right: 41.5%;
+	  	transition: right 0.6s;
+  	  div {
+  	  	margin-top: 4px;
+  	  	span {
+  	  		margin-bottom: -1px;
+  	  	}
+	  	  > span:nth-child(1){
+	  	  	transform: rotate(45deg);
+	  	  	transition: transform 0.6s;
+	  	  }
+	  	  > span:nth-child(3){
+	  	  	visibility: hidden;
+	  	  	transform: visibility 0.6s;
+	  	  }
+  	    > span:nth-child(2){
+  	    	margin-bottom: 8px;
+  	  		transform: rotate(-45deg);
+  	  		transition: transform 0.6s;
+  	    }
+  	  }
+		}
+		ul#main-menu {
+			margin-left: 0px;
+			padding-left: 35px;
+			padding-right: 35px;
+			padding-top: 30px;
+			display: block;
+		}
+	}
+}
+

@@ -1,0 +1,219 @@
+form.wpcf7-form  {
+	// padding-left: 25%;
+	// padding-top: 80px;
+	max-width: @width-column;
+	margin: 0 auto 40px auto;
+	p {
+		margin-bottom: 0px;
+	}
+	p:last-of-type{
+		border: none;
+	}
+	label {
+		height: 32px;
+	}
+	input, textarea {
+		border: none;
+		background-color: @light-pink;
+		color: black;
+		padding: 5px 10px;
+		font-size: 9px;
+		font-family: 'CircularStd', sans-serif;
+		box-sizing: border-box;
+		font-weight: 300;
+		border: 1px solid @gray;
+		border-bottom: none;
+		width: 100%;
+		border-radius: 0;
+	}
+	input {
+		height: 29px;
+	}
+	input::placeholder {
+		color: black;
+		font-size: 9px;
+		// padding-left: 10%;
+	}
+	textarea::placeholder {
+		color: black;
+		font-size: 9px;
+		// padding-left: 10%;
+	}
+	textarea {
+		// height: 17.5vh;
+	}
+	input[type="submit"] {
+		width: auto;
+		margin-top: -3px;
+    padding: 5px 10px;
+    background-color: transparent;
+    font-size: 9px;
+    width: 100%;
+    font-weight: 300;
+    text-align: left;
+    border: 1px solid @gray;
+    transition: background-color 0.5s;
+	}
+	input[type="submit"]:hover {
+		color: white;
+		background-color: black;
+		transition: background-color 0.5s;
+	}
+	input:-webkit-autofill, 
+	input:-webkit-autofill:hover, 
+	input:-webkit-autofill:focus, 
+	input:-webkit-autofill:active {
+	    -webkit-transition-delay: 99999s;
+	    background-color: @light-pink;
+	}
+
+	.wpcf7-radio {
+		display: flex;
+		> .wpcf7-list-item {
+			margin: 0;
+			width: 33.33%;
+			border: 1px solid @gray;
+			padding: 5px 10px;
+			border-right: none;
+			border-bottom: none;
+			cursor: pointer;
+			&:last-of-type {
+				border-right: 1px solid @gray;
+			}
+			&:hover {
+				background-color: black;
+				color: white;
+			}
+
+			.wpcf7-list-item-label {
+				cursor: pointer;
+				font-size: 9px;
+				font-family: 'CircularStd', sans-serif;
+				box-sizing: border-box;
+				font-weight: 300;
+				width: 100%;
+				border-radius: 0;
+			}
+		}
+	}
+	.contact-option {
+		display: flex;
+		div {
+			width: 33.33%;
+			border: 1px solid @gray;
+			border-right: none;
+			border-bottom: none;
+			padding: 5px 10px;
+			h4 {
+				font-size: 9px;
+			}
+			&:last-of-type {
+				border-right: 1px solid @gray;
+			}
+		}
+	}
+	input[type="radio"] {
+		display: none;
+	}
+	.submit-arrow {
+		position: relative;
+		.arrow {
+			position: absolute;
+			top: 8px;
+			right: 10px;
+			display: flex;
+			flex-direction: column;
+			cursor: pointer;
+			// width: 50px;
+			// height: 50px;
+			span {
+				background-color: black;
+				height: 1px;
+				width: 9px;
+				// margin-left: 20px;
+			}
+			.arrow-1 {
+				transform: rotate(45deg);
+				margin-bottom: 5px;
+			}
+			.arrow-2 {
+				transform: rotate(-45deg)
+			}
+		}
+		&:hover {
+			.arrow {
+				span {
+					background-color: white;
+				}
+			}
+		}
+	}
+}
+.wpcf7 .ajax-loader {
+	display: none;
+}
+
+@media screen and (min-width: @screen-lg) {
+	form.wpcf7-form  {
+		max-width: @width-column-lg;
+	}
+}
+@media screen and (max-width: @screen-md) {
+	form.wpcf7-form  {
+		margin-bottom: 30px;
+		max-width: @width-column-md;
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	form.wpcf7-form  {
+		margin-bottom: 30px;
+		max-width: @width-column-sm;
+	}
+}
+
+.woocommerce {
+	.image-columns {
+		.text-box {
+			.text-box__item {
+				br {
+					display: none;
+				}
+				form.wpcf7-form {
+					margin: 30px auto 0px auto;
+					max-width: 100%;
+					input, textarea {
+						background-color: @green;
+						color: white;
+						border-color: white;
+						margin-top: -1px;
+					}
+					textarea::placeholder {
+						color: white;
+					}
+					input::placeholder {
+						color: white;
+					}
+					input:-webkit-autofill, 
+					input:-webkit-autofill:hover, 
+					input:-webkit-autofill:focus, 
+					input:-webkit-autofill:active {
+					  background-color: @green;
+					}
+					input[type="submit"]:hover {
+						background-color: black;
+						transition: background-color 0.5s;
+					}
+					.submit-arrow {
+						margin-top: -2px;
+						.arrow {
+							top: 10px;
+							span {
+								background-color: white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

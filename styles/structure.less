@@ -1,0 +1,153 @@
+//media sizes
+@max-mobile: 600px;
+@screen-xxl: 2560px;
+@screen-md: 1250px; 
+@screen-xxs: 400px;
+
+@width-column: 30%;
+@width-column-lg: 31%;
+@width-column-md: 45%;
+@width-column-sm: 99%;
+
+@screen-xl: 1900px;
+@screen-lg: 1460px;
+@screen-md: 1000px;
+@screen-sm: 700px;
+
+
+//color
+@yellow: #E2DF46;
+@yellow-light: #fec00f;
+@mustard: #966a10;
+@green: #0b1d1c;
+@purple: #1D3831;
+@light-pink: #fffef7;
+@gray: #615e5e;
+@dark-red: #2D0A14;
+@light-purple: #c9bfbc;
+@blue: #6673FF;
+
+/////
+@black: #18191F;
+@orange: #F4920B;
+@light-pink: #FCE5C4;
+@pink: #F05B66;
+@dark-blue: #0B0D17;
+
+
+//content
+.structure-container {
+	width: 100%;
+	.structure-container__content {
+		margin: 100px auto 0;
+		max-width: @screen-xxl;
+	}
+	.structure-container__side {
+		padding-right: 35px;
+		padding-left: 35px;
+		max-width: @screen-lg;
+	}
+
+	@media screen and (max-width: @screen-sm) {
+		.structure-container__content {
+			margin: 20px auto 0;
+			// max-width: @screen-sm;
+		}
+		.structure-container__side {
+			padding-right: 5%;
+			padding-left: 5%;
+		}
+	}
+}
+.structure-color-light-pink {
+	background-color: @light-pink;
+	color: black;
+	border-color: @gray;
+	a {
+		color: black;
+	}
+}
+.structure-color-green {
+	background-color: @green;
+	color: white;
+	border-color: white;
+	a {
+		color: white;
+	}
+}
+.structure-color-black {
+	background-color: black;
+	color: white;
+	border-color: @gray;
+	a {
+		color: white;
+	}
+}
+
+.structure-block {
+	display: flex;
+	justify-content: center;
+	.structure-block__center {
+		max-width: @screen-lg;
+		width: 100%;
+	}
+	@media screen and (min-width: @screen-lg) {
+		.structure-block__center {
+			max-width: @screen-lg;
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: @screen-md) {
+		.structure-block__center {
+			max-width: @screen-md;
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: @screen-sm) {
+		.structure-block__center {
+			max-width: @screen-sm;
+			width: 100%;
+		}
+	}
+}
+
+//FONT
+@font-face {
+  font-family: proximanova;
+  src: url('../resources/font/proximanova-bold.otf') format('truetype');
+  font-weight: 500; 
+}
+@font-face {
+  font-family: proximanova;
+  src: url('../resources/font/proximanova-regular.otf') format('truetype');
+  font-weight: 400; 
+}
+@font-face {
+  font-family: proximanova;
+  src: url('../resources/font/proximanova-thin.otf') format('truetype');
+  font-weight: 300; 
+}
+@font-face {
+  font-family: sofiapro;
+  src: url('../resources/font/sofiapro-light.otf') format('opentype');
+  font-style: italic;
+}
+
+
+
+
+
+//Columns
+.wp-block-image {
+	margin-bottom: 0 !important;
+}
+.structure-justify-start {
+	justify-content: flex-start !important;
+}
+.structure-text-left {
+	text-align: left !important;
+}
+body {
+	// max-width: 1400px;
+	// margin: 0 auto;
+}

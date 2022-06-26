@@ -1,0 +1,382 @@
+/*
+Theme Name: studio-viridiana-theme
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+b,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.template-home {
+  position: relative;
+}
+.template-home > img {
+  width: 100vh;
+  height: auto;
+  margin: 0 auto;
+}
+.template-home .template-home__contents > .box {
+  position: absolute;
+  top: 800px;
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+}
+h1 {
+  font-size: 65px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 18px;
+}
+@media only screen and (max-device-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 9px;
+  }
+}
+.highlight-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  margin-top: 60px;
+}
+.highlight-title h2 {
+  padding-top: 10px;
+  min-height: 30px;
+}
+.highlight-title h2:nth-of-type(2n) {
+  text-transform: uppercase;
+}
+.highlight-title div {
+  position: relative;
+}
+.highlight-title div:before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: #E2DF46;
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+@media only screen and (max-device-width: 600px) {
+  .highlight-title {
+    margin-top: 30px;
+  }
+  .highlight-title h2 {
+    min-height: 12px;
+  }
+  .highlight-title div:before {
+    top: 32px;
+  }
+}
+.decoration {
+  height: 4px;
+  background-color: #E2DF46;
+}
+.decoration-bg {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.decoration-sm {
+  width: 70px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+footer {
+  display: none;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #E2DF46;
+}
+footer > address {
+  font-weight: 400;
+  width: 140px;
+  line-height: 18px;
+  font-size: 16px;
+}
+footer > address strong {
+  font-weight: 600;
+}
+footer > div.footer-social > a {
+  color: black;
+  font-size: 16px;
+}
+footer > div.footer-social > div {
+  margin-top: 20px;
+}
+footer > div.footer-social > div svg {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+@media only screen and (max-device-width: 600px) {
+  footer {
+    display: flex;
+  }
+}
+header {
+  font-family: 'Barlow', sans-serif;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #E2DF46;
+  padding: 50px 0px 0px 50px;
+  width: 310px;
+}
+header #mobile-menu-trigger {
+  display: none;
+}
+header .header-logo {
+  font-size: 42px;
+  line-height: 50.4px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin-bottom: 100px;
+}
+header .header-menu-container {
+  margin-bottom: 100px;
+}
+header .header-menu-container ul#main-menu {
+  font-weight: 400;
+  font-size: 28px;
+}
+header .header-menu-container ul#main-menu > li {
+  margin-bottom: 20px;
+}
+header .header-menu-container ul#main-menu > li > a {
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+header .header-menu-container ul#main-menu > li > a:after {
+  content: '';
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+  width: 70px;
+  height: 5px;
+  background-color: black;
+}
+header .header-menu-container ul#main-menu > li:last-of-type > a:after {
+  display: none;
+}
+header > div.header-menu-social > a {
+  color: black;
+  font-size: 20px;
+}
+header > div.header-menu-social > div {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+header > div.header-menu-social > div svg {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+@media (max-device-width: 600px) {
+  header {
+    padding: 20px 0px 20px 20px;
+    width: auto;
+    right: 0;
+    position: sticky;
+  }
+  header .header-logo {
+    font-size: 30px;
+    line-height: 36px;
+    width: 190px;
+    margin-bottom: 0px;
+  }
+  header #mobile-menu-trigger {
+    display: block;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    z-index: 100;
+    top: 38px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  header #mobile-menu-trigger > span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 28px;
+    background-color: currentColor;
+    opacity: 1;
+    left: 4px;
+    border-radius: 6px;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+  header #mobile-menu-trigger > span:nth-child(1) {
+    top: 9px;
+    transform-origin: left center;
+  }
+  header #mobile-menu-trigger > span:nth-child(2) {
+    top: 20px;
+    transform-origin: left center;
+  }
+  header #mobile-menu-trigger > span:nth-child(3) {
+    top: 31px;
+    transform-origin: left center;
+  }
+  header .header-menu-container {
+    display: none;
+  }
+  header > div.header-menu-social {
+    display: none;
+  }
+}
+main.template-index {
+  font-family: 'Barlow', sans-serif;
+}
+@-ms-viewport {
+  width: device-width;
+}

@@ -1,0 +1,36 @@
+#logo-carousel {
+	.logo-carousel-img {
+		max-width: @screen-lg;
+		margin: 0 auto;
+		.slick-list {
+			.slick-track {
+				display: flex !important;
+				align-items: center;
+				.logo-carousel-img__item {
+					margin: 50px 30px;
+					// width: auto !important;
+					// max-height: 150px;
+				}
+			}
+		}				
+		.slick-dots {
+			bottom: 20px;			
+		}
+		button {
+			display: none !important;
+		}
+	}
+}
+@media screen and (max-width: @screen-sm) {
+	#logo-carousel {
+		.logo-carousel-img {
+			.slick-list {
+				.slick-track {
+					.logo-carousel-img__item {
+						margin: 40px 6px;
+					}
+				}
+			}
+		}
+	}
+}
