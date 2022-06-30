@@ -5,5 +5,90 @@
 		h1 {
 			text-align: center;
 		}
+		> div {
+			margin-bottom: 40px;
+		}
+		.pp-multiple-authors-wrapper {
+			ul {
+				li {
+					display: flex;
+				}
+				img {
+					margin-right: 30px;
+					height: 100px;
+					width: auto;
+					border-radius: 50%;
+				}
+				.multiple-authors-links {
+					display: none;
+				}
+				.multiple-authors-name {
+					font-family: 'Proxima Nova';
+					font-size: 20px;
+					line-height: 24px;
+					letter-spacing: 0.3em;
+					a {
+					text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	.blog-single__img {
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 46vh;
+		margin-bottom: 40px;
+	}
+	.blog-single__info {
+		font-family: 'Sofia Pro';
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+	h2 {
+		color: #015EA7;
+	}
+	.cards-list{
+		.cards-list__item{
+			.cards-list__item-text {
+				h5, 
+				h4 {
+					background-color:@blue;
+				}
+			} 
+		}
+	}
+	.blog_content {
+		margin-bottom: 100px;
+	}
+	.blog-contact {
+		background-color: @light-blue;
+		div {
+			text-align: center;
+			color: @blue;
+			max-width: 450px;
+			margin: 0 auto;
+			padding: 40px 20px;
+			h3, a {
+				color: @blue;
+			}
+			h3:first-of-type{
+				margin-bottom: 0;
+			}
+			h3:last-of-type {
+				margin-bottom: 30px;
+			}
+			a {
+				margin-bottom: 30px;
+				text-decoration: none;
+				&:hover {
+					color: @orange;
+				}
+			}
+		}
 	}
 }
