@@ -39,10 +39,17 @@ function services() {
 						</div>
 						<div class="services-img">
 							<?php foreach ($block['imgs'] as $imgs) : ?>
+								<?php if(count($block['imgs']) == 1 ) :?>
+								<div class="services-img__img__only">
+									<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'horizontal-plus')[0]; ?>">
+									<p><?php echo $imgs['text']?></p>
+								</div>
+								<?php else: ?> 
 								<div class="services-img__img">
 									<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'quarter')[0]; ?>">
 									<p><?php echo $imgs['text']?></p>
 								</div>
+								<?php endif; ?> 
 							<?php endforeach;  ?>
 							
 						</div>

@@ -18,6 +18,7 @@ function cocrianca_add_custom_image_sizes() {
     //horizontal
     add_image_size( 'horizontal', 450, 300, true);
     add_image_size( 'horizontal-b', 740, 540, true);
+    add_image_size( 'horizontal-plus', 715, 225, true);
     add_image_size( 'quarter', 300, 300, true);
     //others
     add_image_size('image_desktop_full_no_crop', 3000 , 3500, false);

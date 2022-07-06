@@ -950,6 +950,22 @@ footer .footer-about a:hover {
   color: white;
   font-size: 16px;
 }
+.services .services-img .services-img__img__only {
+  position: relative;
+}
+.services .services-img .services-img__img__only img {
+  cursor: pointer;
+  border-radius: 20px;
+}
+.services .services-img .services-img__img__only p {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  padding: 3px;
+  background-color: #F4920B;
+  color: white;
+  font-size: 16px;
+}
 @media screen and (max-width: 1000px) {
   .services {
     flex-direction: column;
@@ -960,8 +976,14 @@ footer .footer-about a:hover {
   .services .services-img {
     margin-top: 20px;
   }
+  .services .services-img .services-img__img {
+    width: 30%;
+  }
   .services .services-img .services-img__img img {
-    max-width: 220px;
+    max-width: 100%;
+  }
+  .services .services-img .services-img__img__only img {
+    width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -973,9 +995,6 @@ footer .footer-about a:hover {
   }
   .services .services-img .services-img__img {
     margin-right: 5px;
-  }
-  .services .services-img .services-img__img img {
-    max-width: 105px;
   }
   .services .services-img .services-img__img p {
     bottom: -5px;

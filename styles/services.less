@@ -33,6 +33,22 @@
 				font-size: 16px;
 			}
 		}
+		.services-img__img__only {
+			position: relative;
+			img {
+				cursor: pointer;
+				border-radius: 20px;
+			}
+			p {
+				position: absolute;
+				bottom: 0px;
+				left: 10px;
+				padding: 3px;
+				background-color: @orange;
+				color: white;
+				font-size: 16px;
+			}
+		}
 	}
 }
 @media screen and (max-width: 1000px) {
@@ -44,8 +60,14 @@
 		.services-img {
 			margin-top: 20px;
 			.services-img__img {
+				width: 30%;
 				img {
-					max-width: 220px;
+					max-width: 100%;
+				}
+			}
+			.services-img__img__only {
+				img {
+					width: 100%;
 				}
 			}
 		}
@@ -62,7 +84,7 @@
 				margin-right: 5px;
 
 				img {
-					max-width: 105px;
+					// max-width: 105px;
 				}
 				p {
 					bottom: -5px;
