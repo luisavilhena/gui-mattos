@@ -1,17 +1,44 @@
 .button-bg {
-	padding: 20px 30px;
+	padding: 11px 30px 14px 30px;
 	background-color: @orange;
 	color: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px -4px 22px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
 	text-decoration: none;
 	font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  animation: loadmoreanim infinite 0.5s linear;
+  animation: swing infinite 2s linear;
+
+
+  &:hover {
+      text-decoration: none;
+      color: white;
+      opacity: .7;
+      background-color:@orange;
+      color: white;
+      transition: color 0.2s;
+  }
+  @keyframes swing {
+      5% {transform: rotate3d(0, 0, 1, 5deg);}
+      10% {transform: rotate3d(0, 0, 1, -5deg);}
+      15% {transform: rotate3d(0, 0, 1, 2deg);}
+      20% {transform: rotate3d(0, 0, 1, -2deg);}
+      25% {transform: rotate3d(0, 0, 1, 0deg);}
+  }
+  @keyframes loadmoreanim {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
+  }
 	> h3 {
 		white-space: nowrap;
 		text-align: center;
 		font-size: 16px;
+		line-height: 16px;
 		color: white;
 		margin-bottom: 0px;
+
 	}
 	// &:hover{
 	// 	padding: 20px 40px;
@@ -19,14 +46,15 @@
 	// }
 }
 .button {
-	padding: 15px 20px;
-	background-color: transparent;
+	padding: 8px 20px;
+	background-color: white;
 	color: @black;
 	// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px -4px 22px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
 	border: 2px solid @black;
 	text-decoration: none;
 	font-weight: bold;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	> h3 {
 		white-space: nowrap;
 		text-align: center;
@@ -50,9 +78,19 @@
 }
 @media screen and (max-width: 1080px) {
 	.button-bg {
-		padding: 10px 10px;
+		padding: 7px 12px 9px 12px;
+		h3 {
+			font-size: 15px;
+			line-height: 18px;
+		}
+	}
+}
+@media screen and (max-width: @max-mobile) {
+	.button-bg {
+		padding: 5px 10px 6px 10px;
 		h3 {
 			font-size: 12px;
+			line-height: 12px;
 		}
 	}
 }

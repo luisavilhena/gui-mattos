@@ -1,0 +1,38 @@
+.breadcrumb {
+	position: relative;
+	
+	.breadcrumb__content {
+		position: absolute;
+		top: -45px;
+		left: 90px;
+		display: flex;
+		font-size: 16px;
+		color: @gray;
+		font-weight: bold;
+		font-family: 'proximanova', sans-serif;
+		z-index: 1000;
+		a {
+			font-size: 16px;
+			color: @gray;
+			text-decoration: none;
+			font-family: 'proximanova', sans-serif;
+		}
+	}
+}
+@media screen and (max-width:@screen-xxl) {
+	.breadcrumb {
+		.breadcrumb__content {
+			top: -50px;
+			left: 35px;
+		}
+	}
+}
+
+@media screen and (max-width:@screen-sm) {
+	.breadcrumb {
+		.breadcrumb__content {
+			top: -50px;
+			left: 0;
+		}
+	}
+}

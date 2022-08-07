@@ -4,7 +4,7 @@ get_header(); ?>
 <?php while (have_posts()) : the_post(); ?>
 
 <main id="blog-single" class="structure-container">
-	<div class="structure-container__content structure-container__side">
+	<div class="structure-container__all-content structure-container__side">
 		<div class="blog-single__header">
 			<div class="blog-single__header">
 				<h1><?php the_title(); ?></h1>

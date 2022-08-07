@@ -203,6 +203,21 @@ $(document).ready(function(){
 	console.log(	$('.datepick-header span').text('oct'))
 });
 
+$(document).ready(function(){
+	if($(".carousel").length){
+		$(".breadcrumb__content").css("color", "white");
+		$(".breadcrumb__content").css("top", "55px");
+		$(".breadcrumb a").css("color", "white");
+		$(".breadcrumb").css("top", "30px");
+	}
+	if($(".wp-block-video").length){
+		$(".breadcrumb__content").css("color", "white");
+		$(".breadcrumb__content").css("top", "55px");
+		$(".breadcrumb a").css("color", "white");
+		$(".breadcrumb").css("top", "30px");
+	}
+})
+
 
 
 

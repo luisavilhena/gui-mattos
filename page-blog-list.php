@@ -5,7 +5,7 @@ get_header(); ?>
 
 <main id="blog-list" class="structure-container">
 	<?php while (have_posts()) : the_post(); ?>
-		<div class="structure-container__content structure-container__side">
+		<div class="structure-container__all-content structure-container__side">
 			<div class="blog-list__destak">
 				<?php
 				$latest_cpt = get_posts("post_type=post&numberposts=1");

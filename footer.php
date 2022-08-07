@@ -22,7 +22,7 @@
     		<a href="mailto:contato@cocrianca.com.br">contato@cocrianca.com.br</a>
     	</div>
     	<p>
-    		© 2021 CoCriança. Made with Wordpress
+    		<a target="_blank" href="http://luisavilhena.com/">feito por Luisa Vilhena</a>
     	</p>
     	<ul class="social-media">
     	  <li>

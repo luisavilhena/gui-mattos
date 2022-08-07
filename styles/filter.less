@@ -57,6 +57,15 @@ div.caf-post-layout-container {
 	.manage-layout1 {
 		position: relative;
 		box-shadow: none;
+		&:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0, 0.30);
+			border-radius: 20px;
+		}
 	}
 	#manage-post-area {
 		background: transparent !important;
@@ -64,6 +73,18 @@ div.caf-post-layout-container {
 		bottom: 10px;
 		left: 10px;
 	}
+}
+#caf-post-layout1 .caf-post-title,
+#caf-post-layout1 .caf-content {
+	padding: 0 0 5px 10px;
+
+}
+
+#caf-post-layout1 .caf-meta-content {
+	padding: 0;
+}
+.caf-content {
+	padding: 0;
 }
 #caf-post-layout1 .caf-content-read-more {
 	display: none;
@@ -74,18 +95,22 @@ div.caf-post-layout-container {
   padding-left: 0px;
 }
 .data-target-div1 #caf-post-layout1 .caf-post-title{
-		background-color: @orange;
-		margin-bottom: 10px;
-		border-radius: 10px;
+		background-color: transparent;
+		margin-bottom: 0px;
 	h2 {
 		color: white;
+		font-family: 'sofiapro', sans-serif;
+		font-weight: bold;
+		font-size: 16px;
+
 	}
 }
 .data-target-div1 #caf-post-layout1 .caf-content {
-	background-color: @orange;
-	border-radius: 10px;
+	background-color: transparent;
 	color: white;
+	font-family: 'sofiapro', sans-serif;
 	display: inline-flex;
+	font-size: 16px;
 }
 .caf-row.loading {
 	display: none;
@@ -94,7 +119,7 @@ div.caf-post-layout-container {
 	.caf-filter-layout1 a {
 		padding: 0;
 		margin-right: 10px;
-		font-size: 15px;
+		font-size: 18px;
 	}
 }
 @media screen and (max-width: @screen-sm) {
@@ -109,16 +134,16 @@ div.caf-post-layout-container {
 			bottom:0;
 			left: 0;
 			.caf-post-title {
-				padding: 5px 5px;
+				padding: 0 0 3px 3px;
 				margin-bottom: 5px;
 				h2 {
-					font-size: 12px;
-					line-height: 13px;
+					font-size: 14px;
+					line-height: 15px;
 				}
 			}
 			.caf-content {
-				padding: 5px 5px;
-				font-size: 10px;
+				padding: 0 0 3px 3px;
+				font-size: 12px;
 
 			}
 		}

@@ -19,7 +19,7 @@ function cocrianca_add_custom_image_sizes() {
     add_image_size( 'horizontal', 450, 300, true);
     add_image_size( 'horizontal-b', 740, 540, true);
     add_image_size( 'horizontal-plus', 715, 225, true);
-    add_image_size( 'quarter', 300, 300, true);
+    add_image_size( 'quarter', 225, 225, true);
     //others
     add_image_size('image_desktop_full_no_crop', 3000 , 3500, false);
 }
@@ -297,5 +297,33 @@ function custom_taxonomy_projeto() {
     register_taxonomy( "projeto", [ "projetos" ], $args );
 }
 add_action( 'init', 'custom_taxonomy_projeto' );
+
+
+//add breadcrumb
+function get_breadcrumb() {
+    echo ' <div class="breadcrumb structure-container" >
+    <div class="structure-container__content structure-container__side">
+    <div class="breadcrumb__content">
+    <a href="'.home_url().'" rel="nofollow">Página inicial</a>';
+    if (is_category() || is_single()) {
+        echo "&nbsp;&nbsp;>&nbsp;&nbsp;";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;>&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;>&nbsp;&nbsp;";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "&nbsp;&nbsp;>&nbsp;&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
+    }
+    echo '</div>
+    </div>
+    </div>';
+}
 
 
