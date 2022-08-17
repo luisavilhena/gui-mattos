@@ -1,6 +1,12 @@
 .home-special-img {
 	position: relative;
 	padding-bottom: 350px;
+	p {
+		z-index: 1;
+	}
+	figure {
+		z-index: 0;
+	}
 	img {
 		max-height: 700px;
 		position: absolute;
@@ -9,6 +15,7 @@
 		bottom: 0px;
 		// height: 55vh;
 		width: auto;
+		z-index: 0;
 	}
 }
 @media screen and (max-width: @screen-sm) {
@@ -21,10 +28,17 @@
 }
 .home-special-img--2 {
 	position: relative;
+	img {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 85vh;
+	}
+}
+@media screen and (max-width:@screen-lg-2) {
+	.home-special-img--2 {
 		img {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			height: 85vh;
+			display: none;
 		}
+	}
 }

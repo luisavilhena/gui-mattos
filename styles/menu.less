@@ -18,6 +18,7 @@ ul#main-menu {
 		margin-right: 40px;
 		padding-bottom: 20px;
 		margin-top: 20px;
+		margin-bottom: 0;
 		> a {
 			position: relative;
 			text-decoration: none;
@@ -88,22 +89,25 @@ ul#main-menu {
 	> li:nth-of-type(2) {
 		font-family: 'Material Icons';
 		&:after {
-			content: '\e5c5';
-			font-size: 27px;
-			font-family: 'Material Icons';
+			position: absolute;
+		  padding: 5px;
+		  box-shadow: 2px -2px 0 1px #000 inset;
+		  border: solid transparent;
+		  border-width: 0 0 2px 2px;
+			content: '';
 			color: @black;
 			display: block;
-			position: absolute;
-			right: -20px;
-			top: -5px;
-			transform: rotate(0deg);
+			right: -16px;
+			top: 3px;
+			transform: rotate(-43deg);
 			transition: transform 0.5s;
 		}
 		&:hover {
 			&:after {
-				transform: rotate(180deg);
+				transform: rotate(138deg);
 				transition: transform 0.5s;
 				color: @orange;
+				box-shadow: 2px -2px 0 1px @orange inset;
 			}
 		}
 	}

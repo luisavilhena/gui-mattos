@@ -8,6 +8,7 @@
 	require('services.php');
 	require('carousel-description.php');
 	require('cards-list.php');
+	require('mail.php');
 
 
 	require('rich-text.php');
