@@ -6,15 +6,16 @@ get_header(); ?>
 <main id="blog-list" class="structure-container">
 	<?php while (have_posts()) : the_post(); ?>
 		<div class="structure-container__all-content structure-container__side">
-			<div class="blog-list__destak">
-				<?php
-				$latest_cpt = get_posts("post_type=post&numberposts=1");
-				$Id= $latest_cpt[0]->ID;
-				$Title= get_the_title($Id);
-				$Excerpt= get_the_excerpt($Id);
-				$Thumbnail=get_the_post_thumbnail($Id);
-				$Author= get_the_author($Id);				
-				?>
+			<?php
+			$latest_cpt = get_posts("post_type=post&numberposts=1");
+			$Id= $latest_cpt[0]->ID;
+			$Title= get_the_title($Id);
+			$Excerpt= get_the_excerpt($Id);
+			$Thumbnail=get_the_post_thumbnail($Id);
+			$Author= get_the_author($Id);	
+			$Link = get_permalink($Id)			
+			?>
+			<a href="<?php echo $Link;?>" class="blog-list__destak">
 				<div class="blog-list__destak__img"><?php echo $Thumbnail;?></div>
 				<div class="blog-list__destak__content">
 					<h4>Colunista</h4>
@@ -22,7 +23,7 @@ get_header(); ?>
 					<p><?php echo $Excerpt;?></p>
 					<h3> por <?php echo $Author;?></h3>
 				</div>
-			</div>
+			</a>
 			<h2>leia outros artigos</h2>
 			<div class="cards-list">
 			<?php 
@@ -46,11 +47,13 @@ get_header(); ?>
 								$thumbnail.'
 							</div>
 							<div class="cards-list__item-text">';
+							if($tags){
 								foreach($tags as $tag) {
 		    					echo 
 		    					'<h5>'.
 		    					$tag->name . ' </h5>'; 
-		  					}
+		  					};
+							}
 		  				echo '
 								<h4>'.$title .'</h4>
 							</div>

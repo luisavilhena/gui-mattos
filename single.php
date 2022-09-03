@@ -65,11 +65,13 @@ get_header(); ?>
 							$thumbnail.'
 						</div>
 						<div class="cards-list__item-text">';
+						if($tags){
 							foreach($tags as $tag) {
 	    					echo 
 	    					'<h5>'.
 	    					$tag->name . ' </h5>'; 
 	  					}
+						}
 	  				echo '
 							<h4>'.$title .'</h4>
 						</div>

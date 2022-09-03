@@ -27,7 +27,7 @@
     	<ul class="social-media">
     	  <li>
     	    <a href="<?php echo carbon_get_theme_option('instagram'); ?>">
-    	      <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-instagram.png"">
+    	      <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-instagram.png">
     	    </a>
     	  </li>
     	  <li>

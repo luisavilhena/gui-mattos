@@ -4,14 +4,25 @@
 
 get_header(); ?>
 
-<?php 
-$args = array( 'post_type' => 'projetos', 'posts_per_page' => -1 );
+<?php
+$current_url = home_url( add_query_arg( array(), $wp->request ) ); 
+$url_array = explode('/',$current_url);
+$retVal = !empty($url_array[5]) ? $url_array[5] : $url_array[4] ;
+$idObj = get_category_by_slug($retVal);
+$args = array( 'post_type' => 'projetos',
+							'posts_per_page' => -1,
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'projeto',
+									'field' => 'slug',
+									'terms' => $retVal,
+								)
+				) );
 $the_query = new WP_Query( $args ); 
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $new_link = str_replace('projetos','projeto', $actual_link)
-
 ?>
-	<div id="archive-projetos" class="structure-container">
+	<div  id="taxonomy-projeto"class="structure-container">
 		<div class="carousel">
 			<div id="carousel-img">
 				<div class="item" style ="background-image: url('<?php echo get_template_directory_uri() ?>/resources/8.jpg');">
@@ -27,11 +38,8 @@ $new_link = str_replace('projetos','projeto', $actual_link)
 			</div>
 		</div>
 		<div class="structure-container__content structure-container__side">
-				 <?php $terms = get_terms(array(
-				 		'taxonomy'=>'projeto',
-				 		'hide_empty' => 'false'
-				 )) ?>
-				<div class="filter">
+			<div class="filter">
+				<?php $terms = get_terms('projeto') ?>
 			    <?php foreach ( $terms as $term ) : ?>
 			        <a href="<?php echo $new_link.esc_attr( $term->slug )?>">
 			            <h3><?php echo $term->name ?></h3>

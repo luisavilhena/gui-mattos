@@ -9,6 +9,9 @@
 	require('carousel-description.php');
 	require('cards-list.php');
 	require('mail.php');
+	require('img-text.php');
+	require('link-list.php');
+	require('store.php');
 
 
 	require('rich-text.php');

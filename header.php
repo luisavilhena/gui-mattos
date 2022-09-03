@@ -42,7 +42,7 @@
     id="main-header"
     class="active structure-block"
     data-component="collapsible-header">
-    <div class="header__content structure-block__center">
+    <div class="header__content">
       <a
         id="logo-anchor"
         href="<?php echo get_home_url(); ?>">

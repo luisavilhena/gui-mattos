@@ -4,6 +4,7 @@
 		margin: 0 auto;
 		h1 {
 			text-align: center;
+			color: @blue;
 		}
 		> div {
 			margin-bottom: 40px;
@@ -47,7 +48,8 @@
 		font-style: normal;
 		font-weight: 300;
 		font-size: 20px;
-		margin-bottom: 40px;
+		max-width: 900px;
+		margin: 0 auto 40px auto;
 	}
 	h2 {
 		color: @blue;
@@ -63,7 +65,25 @@
 		}
 	}
 	.blog_content {
-		margin-bottom: 100px;
+		max-width: 900px;
+		margin: 0 auto 100px auto;
+		a {
+			display: inline-flex;
+			&:hover {
+				color: @blue;
+			}
+		}
+		strong {
+			color: @blue;
+		}
+		blockquote {
+			margin-right: 0;
+			text-align: left;
+			margin-left: 30%;
+			p {
+				color: @blue;
+			}
+		}
 	}
 	.blog-contact {
 		background-color: @light-blue;

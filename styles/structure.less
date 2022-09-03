@@ -10,11 +10,12 @@
 @width-column-sm: 99%;
 
 @screen-xl: 1900px;
-@screen-lg: 1460px;
-@screen-lg-2: 1390px;
+@screen-lg: 1160px;
+@screen-lg-2: 1160px;
 @screen-md: 1000px;
 @screen-md-2: 880px;
 @screen-sm: 700px;
+@screen-max-content: 900px;
 
 
 //color
@@ -38,24 +39,25 @@
 @dark-blue: #0B0D17;
 @blue: #015EA7;
 
-
+.wp-block-spacer {
+	height: 40px !important;
+}
 //content
 .structure-container {
 	width: 100%;
 	.structure-container__all-content {
 		margin: 180px auto 100px;
-		max-width: @screen-xxl;
 		position: relative;
 	}
 	.structure-container__content {
 		margin: 100px auto 100px;
-		max-width: @screen-xxl;
+		max-width: @screen-lg-2;
 		position: relative;
 	}
 	.structure-container__side {
 		padding-right: 35px;
-		padding-left: 150px;
-		max-width: @screen-lg;
+		padding-left: 35px;
+		max-width: @screen-lg-2;
 	}
 
 	@media screen and (max-width: @screen-sm) {
@@ -97,17 +99,46 @@
 		color: white;
 	}
 }
-
+.structure-max-width {
+	max-width: @screen-max-content !important;
+	margin: 0 auto;
+}
+.structure-text-center {
+	h2 {
+		max-width: 600px;
+		margin: 0 auto;
+		line-height: 47px;
+	}
+}
+.structure-text-left {
+	h2 {
+		max-width: 600px;
+		line-height: 47px;
+	}
+	p {
+		max-width: 600px;
+	}
+}
+.structure-max-width {
+	* {
+		max-width: 1000px;
+	}
+}
+.structure-letra {
+	figure.alignleft {
+		margin: 0 5px 0 0;
+	}
+}
 .structure-block {
 	display: flex;
 	justify-content: center;
 	.structure-block__center {
-		max-width: @screen-lg;
+		max-width: @screen-lg-2;
 		width: 100%;
 	}
 	@media screen and (min-width: @screen-lg) {
 		.structure-block__center {
-			max-width: @screen-lg;
+			max-width: @screen-lg-2;
 			width: 100%;
 		}
 	}
