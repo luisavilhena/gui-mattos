@@ -54,7 +54,7 @@ get_header(); ?>
 				$postId = $value->ID;
 				$url=get_permalink($value->ID);
 				$tags=get_the_tags($value->ID);
-				$thumbnail= get_the_post_thumbnail($value->ID);
+				$thumbnail= get_the_post_thumbnail($value->ID, 'horizontal-c');
 				$title=$value->post_title;
 				if($Id == $postId){
 

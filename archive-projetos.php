@@ -42,7 +42,7 @@ $new_link = str_replace('projetos','projeto', $actual_link)
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					<a class="cards-list__item cards-list__item--special" href="<?php the_permalink(); ?>">
 						<div class="image-columns__item__img">
-							<?php the_post_thumbnail("medium"); ?>
+							<?php the_post_thumbnail('horizontal-c'); ?>
 						</div>
 						<div class="cards-list__item-text">
 							<h5><?php the_excerpt();?></h5>
