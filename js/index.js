@@ -48,7 +48,7 @@ $(document).ready(function(){
   	$(this).slick({
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
-		  autoplay: false,
+		  autoplay: true,
 		  speed: 2000,
 		  autoplaySpeed: 2000,
 		  dots: false,
