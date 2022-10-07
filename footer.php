@@ -19,29 +19,29 @@
     <div class="footer-about">
     	<div>
     		<p>escreva pra gente</p>
-    		<a href="mailto:contato@cocrianca.com.br">contato@cocrianca.com.br</a>
+    		<a target="_blank" href="mailto:contato@cocrianca.com.br">contato@cocrianca.com.br</a>
     	</div>
     	<p>
     		<a target="_blank" href="http://luisavilhena.com/">feito por Luisa Vilhena</a>
     	</p>
     	<ul class="social-media">
     	  <li>
-    	    <a href="<?php echo carbon_get_theme_option('instagram'); ?>">
+    	    <a target="_blank" href="<?php echo carbon_get_theme_option('instagram'); ?>">
     	      <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-instagram.png">
     	    </a>
     	  </li>
     	  <li>
-    	    <a href="<?php echo carbon_get_theme_option('youtube'); ?>">
+    	    <a target="_blank" href="<?php echo carbon_get_theme_option('youtube'); ?>">
     	      <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-youtube.png"">
     	    </a>
     	  </li>
     	  <li>
-    	    <a href="<?php echo carbon_get_theme_option('facebook'); ?>">
+    	    <a target="_blank" href="<?php echo carbon_get_theme_option('facebook'); ?>">
     	      <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-facebook.png"">
     	    </a>
     	  </li>
     	  <li>
-    	    <a href="<?php echo carbon_get_theme_option('linkedin'); ?>">
+    	    <a target="_blank" href="<?php echo carbon_get_theme_option('linkedin'); ?>">
     	      <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-linkedin.png"">
     	    </a>
     	  </li>
