@@ -1082,7 +1082,7 @@ footer .footer-about a:hover {
   margin-right: 15px;
 }
 #equipe .equipe-items .equipe-item div h4 {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 #equipe .equipe-items .equipe-item div p {
   font-size: 15px;
@@ -1138,6 +1138,7 @@ footer .footer-about a:hover {
   margin-right: 50px;
   margin-bottom: 30px;
   white-space: nowrap;
+  min-width: 80px;
 }
 .text-items .text-items__item h4 {
   line-height: unset;
