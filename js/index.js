@@ -62,7 +62,7 @@ $(document).ready(function(){
     	$(this).slick({
   		  slidesToShow: 1,
   		  slidesToScroll: 1,
-  		  autoplay: false,
+  		  autoplay: true,
   		  speed: 1000,
   		  autoplaySpeed: 1000,
   		  dots: true,

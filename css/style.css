@@ -268,13 +268,13 @@ ul#main-menu > li:hover a {
 ul#main-menu > li:hover ul.sub-menu {
   background-color: white;
   top: 30px;
-  transition: background-color 1s;
+  transition: background-color 0.2s;
   border: #F4920B 1px solid;
   display: block;
 }
 ul#main-menu > li:hover ul.sub-menu > li:hover {
   background-color: #FCE5C4;
-  transition: background-color 1s;
+  transition: background-color 0.2s;
 }
 ul#main-menu > li > ul.sub-menu {
   background-color: transparent;
@@ -329,12 +329,12 @@ ul#main-menu > li:nth-of-type(2):after {
   right: -16px;
   top: 3px;
   transform: rotate(-43deg);
-  transition: transform 0.5s;
+  transition: transform 0.3s;
 }
 ul#main-menu > li:first-of-type:hover:after,
 ul#main-menu > li:nth-of-type(2):hover:after {
   transform: rotate(138deg);
-  transition: transform 0.5s;
+  transition: transform 0.3s;
   color: #F4920B;
   box-shadow: 2px -2px 0 1px #F4920B inset;
 }
@@ -1082,11 +1082,12 @@ footer .footer-about a:hover {
   margin-right: 15px;
 }
 #equipe .equipe-items .equipe-item div h4 {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 #equipe .equipe-items .equipe-item div p {
   font-size: 15px;
   margin-bottom: 10px;
+  line-height: 20px;
 }
 #equipe .equipe-items .equipe-item__2columns {
   width: 40%;
@@ -1252,6 +1253,14 @@ footer .footer-about a:hover {
 }
 .carousel-description .carousel-description__item .slick-dots li {
   margin: 0px;
+}
+.carousel-description .carousel-description_text h3 {
+  color: black;
+  line-height: auto;
+  margin-bottom: 10px;
+}
+.carousel-description .carousel-description_text p {
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 1000px) {
   .carousel-description {
@@ -1661,6 +1670,7 @@ div.caf-post-layout-container ul li a {
   margin-bottom: 20px;
   color: #18191F;
   text-decoration: none;
+  font-size: 15px;
 }
 #blog-list .blog-list__destak .blog-list__destak__content h2 {
   margin-bottom: 20px;
@@ -1683,6 +1693,7 @@ div.caf-post-layout-container ul li a {
   }
 }
 .breadcrumb {
+  display: none;
   position: relative;
 }
 .breadcrumb .breadcrumb__content {
@@ -3562,10 +3573,10 @@ h5 {
   margin-bottom: 20px;
 }
 h6 {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   margin-bottom: 20px;
-  line-height: 20px;
+  line-height: 24px;
   letter-spacing: 0.3em;
   font-family: 'proxima-nova', sans-serif;
 }
@@ -3641,7 +3652,7 @@ q p:last-of-type {
     line-height: 18px;
   }
   h6 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
   }
   p {

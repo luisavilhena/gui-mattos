@@ -34,7 +34,7 @@ function equipe_block() {
  					<div class="equipe-items">
  						<?php foreach ($block['equipe'] as $equipe) : ?>
  						<div class="equipe-item <?php if($block['columns']){echo('equipe-item__2columns');}?>">
- 							<img class="equipe-item__img" src="<?php echo wp_get_attachment_image_src($equipe['img'],'image_desktop_full_no_crop')[0]; ?>">
+ 							<img class="equipe-item__img" src="<?php echo wp_get_attachment_image_src($equipe['img'],'quarter')[0]; ?>">
  							<div>
  								<h4>
  									<?php echo $equipe['title'] ?>
