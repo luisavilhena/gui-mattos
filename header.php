@@ -79,23 +79,23 @@
       </nav>
       <ul class="social-media">
         <li>
-          <a target="_blank"> href="<?php echo carbon_get_theme_option('instagram'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-instagram.png"">
+          <a target="_blank" href="<?php echo carbon_get_theme_option('instagram'); ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-instagram.png">
           </a>
         </li>
         <li>
-          <a target="_blank"> href="<?php echo carbon_get_theme_option('youtube'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-youtube.png"">
+          <a target="_blank" href="<?php echo carbon_get_theme_option('youtube'); ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-youtube.png">
           </a>
         </li>
         <li>
-          <a target="_blank"> href="<?php echo carbon_get_theme_option('facebook'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-facebook.png"">
+          <a target="_blank" href="<?php echo carbon_get_theme_option('facebook'); ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-facebook.png">
           </a>
         </li>
         <li>
-          <a target="_blank"> href="<?php echo carbon_get_theme_option('linkedin'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-linkedin.png"">
+          <a target="_blank" href="<?php echo carbon_get_theme_option('linkedin'); ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-linkedin.png">
           </a>
         </li>
       </ul>
