@@ -12,6 +12,7 @@
 	require('img-text.php');
 	require('link-list.php');
 	require('store.php');
+	require('carousel-history.php');
 
 
 	// require('rich-text.php');

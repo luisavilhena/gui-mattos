@@ -135,6 +135,12 @@
     width: 100%;
   }
 }
+.structure-mg-top-20 {
+  margin-top: 20px;
+}
+.structure-mg-top-80 {
+  margin-top: 80px;
+}
 @font-face {
   font-family: "sofiapro";
   src: url("../resources/font/Fonts/6080420/671fbd35-afa7-4696-93cc-b69417939fde.woff2") format("woff2"), url("Fonts/6080420/bc60477f-2742-4fb5-b9a2-80af70a3840a.woff") format("woff");
@@ -876,8 +882,9 @@ header .header__content .header-content__button {
 .carousel .carousel-text {
   position: absolute;
   bottom: 100px;
-  left: 80px;
   max-width: 750px;
+  transform: none;
+  left: 35px;
 }
 .carousel .carousel-text h1 {
   color: white;
@@ -928,6 +935,7 @@ header .header__content .header-content__button {
   .carousel .carousel-text {
     bottom: 20px;
     left: 20px;
+    transform: none;
   }
   .carousel .carousel-text p {
     font-size: 25px;
@@ -935,6 +943,12 @@ header .header__content .header-content__button {
   }
   .carousel .slick-list .item {
     height: 40vh;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .carousel .carousel-text {
+    left: 30%;
+    transform: translate(-50%, 42%);
   }
 }
 #logo-carousel .logo-carousel-img {
@@ -1805,6 +1819,7 @@ div.caf-post-layout-container ul li a {
 .link-list a.link-list__item {
   width: 48%;
   text-decoration: none;
+  min-width: 173px;
 }
 .link-list a.link-list__item h2 {
   font-size: 24px;

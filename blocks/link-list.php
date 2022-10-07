@@ -23,7 +23,7 @@ function link_list() {
  
 			<div class="link-list">
 				<?php foreach ($block['links'] as $links) : ?>
-					<a target="_blank" class="link-list__item" href="<?php ($links['link'])?>">
+					<a target="_blank" class="link-list__item" href="<?php  echo($links['link'])?>">
 							<h2><?php echo $links['title']?></h2>
 					</a>
 				<?php endforeach;  ?>

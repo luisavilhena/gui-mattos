@@ -20,8 +20,9 @@
 	.carousel-text {
 		position: absolute;
 		bottom: 100px;
-		left: 80px;
 		max-width: 750px;
+		transform: none;
+		left: 35px;
 
 		h1 {
 			color: white;
@@ -82,6 +83,7 @@
 		.carousel-text {
 			bottom: 20px;
 			left: 20px;
+			transform: none;
 			p {
 				font-size: 25px;
 				line-height: 28px;
@@ -94,5 +96,21 @@
 		}
 	}
 }
+@media screen and (min-width: 1300px) {
+	.carousel {
+		.carousel-text {
+			left: 30%;
+			transform: translate(-50%, 42%);
+			p {
+
+			}
+		}
+		.slick-list {	
+			.item {
+		  }
+		}
+	}
+}
+
 
 
