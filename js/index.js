@@ -1,26 +1,5 @@
 //js functions
-//create location change
 
-(function() {
-    var pushState = history.pushState;
-    var replaceState = history.replaceState;
-
-    history.pushState = function() {
-        pushState.apply(history, arguments);
-        window.dispatchEvent(new Event('pushstate'));
-        window.dispatchEvent(new Event('locationchange'));
-    };
-
-    history.replaceState = function() {
-        replaceState.apply(history, arguments);
-        window.dispatchEvent(new Event('replacestate'));
-        window.dispatchEvent(new Event('locationchange'));
-    };
-
-    window.addEventListener('popstate', function() {
-        window.dispatchEvent(new Event('locationchange'))
-    });
-})();
 
 
 
@@ -31,13 +10,6 @@ $(document).ready(function(){
 })
 
 
-$(document).ready(function(){
-	$('#name1').attr("placeholder", "NAME")
-	$('#email1').attr("placeholder", "E-MAIL")
-	$('#phone1').attr("placeholder", "PHONE")
-	$('.captachinput').attr("placeholder", "RECAPCTHA")
-	$('input[type="password"]').attr("placeholder", "PASSWORD")
-})
 
 //CAROUSEL
 $(document).ready(function(){
@@ -79,9 +51,7 @@ $(document).ready(function(){
 	  infinite: true,
 	  slidesToScroll: 1,
 	  autoplay: true,
-	  speed: 2000,
-	  autoplaySpeed: 0,
-	  dots: true,
+	  autoplaySpeed: 1000,
   });
 });
 

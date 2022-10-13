@@ -20,7 +20,9 @@ $args = array( 'post_type' => 'projetos',
 				) );
 $the_query = new WP_Query( $args ); 
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$new_link = str_replace('projetos','projeto', $actual_link)
+$new_link = str_replace('projetos','projeto', $actual_link);
+$correct_link = explode('projeto', $new_link);
+$link = $correct_link[0];
 ?>
 	<div  id="taxonomy-projeto"class="structure-container">
 		<div class="carousel">
@@ -30,10 +32,10 @@ $new_link = str_replace('projetos','projeto', $actual_link)
 			</div>
 			<div class="carousel-text">
 				<p>
-					Expericências coletivas de
+					expericências coletivas de
 				</p>
 				<h1>
-					Projeto, Construção e Aprendizagem
+					projeto, construção e aprendizagem
 				</h1>
 			</div>
 		</div>
@@ -41,7 +43,7 @@ $new_link = str_replace('projetos','projeto', $actual_link)
 			<div class="filter">
 				<?php $terms = get_terms('projeto') ?>
 			    <?php foreach ( $terms as $term ) : ?>
-			        <a href="<?php echo $new_link.esc_attr( $term->slug )?>">
+			        <a href="<?php echo $link.'/projeto/'.esc_attr( $term->slug )?>">
 			            <h3><?php echo $term->name ?></h3>
 			        </a>
 			    <?php endforeach; ?>

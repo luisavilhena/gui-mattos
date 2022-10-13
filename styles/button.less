@@ -47,11 +47,11 @@
 }
 .button {
 	padding: 11px 20px;
-	background-color: white;
-	color: @black;
+	background-color: @orange;
+	color: white;
 	// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px -4px 22px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
-	border: 2px solid @black;
+	border: 2px solid white;
 	text-decoration: none;
 	font-weight: bold;
 	> h3 {
@@ -60,14 +60,15 @@
 		line-heigt: unset;
 		font-size: 16px;
 		font-weight: lighter;
-		color: @black;
+		color: white;
 		margin-bottom: 0px;
 	}
 	&:hover {
-		background-color: @orange;
+		background-color: white;
 		border-color: @orange;
+		color: @orange;
 		> h3 {
-			color: white;
+			color: @orange;
 		}
 	}
 
@@ -76,6 +77,16 @@
 	background-color: @orange;
 	color: white;
 	transition: background-color 0.4s;
+}
+
+.wp-block-button__link.has-background {
+	&:hover {
+		a {
+			color: @orange;
+			background-color: white;
+			border: 1px solid @orange;
+		}
+	}
 }
 @media screen and (max-width: 1080px) {
 	.button-bg {

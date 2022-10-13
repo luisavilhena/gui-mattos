@@ -16,7 +16,7 @@
 }
 .wp-block-columns_special-3.wp-block-columns {
 	justify-content: center;
-	padding: 80px 2%;
+	padding: 80px 10%;
 	column-gap: 5% !important;
 	.wp-block-column {
 		max-width: 420px;
@@ -35,12 +35,12 @@
 	justify-content: space-between;
 }
 .wp-block-columns.wp-block-padding-sm {
-	padding: 0px 2%;
+	padding: 0px 10%;
 	margin-bottom: 0;
 }
 .wp-block-columns {
 	justify-content: center;
-	padding: 80px 2%;
+	padding: 80px 10%;
 	column-gap: 5% !important;
 	.wp-block-column {
 		max-width: @screen-lg;
@@ -87,8 +87,10 @@
 }
 
 @media screen and (max-width: @screen-sm) {
-	.wp-block-columns {
+	.wp-block-columns,
+	.wp-block-columns.wp-block-padding-sm,
+	.wp-block-columns_special-3.wp-block-columns {
 		padding: 40px 15px;
 	}
-
 }
+

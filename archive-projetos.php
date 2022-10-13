@@ -19,10 +19,10 @@ $new_link = str_replace('projetos','projeto', $actual_link)
 			</div>
 			<div class="carousel-text">
 				<p>
-					Expericências coletivas de
+					expericências coletivas de
 				</p>
 				<h1>
-					Projeto, Construção e Aprendizagem
+					projeto, construção e aprendizagem
 				</h1>
 			</div>
 		</div>
