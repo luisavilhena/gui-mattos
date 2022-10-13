@@ -728,6 +728,7 @@ header .header__content .header-content__button {
   margin-bottom: 0px;
 }
 .button:hover {
+  transition: background-color 0.3s;
   background-color: white;
   border-color: #F4920B;
   color: #F4920B;
@@ -740,10 +741,11 @@ header .header__content .header-content__button {
   color: white;
   transition: background-color 0.4s;
 }
-.wp-block-button__link.has-background:hover a {
+.wp-block-button__link:hover a {
   color: #F4920B;
   background-color: white;
   border: 1px solid #F4920B;
+  transition: background-color 0.3s;
 }
 @media screen and (max-width: 1080px) {
   .button-bg {
@@ -988,7 +990,7 @@ header .header__content .header-content__button {
   margin: 50px 30px;
 }
 #logo-carousel .logo-carousel-img .slick-dots {
-  bottom: 20px;
+  display: none;
 }
 #logo-carousel .logo-carousel-img button {
   width: 50px;
