@@ -29,7 +29,9 @@ $new_link = str_replace('projetos','projeto', $actual_link)
 		<div class="structure-container__content structure-container__side">
 				 <?php $terms = get_terms(array(
 				 		'taxonomy'=>'projeto',
-				 		'hide_empty' => 'false'
+				 		'hide_empty' => 'false',
+				 		'orderby'=> 'id',
+				 		'order' => 'ASC',
 				 )) ?>
 				<div class="filter">
 			    <?php foreach ( $terms as $term ) : ?>

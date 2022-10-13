@@ -100,8 +100,8 @@
         </li>
       </ul>
       <a
-        class="header-content__button button-bg"
-        href="<?php echo get_home_url(); ?>">
+        class="header-content__button button-bg" target="_blank"
+        href="<?php echo carbon_get_theme_option('doacao'); ?>">
         <h3>apoie o projeto</h3>
       </a>
     </div> 

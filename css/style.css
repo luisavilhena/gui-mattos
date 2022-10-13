@@ -741,8 +741,8 @@ header .header__content .header-content__button {
   color: white;
   transition: background-color 0.4s;
 }
-.is-style-fill {
-  border: 1px solid transparent;
+.is-style-fill a {
+  border: 1px solid #F4920B;
   z-index: 100000;
 }
 .is-style-fill:hover a {
@@ -831,7 +831,7 @@ header .header__content .header-content__button {
 }
 .wp-block-columns {
   justify-content: center;
-  padding: 80px 7%;
+  padding: 80px 5%;
   column-gap: 5% !important;
 }
 .wp-block-columns .wp-block-column {
@@ -1318,6 +1318,7 @@ footer .footer-about a:hover {
 .carousel-description .carousel-description__item img {
   cursor: pointer;
   border-radius: 20px;
+  min-width: 600px;
 }
 .carousel-description .carousel-description__item .slick-dots {
   bottom: -40px;
@@ -1325,12 +1326,12 @@ footer .footer-about a:hover {
 .carousel-description .carousel-description__item .slick-dots li {
   margin: 0px;
 }
-.carousel-description .carousel-description_text h3 {
+.carousel-description .carousel-description__text h3 {
   color: black;
   line-height: auto;
   margin-bottom: 10px;
 }
-.carousel-description .carousel-description_text p {
+.carousel-description .carousel-description__text p {
   margin-bottom: 20px;
 }
 @media screen and (max-width: 1000px) {
@@ -1342,13 +1343,14 @@ footer .footer-about a:hover {
     width: 100%;
   }
   .carousel-description .carousel-description__item img {
-    margin-bottom: 20px;
+    min-width: 100%;
+    blacmargin-bottom: 20px;
   }
 }
 .cards-list {
   margin-bottom: 100px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .cards-list .cards-list__item {
@@ -1414,7 +1416,7 @@ footer .footer-about a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   transition: transform 0.3s;
-  height: 99%;
+  height: 98%;
 }
 .cards-list .cards-list__item--special:hover img {
   border-radius: 20px;
@@ -1455,11 +1457,12 @@ footer .footer-about a:hover {
   }
 }
 .filter {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   position: relative;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  width: 100%;
 }
 .filter:before {
   content: '';
@@ -1485,7 +1488,7 @@ footer .footer-about a:hover {
 .filter a:hover:before {
   content: '';
   position: absolute;
-  width: 100%;
+  width: 76%;
   height: 1px;
   background-color: gray;
   bottom: 10px;

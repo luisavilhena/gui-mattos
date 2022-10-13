@@ -1,8 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts', 'cocrianca');
 function cocrianca(){
-    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.8', 'all');
-
+    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.9', 'all');
     wp_enqueue_style('slickcss', get_template_directory_uri() . '/slick/slick.css', array(), '1.8.0', 'all');
     wp_enqueue_style('slicktheme', get_template_directory_uri() . '/slick/slick-theme.css', array(), '1.8.0', 'all');
     wp_enqueue_script('slickjs',  get_template_directory_uri() . '/slick/slick.js', array('jquery'), '', false);
@@ -36,7 +35,7 @@ function crb_attach_theme_options() {
         ->add_fields( array(
             Field::make( 'text', 'email', 'E-mail' ),
             Field::make( 'text', 'phone', 'Phone' ),
-            Field::make( 'text', 'description', 'Descrição' ),
+            Field::make( 'text', 'doacao', 'Doação' ),
             Field::make( 'text', 'instagram', 'Instagram' ),
             Field::make( 'text', 'youtube', 'Youtube' ),
             Field::make( 'text', 'facebook', 'Facebook' ),
