@@ -48,7 +48,6 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.logo-carousel-img').slick({
 	  slidesToShow: 6,
-	  infinite: true,
 	  slidesToScroll: 1,
 	  autoplay: true,
 	  autoplaySpeed: 1000,
