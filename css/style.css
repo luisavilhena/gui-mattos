@@ -2175,6 +2175,7 @@ div.caf-post-layout-container ul li a {
   bottom: 0;
   right: 0;
   height: 85vh;
+  width: auto;
 }
 @media screen and (max-width: 1160px) {
   .home-special-img--2 img {
