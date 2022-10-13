@@ -17,6 +17,7 @@ function services() {
 			  ->add_fields(array(
 			    Field::make('image', 'img', 'Imagem'),
 			    Field::make('text', 'text', 'Texto da imagem'),
+			    Field::make('text', 'text_2', 'Frase'),
 			  ))
 			  ->set_layout('tabbed-vertical')
 		) )
@@ -48,6 +49,7 @@ function services() {
 								<div class="services-img__img">
 									<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'quarter')[0]; ?>">
 									<p><?php echo $imgs['text']?></p>
+									<div class="services-img__phrase"><p><?php echo $imgs['text_2']?></p></div>
 								</div>
 								<?php endif; ?> 
 							<?php endforeach;  ?>
