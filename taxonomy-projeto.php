@@ -16,8 +16,6 @@ $args = array( 'post_type' => 'projetos',
 									'taxonomy' => 'projeto',
 									'field' => 'slug',
 									'terms' => $retVal,
-									'orderby'=> 'id',
-									'order' => 'ASC',
 								)
 				) );
 $the_query = new WP_Query( $args ); 
@@ -43,7 +41,10 @@ $link = $correct_link[0];
 		</div>
 		<div class="structure-container__content structure-container__side">
 			<div class="filter">
-				<?php $terms = get_terms('projeto') ?>
+				<?php $terms = get_terms('projeto', array(
+					'orderby'=> 'id',
+					'order' => 'ASC',
+				)) ?>
 			    <?php foreach ( $terms as $term ) : ?>
 			        <a href="<?php echo $link.'/projeto/'.esc_attr( $term->slug )?>">
 			            <h3><?php echo $term->name ?></h3>

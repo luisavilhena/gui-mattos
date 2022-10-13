@@ -1356,7 +1356,7 @@ footer .footer-about a:hover {
 .cards-list {
   margin-bottom: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .cards-list .cards-list__item {
