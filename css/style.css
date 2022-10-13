@@ -1239,8 +1239,7 @@ footer .footer-about a:hover {
   font-family: 'sofiapro', sans-serif;
 }
 .services .services-img .services-img__img .services-img__phrase {
-  display: none;
-  background-color: #F4920B;
+  background-color: transparent;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1249,8 +1248,15 @@ footer .footer-about a:hover {
   right: 0;
   border-radius: 20px;
 }
+.services .services-img .services-img__img .services-img__phrase p {
+  color: transparent;
+}
 .services .services-img .services-img__img:hover .services-img__phrase {
-  display: block;
+  background-color: #F4920B;
+  transition: all 0.4s;
+}
+.services .services-img .services-img__img:hover .services-img__phrase p {
+  color: white;
 }
 .services .services-img .services-img__img__only {
   position: relative;

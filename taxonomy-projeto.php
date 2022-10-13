@@ -16,6 +16,8 @@ $args = array( 'post_type' => 'projetos',
 									'taxonomy' => 'projeto',
 									'field' => 'slug',
 									'terms' => $retVal,
+									'orderby'=> 'id',
+									'order' => 'ASC',
 								)
 				) );
 $the_query = new WP_Query( $args ); 
