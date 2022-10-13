@@ -1467,7 +1467,7 @@ footer .footer-about a:hover {
 .filter:before {
   content: '';
   position: absolute;
-  width: 100%;
+  width: 76%;
   height: 1px;
   background-color: lightgray;
   bottom: 10px;
@@ -1488,7 +1488,7 @@ footer .footer-about a:hover {
 .filter a:hover:before {
   content: '';
   position: absolute;
-  width: 76%;
+  width: 100%;
   height: 1px;
   background-color: gray;
   bottom: 10px;
