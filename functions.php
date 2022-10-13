@@ -1,7 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts', 'cocrianca');
 function cocrianca(){
-    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.4', 'all');
+    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.5', 'all');
 
     wp_enqueue_style('slickcss', get_template_directory_uri() . '/slick/slick.css', array(), '1.8.0', 'all');
     wp_enqueue_style('slicktheme', get_template_directory_uri() . '/slick/slick-theme.css', array(), '1.8.0', 'all');
