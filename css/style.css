@@ -861,7 +861,10 @@ header .header__content .header-content__button {
     padding: 40px 15px;
   }
 }
-.wp-container-5 {
+.wp-container-6 {
+  z-index: 100;
+}
+.wp-block-buttons.is-content-justification-right {
   z-index: 100;
 }
 .text-topics .text-topics__header {
@@ -1349,8 +1352,9 @@ footer .footer-about a:hover {
     width: 100%;
   }
   .carousel-description .carousel-description__item img {
-    min-width: 100%;
-    blacmargin-bottom: 20px;
+    min-width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 .cards-list {
@@ -1610,6 +1614,7 @@ div.caf-post-layout-container ul li a {
 #blog-list .blog-list__destak {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   margin-bottom: 100px;
   text-decoration: none;
 }
