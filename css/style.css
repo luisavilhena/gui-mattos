@@ -1308,6 +1308,9 @@ footer .footer-about a:hover {
   .services .services-img .services-img__img {
     margin-right: 5px;
   }
+  .services .services-img .services-img__img .services-img__phrase {
+    display: none;
+  }
   .services .services-img .services-img__img p {
     bottom: -5px;
     font-size: 10px;
