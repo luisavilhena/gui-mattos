@@ -14,13 +14,4 @@
 	require('store.php');
 	require('carousel-history.php');
 
-
-	// require('rich-text.php');
-	// require('image-columns.php');
-	// require('one-image.php');
-	// require('text-box.php');
-	// require('social-media.php');
-	// require('columns-image-text-box.php');
-	// require('columns-image-text-box-img-sm.php');
-	// require('image-sizes.php');
 ?>
