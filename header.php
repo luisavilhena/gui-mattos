@@ -99,11 +99,7 @@
           </a>
         </li>
       </ul>
-      <a
-        class="header-content__button button-bg" target="_blank"
-        href="<?php echo carbon_get_theme_option('doacao'); ?>">
-        <h3>apoie o projeto</h3>
-      </a>
+      <a href="#XANLCNZN" style="display: none"></a>
     </div> 
 	  
 	</header>
