@@ -38,7 +38,7 @@
   width: 100%;
 }
 .structure-container .structure-container__all-content {
-  margin: 40px auto 100px;
+  margin: 120px auto 100px;
   position: relative;
 }
 .structure-container .structure-container__content {
@@ -53,7 +53,7 @@
 }
 @media screen and (max-width: 700px) {
   .structure-container .structure-container__all-content {
-    margin: 60px auto 0;
+    margin: 80px auto 0;
   }
   .structure-container .structure-container__content {
     margin: 50px auto 0;
@@ -1832,6 +1832,75 @@ div.caf-post-layout-container ul li a {
 @media screen and (max-width: 700px) {
   .link-list .link-list__item {
     width: 80%;
+  }
+}
+.carousel-mini {
+  margin-top: 30px;
+}
+.carousel-mini .carousel-mini__item img {
+  height: 56vh;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.carousel-mini .carousel-mini__nav {
+  margin-top: 30px;
+}
+.carousel-mini .carousel-mini__nav img {
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.carousel-mini .carousel-mini__nav .slick-prev {
+  left: 20px;
+  z-index: 10;
+}
+.carousel-mini .carousel-mini__nav .slick-next {
+  right: 24px;
+  z-index: 10;
+}
+.carousel-mini .carousel-mini__nav .slick-next:before,
+.carousel-mini .carousel-mini__nav .slick-prev:before {
+  opacity: 1;
+  color: orange;
+  font-size: 28px;
+}
+.carousel-mini .carousel-mini__text {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.carousel-mini .carousel-mini__text div:first-of-type {
+  width: 55%;
+}
+.carousel-mini .carousel-mini__text div:nth-of-type(2) {
+  margin-top: 20px;
+  width: 30%;
+}
+@media screen and (max-width: 700px) {
+  .carousel-mini .carousel-mini__item img {
+    height: 35vh;
+  }
+  .carousel-mini .carousel-mini__nav {
+    margin-top: 15px;
+  }
+  .carousel-mini .carousel-mini__nav img {
+    border-radius: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+  .carousel-mini .carousel-mini__text {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .carousel-mini .carousel-mini__text div:first-of-type {
+    width: 100%;
+  }
+  .carousel-mini .carousel-mini__text div:nth-of-type(2) {
+    margin-top: 20px;
+    width: 100%;
   }
 }
 .home-special-img {

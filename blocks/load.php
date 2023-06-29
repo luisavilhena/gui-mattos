@@ -13,5 +13,6 @@
 	require('link-list.php');
 	require('store.php');
 	require('carousel-history.php');
+	require('carousel-mini.php');
 
 ?>

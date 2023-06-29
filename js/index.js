@@ -42,7 +42,22 @@ $(document).ready(function(){
     	});
     });
 
+    var myCarouselMini = $(".carousel-mini__item");
 
+     $('.carousel-mini__item').slick({
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  arrows: false,
+			  fade: true,
+			  asNavFor: '.carousel-mini__nav'
+			});
+			$('.carousel-mini__nav').slick({
+			  slidesToShow: 5,
+			  slidesToScroll: 3,
+			  asNavFor: '.carousel-mini__item',
+			  dots: false,
+			  focusOnSelect: true
+			});
 });
 
 $(document).ready(function(){
