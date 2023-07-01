@@ -56,7 +56,7 @@
     margin: 80px auto 0;
   }
   .structure-container .structure-container__content {
-    margin: 50px auto 0;
+    margin: 50px auto 50px;
   }
   .structure-container .structure-container__side {
     padding-right: 5%;
@@ -782,7 +782,7 @@ header .header__content .header-content__button {
 }
 #banner .banner_button {
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 16%;
   max-width: 750px;
   transform: translate(-42%, 0%);
@@ -1562,6 +1562,7 @@ div.caf-post-layout-container ul li a {
   font-size: 20px;
   max-width: 900px;
   margin: 0 auto 40px auto;
+  line-height: 22px;
 }
 #blog-single h2 {
   color: #015EA7;
@@ -1575,6 +1576,9 @@ div.caf-post-layout-container ul li a {
 }
 #blog-single .blog_content a:hover {
   color: #015EA7;
+}
+#blog-single .blog_content p {
+  line-height: 24px;
 }
 #blog-single .blog_content strong {
   color: #015EA7;
@@ -1837,10 +1841,26 @@ div.caf-post-layout-container ul li a {
 .carousel-mini {
   margin-top: 30px;
 }
-.carousel-mini .carousel-mini__item img {
+.carousel-mini .carousel-mini__item div {
+  position: relative;
+}
+.carousel-mini .carousel-mini__item div img {
   height: 56vh;
+  width: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+.carousel-mini .carousel-mini__item div figcaption {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 10px;
+}
+.carousel-mini .carousel-mini__item div figcaption p {
+  padding: 10px 20px;
+  margin: 0;
+  color: white;
 }
 .carousel-mini .carousel-mini__nav {
   margin-top: 30px;

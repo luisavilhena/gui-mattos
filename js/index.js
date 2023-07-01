@@ -1,5 +1,7 @@
 //js functions
 
+//retira author dev
+
 
 
 
@@ -7,6 +9,10 @@ $(document).ready(function(){
 	$('#mobile-menu-trigger').on("click", function(e){
 		$('#main-header').toggleClass('menu-open')
 	})
+	if($(".author_dev")){
+	console.log('teeem')
+	$(".author_dev").css("display", "none")
+}
 })
 
 
@@ -32,14 +38,20 @@ $(document).ready(function(){
 
     myCarouselDescriptionItem.each(function() {
     	$(this).slick({
-  		  slidesToShow: 1,
-  		  slidesToScroll: 1,
-  		  autoplay: true,
-  		  speed: 1000,
-  		  autoplaySpeed: 1000,
-  		  dots: true,
-  		  adaptiveHeight: false,
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  arrows: false,
+			  fade: true,
+			  asNavFor: '.carousel-mini__nav'
     	});
+    	$('.carousel-mini__nav').slick({
+    	  slidesToShow: 5,
+    	  slidesToScroll: 3,
+    	  asNavFor: '.carousel-description__item',
+    	  dots: false,
+    	  focusOnSelect: true
+    	});
+
     });
 
     var myCarouselMini = $(".carousel-mini__item");

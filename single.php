@@ -12,6 +12,7 @@ get_header(); ?>
 				<div>
 					<?php echo do_shortcode('[publishpress_authors_box layout="boxed"]')?>
 				</div>
+				<?php ?>
 			</div>
 		</div>
 	</div>
