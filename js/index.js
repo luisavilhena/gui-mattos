@@ -46,7 +46,7 @@ $(document).ready(function(){
     	});
     	$('.carousel-mini__nav').slick({
     	  slidesToShow: 5,
-    	  slidesToScroll: 3,
+    	  slidesToScroll: 1,
     	  asNavFor: '.carousel-description__item',
     	  dots: false,
     	  focusOnSelect: true
@@ -65,7 +65,7 @@ $(document).ready(function(){
 			});
 			$('.carousel-mini__nav').slick({
 			  slidesToShow: 5,
-			  slidesToScroll: 3,
+			  slidesToScroll: 1,
 			  asNavFor: '.carousel-mini__item',
 			  dots: false,
 			  focusOnSelect: true
