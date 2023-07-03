@@ -10,8 +10,8 @@ $(document).ready(function(){
 		$('#main-header').toggleClass('menu-open')
 	})
 	if($(".author_dev")){
-	console.log('teeem')
 	$(".author_dev").css("display", "none")
+	$(".box-header-title").css("display", "none")
 }
 })
 
