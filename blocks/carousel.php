@@ -3,7 +3,7 @@
 use Carbon_Fields\Block;
 use Carbon_Fields\Field;
  
-add_action( 'after_setup_theme', 'studio_viridiana' );
+add_action( 'after_setup_theme', 'gui-mattos-theme' );
  
 function carousel() {
 	Block::make( 'Carousel' )
@@ -21,12 +21,11 @@ function carousel() {
 			// ob_start();
 			?>
  
-			<div class="carousel">
-				<div id="carousel-img">
+			<div class="carousel-main">
+				<div id="carousel-main-item">
 					<?php foreach ($block['carousel'] as $carousel) : ?>
 						<?php if ($carousel['img']) : ?>
-					<div class="item" style ="background-image: url('<?php echo wp_get_attachment_image_src($carousel['img'],'image_desktop_full_no_crop')[0]; ?>');">
-					</div>
+							<img src="<?php echo wp_get_attachment_image_src($carousel['img'],'image_desktop_full_no_crop')[0]; ?>">
 						<?php endif; ?>
 					<?php endforeach;  ?>					
 				</div>

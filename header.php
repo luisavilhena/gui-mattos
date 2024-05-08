@@ -44,13 +44,14 @@
     data-component="collapsible-header">
     <div class="header__content">
       <a
+        aria-label="ir para home"
         id="logo-anchor"
         href="<?php echo get_home_url(); ?>">
-        <img src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-cocrianca.png">
-        
+        <img alt="logo Gui Mattos" src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-gui-mattos.png">
       </a>
 
       <button
+        aria-label="abrir menu mobile"
         id="mobile-menu-trigger"
         data-component="trigger"
         data-trigger-target="body">
@@ -65,6 +66,13 @@
         class="header-menu-container"
         id="main-menu-container"
         data-component="menu">
+        <?php 
+          if (is_archive()) {
+              echo '<div id="menu-filter">Filtrar por 
+              <img id="open-filter"alt="abrir filtro" src="'.get_template_directory_uri().'/resources/icons/seta-top.png">
+              </div>';
+          }
+        ?>
         <?php
           wp_nav_menu(array(
             'theme_location' => 'main-menu',
@@ -77,29 +85,6 @@
           href="<?php echo get_home_url(); ?>?s=">
         </a>
       </nav>
-      <ul class="social-media">
-        <li>
-          <a target="_blank" href="<?php echo carbon_get_theme_option('instagram'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-instagram.png">
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="<?php echo carbon_get_theme_option('youtube'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-youtube.png">
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="<?php echo carbon_get_theme_option('facebook'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-facebook.png">
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="<?php echo carbon_get_theme_option('linkedin'); ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/resources/icons/icon-linkedin.png">
-          </a>
-        </li>
-      </ul>
-      <a href="#XANLCNZN" style="display: none"></a>
     </div> 
 	  
 	</header>

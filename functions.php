@@ -1,30 +1,37 @@
 <?php
-add_action('wp_enqueue_scripts', 'cocrianca');
-function cocrianca(){
-    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.15', 'all');
+add_action('wp_enqueue_scripts', 'guimattos');
+function guimattos(){
+    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.16', 'all');
+    wp_enqueue_style('fontstyle', get_template_directory_uri() . '/font-style.css', array(), '1.0.1', 'all');
     wp_enqueue_style('slickcss', get_template_directory_uri() . '/slick/slick.css', array(), '1.8.0', 'all');
     wp_enqueue_style('slicktheme', get_template_directory_uri() . '/slick/slick-theme.css', array(), '1.8.0', 'all');
     wp_enqueue_script('slickjs',  get_template_directory_uri() . '/slick/slick.js', array('jquery'), '', false);
     wp_enqueue_script('customjs',  get_template_directory_uri() . '/js/index.js', array(), NULL, false );
 }
 
+function legit_block_editor_styles() {
+    wp_enqueue_style( 'legit-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '2.3', 'all' );
+} 
+add_action( 'enqueue_block_editor_assets', 'legit_block_editor_styles' );
 
-function cocrianca_add_custom_image_sizes() {
+function guimattos_add_custom_image_sizes() {
 
      // Add "vertical" image
     add_image_size( 'vertical', 590, 670, true);
     add_image_size( 'vertical-larger', 890, 970, true);
     //horizontal
-    add_image_size( 'horizontal', 450, 300, true);
-    add_image_size( 'horizontal-b', 740, 540, true);
-    add_image_size( 'horizontal-c', 342, 290, true);
+    add_image_size( 'horizontal', 740, 540, true);
+    add_image_size( 'horizontal-b', 1700, 780, true);
+    add_image_size( 'horizontal-c', 381, 226, true);
     add_image_size( 'horizontal-plus', 715, 225, true);
     add_image_size( 'quarter', 225, 225, true);
+    add_image_size( 'horizontal16x9', 1200, 675, true);
+
     //others
     add_image_size('image_desktop_full_no_crop', 3000 , 3500, false);
 }
 
-add_action('after_setup_theme', 'cocrianca_add_custom_image_sizes' );
+add_action('after_setup_theme', 'guimattos_add_custom_image_sizes' );
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -325,5 +332,92 @@ function get_breadcrumb() {
     </div>
     </div>';
 }
+
+add_action('wp_ajax_filtrar_posts_por_categoria', 'filtrar_posts_por_categoria');
+add_action('wp_ajax_nopriv_filtrar_posts_por_categoria', 'filtrar_posts_por_categoria');
+
+function filtrar_posts_por_categoria() {
+    if (isset($_POST['categorias_ids'])) {
+        
+        $args = array(
+            'post_type' => 'post', 
+            'post_status' => 'publish', 
+            'posts_per_page' => -1, 
+            'category__in' => $_POST['categorias_ids'] 
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            ob_start();
+            while ($query->have_posts()) : $query->the_post();
+                $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                $post_url = get_permalink();
+            ?>
+            <div class="project-list__item">
+                <?php if ($thumbnail_url) : ?>
+                    <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
+                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                    </a>
+                <?php endif; ?>
+                <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+            </div>
+            <?php
+            endwhile ;
+            wp_reset_postdata();
+            echo ob_get_clean();
+        else :
+            echo '<p>Nenhum post encontrado nessas categorias.</p>';
+        endif;
+        
+    }
+
+    die();
+
+}
+
+add_action('wp_ajax_custom_search', 'custom_search');
+add_action('wp_ajax_nopriv_custom_search', 'custom_search');
+
+function custom_search() {
+    $search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
+
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        's' => $search_query,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => -1
+    );
+
+    $the_query = new WP_Query($args);
+
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) : $the_query->the_post();
+            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+            $post_url = get_permalink();
+            ?>
+            <div class="project-list__item">
+                <?php if ($thumbnail_url) : ?>
+                    <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
+                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                    </a>
+                <?php endif; ?>
+                <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+            </div>
+            <?php
+        endwhile;
+        wp_reset_postdata();
+    } else {
+        echo '<p>' . esc_html__( 'No results found.', 'text-domain' ) . '</p>';
+    }
+
+    wp_die();
+}
+
+
+
+
 
 

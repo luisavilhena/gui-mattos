@@ -1,22 +1,17 @@
 <?php
+get_header();
 
-get_header(); ?>
+while (have_posts()) : the_post();
+?>
 
-<?php while (have_posts()) : the_post(); ?>
-
-<main id="page-default" class="structure-container">
-  <div class="structure-container__all-content">
-  	<div>
-  	<?php
-  		get_breadcrumb();
-		
-  	?>
-  	<?php the_content(); ?>  		
-  	</div>
-  </div>
-</main>
-<?php endwhile; ?>
-
+<div class="structure-container"> 
+    <?php the_content();?>
+</div>
 <?php
+
+endwhile;
+
 get_footer();
+?>
+
 

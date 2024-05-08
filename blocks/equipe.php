@@ -3,7 +3,7 @@
 use Carbon_Fields\Block;
 use Carbon_Fields\Field;
  
-add_action( 'after_setup_theme', 'studio_viridiana' );
+add_action( 'after_setup_theme', 'gui-mattos' );
  
 function equipe_block() {
 	Block::make( 'Equipe' )

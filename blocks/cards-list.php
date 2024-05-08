@@ -13,6 +13,7 @@ function cards_list() {
 			  ->add_fields(array(
 			    Field::make('image', 'img', 'Imagem'),
 			    Field::make('text', 'title', 'Título'),
+				Field::make('text', 'date', 'Data'),
 			    Field::make('text', 'subtitle', 'Subtítulo'),
 			    Field::make('text', 'link', 'Link'),
 			  ))
@@ -25,11 +26,17 @@ function cards_list() {
  
 			<div class="cards-list">
 				<?php foreach ($block['imgs'] as $imgs) : ?>
-					<a class="cards-list__item" <?php if($block['link']) : ?>href=""<?php endif; ?>>
-						<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'quarter')[0]; ?>">
+					<a class="cards-list__item" <?php if($imgs['link']) : ?>href=""<?php endif; ?>>
+						<div class="cards-list__item-img">
+							<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'horizontal16x9')[0]; ?>">
+							<span></span>
+						</div>
 						<div class="cards-list__item-text">
-							<h5><?php echo $imgs['subtitle']?></h5>
-							<h4><?php echo $imgs['title']?></h4>
+							<div>
+								<h2><?php echo $imgs['title']?></h2>
+								<p><?php echo $imgs['date']?></p>
+							</div>
+							<p><?php echo $imgs['subtitle']?></p>
 						</div>
 					</a>
 				<?php endforeach;  ?>

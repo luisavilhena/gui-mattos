@@ -1,19 +1,5 @@
 //js functions
 
-//retira author dev
-
-
-
-
-$(document).ready(function(){
-	$('#mobile-menu-trigger').on("click", function(e){
-		$('#main-header').toggleClass('menu-open')
-	})
-	if($(".author_dev")){
-	$(".author_dev").css("display", "none")
-	$(".box-header-title").css("display", "none")
-}
-})
 
 
 
@@ -73,11 +59,13 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.logo-carousel-img').slick({
-	  slidesToShow: 6,
+  $('#carousel-main-item').slick({
+	  slidesToShow: 1,
 	  slidesToScroll: 1,
 	  autoplay: true,
-	  autoplaySpeed: 1000,
+	  autoplaySpeed: 3000,
+	  speed: 2000,
+	  fade: true,
   });
 });
 
@@ -199,20 +187,73 @@ $(document).ready(function(){
 	console.log(	$('.datepick-header span').text('oct'))
 });
 
+
+
+///////////////////CAROUSEL/////////////////////////////
 $(document).ready(function(){
-	if($(".carousel").length){
-		$(".breadcrumb__content").css("color", "white");
-		$(".breadcrumb__content").css("top", "55px");
-		$(".breadcrumb a").css("color", "white");
-		$(".breadcrumb").css("top", "30px");
+	function initializeCarousel() {
+	  $('.carousel__imgs').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 3000, // Alterei para 3 segundos para uma transição mais suave
+		dots: true,
+		fade: true,
+		waitForAnimate: false,
+	  });
+  
+	  setTimeout(function() {
+		var dots = $('.slick-dots li');
+		dots.each(function(k, v){
+		  $(this).find('button').addClass('heading' + k);
+		});
+  
+		var items = $('.carousel__imgs').slick('getSlick').$slides;
+		items.each(function(k, v){
+		  var text = $(this).find('h2').text();
+		  $('.heading' + k).text(text);
+		});
+	  }, 2000);
+  
+	  $('.carousel__imgs__item__img').on('click', function(e){
+		$('.carousel__imgs').slick('slickPause');
+	  });
+  
+	  $('.slick-dots li button').on('click', function(e){
+		$('.carousel__imgs').slick('slickPause');
+	  });
 	}
-	if($(".wp-block-video").length){
-		$(".breadcrumb__content").css("color", "white");
-		$(".breadcrumb__content").css("top", "55px");
-		$(".breadcrumb a").css("color", "white");
-		$(".breadcrumb").css("top", "30px");
+  
+	function checkScreenWidth() {
+	  if ($(window).width() > 850) {
+		initializeCarousel();
+	  } else {
+		// Se a largura da tela for menor que 850px, destrua o carrossel se estiver inicializado
+		if ($('.carousel__imgs').hasClass('slick-initialized')) {
+		  $('.carousel__imgs').slick('unslick');
+		}
+	  }
 	}
-})
+  
+	// Chamar a função ao carregar a página e redimensionar a tela
+	checkScreenWidth();
+	$(window).resize(checkScreenWidth);
+
+	//back to top
+	function scrollToTop() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+
+    // Evento de clique no botão "Back to Top"
+    $('.animationbacktotop').click(function(e) {
+		e.preventDefault()
+        scrollToTop();
+    });
+});
+  
+  
+  
 
 
 

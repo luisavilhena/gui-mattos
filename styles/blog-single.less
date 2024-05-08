@@ -1,124 +1,26 @@
 #blog-single {
-	margin-top: 180px;
 	.blog-single__header {
-		max-width: 800px;
-		margin: 0 auto;
-		h1 {
-			text-align: center;
-			color: @blue;
-		}
-		> div {
-			margin-bottom: 40px;
-		}
-		.pp-multiple-authors-wrapper {
-			ul {
-				li {
-					display: flex;
-				}
-				img {
-					margin-right: 30px;
-					height: 100px;
-					width: auto;
-					border-radius: 50%;
-				}
-				.multiple-authors-links {
-					display: none;
-				}
-				.multiple-authors-name {
-					font-family: 'proxima-nova';
-					font-size: 20px;
-					line-height: 24px;
-					letter-spacing: 0.3em;
-					a {
-					text-decoration: none;
-					}
-				}
-			}
-		}
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
 	}
 	.blog-single__img {
-		background-position: top;
-		background-repeat: no-repeat;
-		background-size: cover;
 		width: 100%;
-		height: 46vh;
-		margin-bottom: 40px;
-	}
-	.blog-single__info {
-		font-family: 'sofia-pro';
-		font-style: normal;
-		font-weight: 300;
-		font-size: 20px;
-		max-width: 900px;
-		margin: 0 auto 40px auto;
-		line-height: 22px;
-	}
-	h2 {
-		color: @blue;
-	}
-	.cards-list{
-		.cards-list__item{
-			.cards-list__item-text {
-				h5, 
-				h4 {
-				
-				}
-			} 
-		}
 	}
 	.blog_content {
-		max-width: 900px;
-		margin: 0 auto 100px auto;
+	
 		a {
-			display: inline-flex;
 			&:hover {
-				color: @blue;
 			}
 		}
 		p {
-			line-height: 24px;
 		}
 		strong {
-			color: @blue;
 		}
-		blockquote {
-			margin-right: 0;
-			text-align: left;
-			margin-left: 30%;
-			p {
-				color: @blue;
-			}
-		}
-	}
-	.blog-contact {
-		background-color: @light-blue;
-		div {
-			text-align: center;
-			color: @blue;
-			max-width: 450px;
-			margin: 0 auto;
-			padding: 40px 20px;
-			h3, a {
-				color: @blue;
-			}
-			h3:first-of-type{
-				margin-bottom: 0;
-			}
-			h3:last-of-type {
-				margin-bottom: 30px;
-			}
-			a {
-				margin-bottom: 30px;
-				text-decoration: none;
-				&:hover {
-					color: @orange;
-				}
-			}
-		}
+
 	}
 }
 @media screen and (max-width: @screen-sm) {
 	#blog-single {
-		margin-top: 120px;
 	}
 }
