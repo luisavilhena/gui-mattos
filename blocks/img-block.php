@@ -20,13 +20,13 @@ function img_block() {
 			// ob_start();
 			?>
  
-			<div class=img-block">
-					<a class=img-block__item" <?php if($block['link']) : ?>href=""<?php endif; ?>>
-						<div class=img-block__item-img">
+			<div class="img-block">
+					<a class="img-block__item" <?php if($block['link']) : ?>href=""<?php endif; ?>>
+						<div class="img-block__item-img">
 							<img class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($block['img'], 'ap_image_desktop_full_no_crop')[0]; ?>">
 							<span></span>
 						</div>
-						<div class=img-block__item-text">
+						<div class="img-block__item-text">
 							<div>
 								<h2><?php echo $block['title']?></h2>
 								<p><?php echo $block['date']?></p>
