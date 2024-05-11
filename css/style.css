@@ -47,14 +47,13 @@
 .page-template-page-sobre footer {
   background-color: #CACACA;
 }
-.cards-list {
-  margin-bottom: 100px;
+.img-block {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.cards-list .cards-list__item {
-  width: 49.5%;
+.img-block .img-block__item {
+  width: 100%;
   min-width: 110px;
   display: block;
   color: black;
@@ -62,20 +61,19 @@
   position: relative;
   transition: all 0.7s ease;
   max-width: 100%;
-  margin-bottom: 40px;
   cursor: pointer;
 }
-.cards-list .cards-list__item .cards-list__item-img {
+.img-block .img-block__item .img-block__item-img {
   position: relative;
 }
-.cards-list .cards-list__item img {
+.img-block .img-block__item img {
   width: 100%;
   height: auto;
 }
-.cards-list .cards-list__item:hover {
+.img-block .img-block__item:hover {
   position: relative;
 }
-.cards-list .cards-list__item:hover span {
+.img-block .img-block__item:hover span {
   position: absolute;
   top: 0px;
   right: 0;
@@ -84,59 +82,68 @@
   background-color: rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
 }
-.cards-list .cards-list__item img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-  position: relative;
-}
-.cards-list .cards-list__item .cards-list__item-text div {
+.img-block .img-block__item:hover .img-block__item-text div {
   display: flex;
   justify-content: space-between;
 }
-.cards-list .cards-list__item .cards-list__item-text h2 {
+.img-block .img-block__item:hover .img-block__item-text h2 {
+  transition: color 0.3s;
+  color: black;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0;
+  font-family: 'gilroy', sans-serif;
 }
-.cards-list .cards-list__item .cards-list__item-text > p {
+.img-block .img-block__item:hover .img-block__item-text > p {
   max-width: 320px;
+  font-family: 'gilroy', sans-serif;
 }
-.cards-list .cards-list__item .cards-list__item-text p {
+.img-block .img-block__item:hover .img-block__item-text p {
+  transition: color 0.3s;
+  color: black;
   font-size: 15px;
   line-height: 18px;
   padding: 0;
   margin-bottom: 0;
 }
-.cards-list .cards-list__item--special {
+.img-block .img-block__item .img-block__item-text h2,
+.img-block .img-block__item .img-block__item-text p {
+  color: transparent;
+}
+.img-block .img-block__item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+  position: relative;
+}
+.img-block .img-block__item--special {
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
-  .cards-list {
-    margin-bottom: 50px;
+  .img-block {
     justify-content: center;
   }
-  .cards-list .cards-list__item {
-    width: 40%;
-  }
-  .cards-list .cards-list__item .cards-list__item-text {
+  .img-block .img-block__item .img-block__item-text {
     left: 5px;
     bottom: 5px;
   }
-  .cards-list .cards-list__item .cards-list__item-text h5,
-  .cards-list .cards-list__item .cards-list__item-text h4,
-  .cards-list .cards-list__item .cards-list__item-text p {
+  .img-block .img-block__item .img-block__item-text div {
+    flex-direction: column;
+  }
+  .img-block .img-block__item .img-block__item-text h5,
+  .img-block .img-block__item .img-block__item-text h4,
+  .img-block .img-block__item .img-block__item-text p {
     padding: 1px;
     margin-bottom: 3px;
   }
-  .cards-list .cards-list__item .cards-list__item-text h5,
-  .cards-list .cards-list__item .cards-list__item-text p {
+  .img-block .img-block__item .img-block__item-text h5,
+  .img-block .img-block__item .img-block__item-text p {
     font-size: 12px;
   }
-  .cards-list .cards-list__item .cards-list__item-text h4 {
+  .img-block .img-block__item .img-block__item-text h4 {
     font-size: 14px;
   }
-  .cards-list .cards-list__item--special {
+  .img-block .img-block__item--special {
     width: 44%;
   }
 }
@@ -1155,12 +1162,13 @@ footer .footer-about a:hover {
   }
 }
 .cards-list {
+  margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .cards-list .cards-list__item {
-  width: 100%;
+  width: 49.5%;
   min-width: 110px;
   display: block;
   color: black;
@@ -1168,6 +1176,7 @@ footer .footer-about a:hover {
   position: relative;
   transition: all 0.7s ease;
   max-width: 100%;
+  margin-bottom: 40px;
   cursor: pointer;
 }
 .cards-list .cards-list__item .cards-list__item-img {
@@ -1189,53 +1198,44 @@ footer .footer-about a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
 }
-.cards-list .cards-list__item:hover .cards-list__item-text div {
-  display: flex;
-  justify-content: space-between;
-}
-.cards-list .cards-list__item:hover .cards-list__item-text h2 {
-  transition: color 0.3s;
-  color: black;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  font-family: 'gilroy', sans-serif;
-}
-.cards-list .cards-list__item:hover .cards-list__item-text > p {
-  max-width: 320px;
-  font-family: 'gilroy', sans-serif;
-}
-.cards-list .cards-list__item:hover .cards-list__item-text p {
-  transition: color 0.3s;
-  color: black;
-  font-size: 15px;
-  line-height: 18px;
-  padding: 0;
-  margin-bottom: 0;
-}
-.cards-list .cards-list__item .cards-list__item-text h2,
-.cards-list .cards-list__item .cards-list__item-text p {
-  color: transparent;
-}
 .cards-list .cards-list__item img {
   width: 100%;
   height: auto;
   transition: transform 0.3s;
   position: relative;
 }
+.cards-list .cards-list__item .cards-list__item-text div {
+  display: flex;
+  justify-content: space-between;
+}
+.cards-list .cards-list__item .cards-list__item-text h2 {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.cards-list .cards-list__item .cards-list__item-text > p {
+  max-width: 320px;
+}
+.cards-list .cards-list__item .cards-list__item-text p {
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0;
+  margin-bottom: 0;
+}
 .cards-list .cards-list__item--special {
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
   .cards-list {
+    margin-bottom: 50px;
     justify-content: center;
+  }
+  .cards-list .cards-list__item {
+    width: 40%;
   }
   .cards-list .cards-list__item .cards-list__item-text {
     left: 5px;
     bottom: 5px;
-  }
-  .cards-list .cards-list__item .cards-list__item-text div {
-    flex-direction: column;
   }
   .cards-list .cards-list__item .cards-list__item-text h5,
   .cards-list .cards-list__item .cards-list__item-text h4,

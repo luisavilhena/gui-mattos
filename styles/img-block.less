@@ -1,10 +1,9 @@
-.cards-list {
-	margin-bottom: 100px;
+.img-block {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	.cards-list__item {
-		width: 49.5%;
+	.img-block__item {
+		width: 100%;
 		min-width: 110px;
 		display: block;
 		color: black;
@@ -12,9 +11,8 @@
 		position: relative;
 		transition: all 0.7s ease;
 		max-width: 100%;
-		margin-bottom: 40px;
 		cursor: pointer;
-		.cards-list__item-img {
+		.img-block__item-img {
 			position: relative;
 		}
 		img {
@@ -32,7 +30,39 @@
 				background-color: rgba(0, 0, 0, 0.3); 
 				transition: background 0.3s;
 			}
+			.img-block__item-text {
+				div {
+					display: flex;
+					justify-content: space-between;
+				}
+				h2{
+					transition: color 0.3s;
+					color: black;
+					font-weight: 600;
+					text-transform: uppercase;
+					margin-bottom: 0;
+					font-family: 'gilroy', sans-serif;
+				}
+				>p {
+					max-width: 320px;
+					font-family: 'gilroy', sans-serif;
+				}
+	
+				p {
+					transition: color 0.3s;
+					color: black;
+					font-size: 15px;
+					line-height: 18px;
+					padding: 0;
+					margin-bottom: 0;
+				}
+			}
 
+		}
+		.img-block__item-text {
+			h2, p {
+				color: transparent
+			}
 		}
 
 		img {
@@ -41,29 +71,9 @@
 			transition: transform 0.3s;
 			position: relative;
 		}
-		.cards-list__item-text {
-			div {
-				display: flex;
-				justify-content: space-between;
-			}
-			h2{
-				font-weight: 600;
-				text-transform: uppercase;
-				margin-bottom: 0;
-			}
-			>p {
-				max-width: 320px;
-			}
 
-			p {
-				font-size: 15px;
-				line-height: 18px;
-				padding: 0;
-				margin-bottom: 0;
-			}
-		}
 	}
-	.cards-list__item--special {
+	.img-block__item--special {
 		cursor: pointer;
 
 		&:hover {
@@ -78,12 +88,13 @@
 	}
 }
 @media screen and (max-width: @screen-md) {
-	.cards-list {
-		margin-bottom: 50px;
+	.img-block {
 		justify-content: center;
-		.cards-list__item {
-			width: 40%;
-			.cards-list__item-text {
+		.img-block__item {
+			.img-block__item-text {
+				div {
+					flex-direction: column;
+				}
 				left: 5px;
 				bottom: 5px;
 				h5, h4, p {
@@ -98,7 +109,7 @@
 				}
 			}
 		}
-		.cards-list__item--special {
+		.img-block__item--special {
 			width: 44%;
 		}
 	}
