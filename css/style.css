@@ -1190,14 +1190,12 @@ footer .footer-about a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
 }
-.cards-list .cards-list__item:hover .cards-list__item-text {
-  display: block;
-}
 .cards-list .cards-list__item:hover .cards-list__item-text div {
   display: flex;
   justify-content: space-between;
 }
 .cards-list .cards-list__item:hover .cards-list__item-text h2 {
+  color: black;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -1208,13 +1206,15 @@ footer .footer-about a:hover {
   font-family: 'gilroy', sans-serif;
 }
 .cards-list .cards-list__item:hover .cards-list__item-text p {
+  color: black;
   font-size: 15px;
   line-height: 18px;
   padding: 0;
   margin-bottom: 0;
 }
-.cards-list .cards-list__item .cards-list__item-text {
-  display: none;
+.cards-list .cards-list__item .cards-list__item-text h2,
+.cards-list .cards-list__item .cards-list__item-text p {
+  color: transparent;
 }
 .cards-list .cards-list__item img {
   width: 100%;
@@ -1227,7 +1227,6 @@ footer .footer-about a:hover {
 }
 @media screen and (max-width: 1000px) {
   .cards-list {
-    margin-bottom: 50px;
     justify-content: center;
   }
   .cards-list .cards-list__item .cards-list__item-text {

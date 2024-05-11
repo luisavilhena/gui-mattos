@@ -33,12 +33,12 @@
 				transition: background 0.3s;
 			}
 			.cards-list__item-text {
-				display: block;
 				div {
 					display: flex;
 					justify-content: space-between;
 				}
 				h2{
+					color: black;
 					font-weight: 600;
 					text-transform: uppercase;
 					margin-bottom: 0;
@@ -50,6 +50,7 @@
 				}
 	
 				p {
+					color: black;
 					font-size: 15px;
 					line-height: 18px;
 					padding: 0;
@@ -59,7 +60,9 @@
 
 		}
 		.cards-list__item-text {
-			display: none;
+			h2, p {
+				color: transparent
+			}
 		}
 
 		img {
@@ -86,7 +89,6 @@
 }
 @media screen and (max-width: @screen-md) {
 	.cards-list {
-		margin-bottom: 50px;
 		justify-content: center;
 		.cards-list__item {
 			.cards-list__item-text {
