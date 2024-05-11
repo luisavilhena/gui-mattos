@@ -31,8 +31,10 @@
 				transition: background 0.3s;
 			}
 			.img-block__item-text {
+				div {
 					display: flex;
 					justify-content: space-between;
+				}
 				h2{
 					transition: color 0.3s;
 					color: black;
@@ -90,7 +92,9 @@
 		justify-content: center;
 		.img-block__item {
 			.img-block__item-text {
-				flex-direction: column;
+				div {
+					flex-direction: column;
+				}
 				left: 5px;
 				bottom: 5px;
 				h5, h4, p {
