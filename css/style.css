@@ -84,7 +84,7 @@
 }
 .img-block .img-block__item:hover .img-block__item-text h2,
 .img-block .img-block__item:hover .img-block__item-text p {
-  color: transparent;
+  color: black;
 }
 .img-block .img-block__item .img-block__item-text div {
   display: flex;
