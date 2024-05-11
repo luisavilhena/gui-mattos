@@ -82,33 +82,33 @@
   background-color: rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
 }
-.img-block .img-block__item:hover .img-block__item-text div {
+.img-block .img-block__item:hover .img-block__item-text h2,
+.img-block .img-block__item:hover .img-block__item-text p {
+  color: transparent;
+}
+.img-block .img-block__item .img-block__item-text div {
   display: flex;
   justify-content: space-between;
 }
-.img-block .img-block__item:hover .img-block__item-text h2 {
+.img-block .img-block__item .img-block__item-text h2 {
   transition: color 0.3s;
-  color: black;
+  color: transparent;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0;
   font-family: 'gilroy', sans-serif;
 }
-.img-block .img-block__item:hover .img-block__item-text > p {
+.img-block .img-block__item .img-block__item-text > p {
   max-width: 320px;
   font-family: 'gilroy', sans-serif;
 }
-.img-block .img-block__item:hover .img-block__item-text p {
+.img-block .img-block__item .img-block__item-text p {
   transition: color 0.3s;
-  color: black;
+  color: transparent;
   font-size: 15px;
   line-height: 18px;
   padding: 0;
   margin-bottom: 0;
-}
-.img-block .img-block__item .img-block__item-text h2,
-.img-block .img-block__item .img-block__item-text p {
-  color: transparent;
 }
 .img-block .img-block__item img {
   width: 100%;
