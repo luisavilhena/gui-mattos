@@ -1161,7 +1161,7 @@ footer .footer-about a:hover {
   flex-wrap: wrap;
 }
 .cards-list .cards-list__item {
-  width: 49.5%;
+  width: 100%;
   min-width: 110px;
   display: block;
   color: black;
@@ -1205,9 +1205,11 @@ footer .footer-about a:hover {
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0;
+  font-family: 'gilroy', sans-serif;
 }
 .cards-list .cards-list__item .cards-list__item-text > p {
   max-width: 320px;
+  font-family: 'gilroy', sans-serif;
 }
 .cards-list .cards-list__item .cards-list__item-text p {
   font-size: 15px;
@@ -1222,9 +1224,6 @@ footer .footer-about a:hover {
   .cards-list {
     margin-bottom: 50px;
     justify-content: center;
-  }
-  .cards-list .cards-list__item {
-    width: 40%;
   }
   .cards-list .cards-list__item .cards-list__item-text {
     left: 5px;
