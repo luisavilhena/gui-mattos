@@ -1,5 +1,5 @@
 .cards-list {
-	margin-bottom: 100px;
+
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -32,7 +32,34 @@
 				background-color: rgba(0, 0, 0, 0.3); 
 				transition: background 0.3s;
 			}
+			.cards-list__item-text {
+				display: block;
+				div {
+					display: flex;
+					justify-content: space-between;
+				}
+				h2{
+					font-weight: 600;
+					text-transform: uppercase;
+					margin-bottom: 0;
+					font-family: 'gilroy', sans-serif;
+				}
+				>p {
+					max-width: 320px;
+					font-family: 'gilroy', sans-serif;
+				}
+	
+				p {
+					font-size: 15px;
+					line-height: 18px;
+					padding: 0;
+					margin-bottom: 0;
+				}
+			}
 
+		}
+		.cards-list__item-text {
+			display: none;
 		}
 
 		img {
@@ -41,29 +68,7 @@
 			transition: transform 0.3s;
 			position: relative;
 		}
-		.cards-list__item-text {
-			div {
-				display: flex;
-				justify-content: space-between;
-			}
-			h2{
-				font-weight: 600;
-				text-transform: uppercase;
-				margin-bottom: 0;
-				font-family: 'gilroy', sans-serif;
-			}
-			>p {
-				max-width: 320px;
-				font-family: 'gilroy', sans-serif;
-			}
 
-			p {
-				font-size: 15px;
-				line-height: 18px;
-				padding: 0;
-				margin-bottom: 0;
-			}
-		}
 	}
 	.cards-list__item--special {
 		cursor: pointer;
@@ -85,6 +90,9 @@
 		justify-content: center;
 		.cards-list__item {
 			.cards-list__item-text {
+				div {
+					flex-direction: column;
+				}
 				left: 5px;
 				bottom: 5px;
 				h5, h4, p {
