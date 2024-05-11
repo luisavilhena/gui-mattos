@@ -82,7 +82,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
 }
-.img-block .img-block__item:hover .img-block__item-text div {
+.img-block .img-block__item:hover .img-block__item-text {
   display: flex;
   justify-content: space-between;
 }
@@ -124,11 +124,9 @@
     justify-content: center;
   }
   .img-block .img-block__item .img-block__item-text {
+    flex-direction: column;
     left: 5px;
     bottom: 5px;
-  }
-  .img-block .img-block__item .img-block__item-text div {
-    flex-direction: column;
   }
   .img-block .img-block__item .img-block__item-text h5,
   .img-block .img-block__item .img-block__item-text h4,
