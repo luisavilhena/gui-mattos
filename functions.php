@@ -40,9 +40,11 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
     Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
         ->add_fields( array(
-            Field::make( 'text', 'email', 'E-mail' ),
-            Field::make( 'text', 'phone', 'Phone' ),
-            Field::make( 'text', 'doacao', 'Doação' ),
+            Field::make( 'text', 'email', 'E-mail Geral' ),
+            Field::make( 'text', 'novosprojetos', 'Novos Projetos' ),
+            Field::make( 'text', 'imprensa', 'Imprensa' ),
+            Field::make( 'rich_text', 'endereco', 'Endereço' ),
+            Field::make( 'image', 'googlemaps', 'Imagem da localização' ),
             Field::make( 'text', 'instagram', 'Instagram' ),
             Field::make( 'text', 'youtube', 'Youtube' ),
             Field::make( 'text', 'facebook', 'Facebook' ),
@@ -51,38 +53,7 @@ function crb_attach_theme_options() {
         ) );
 }
 
-add_action( 'carbon_fields_register_fields', 'crb_attach_about' );
-function crb_attach_about() {
-    Container::make( 'theme_options', __( 'About', 'crb' ) )
-        ->add_fields( array(
-            Field::make( 'text', 'fixed_title', 'FIXED title' ),
-            Field::make( 'text', 'fixed_subtile_1', 'FIXED Block one - subtitle' ),
-            Field::make( 'rich_text', 'fixed_description_1', 'FIXED Block one - description' ),
-            Field::make( 'text', 'fixed_subtile_2', 'FIXED Block two - subtitle' ),
-            Field::make( 'rich_text', 'fixed_description_2', 'FIXED Block two - description' ),
-            Field::make( 'text', 'fixed_subtile_3', 'FIXED Block three - subtitle' ),
-            Field::make( 'rich_text', 'fixed_description_3', 'FIXED Block three - description' ),
-            Field::make( 'text', 'fixed_footer_title_1', 'FOOTER title - first' ),
-            Field::make( 'rich_text', 'fixed_footer_description_1', 'FOOTER description - first' ),
-            Field::make( 'text', 'fixed_footer_link_1', 'FOOTER link - first' ),
-            Field::make( 'text', 'fixed_footer_title_2', 'FOOTER title - second' ),
-            Field::make( 'rich_text', 'fixed_footer_description_2', 'FOOTER description - second' ),
-            Field::make( 'text', 'fixed_footer_link_2', 'FOOTER link - second' ),
-        ) )
-        ->add_fields( array(
-            Field::make( 'image', 'photo_2', 'SECTION 2 - image' ),
-            Field::make( 'rich_text', 'scroll_description_2', 'SECTION 2 - description' ),
-            Field::make( 'rich_text', 'scroll_box_description_2', 'SECTION 2 - box' ),
-        ) )
-        ->add_fields( array(
-            Field::make( 'image', 'photo_list_1', 'SECTION 3 - Photo list 1' ),
-            Field::make( 'image', 'photo_list_2', 'SECTION 3 - Photo list 2' ),
-            Field::make( 'image', 'photo_list_3', 'SECTION 3 - Photo list 3' ),
-            Field::make( 'rich_text', 'scroll_description_3', 'SECTION 3 - description' ),
-            Field::make( 'text', 'scroll_box_title_3', 'SECTION 3 - box title' ),
-            Field::make( 'rich_text', 'scroll_box_description_3', 'SECTION 3 - box description' ),
-        ) );
-}
+
 
 
 

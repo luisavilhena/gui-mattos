@@ -1,0 +1,56 @@
+#contato {
+	.contato__textos {
+		display: flex;
+		justify-content: space-between;
+		font-family: 'gilroy', sans-serif;;
+		address {
+			width: 20%;
+			font-family: 'gilroy', sans-serif;;
+			font-weight: 300;
+			max-width: 190px;
+			font-size: 15px;
+		}
+		ul {
+			justify-content: flex-end;
+			width: 70%;
+			display: flex;
+			list-style: none;
+			li {
+				margin-right: 10px;
+				width: 30%;
+				a {
+					text-decoration: none;
+				}
+			}
+			h2 {
+				margin-bottom: 5px;
+				border-bottom: 1px solid black;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1000px) {
+	#contato {
+		.contato__textos {
+			flex-direction: column;
+			address {
+				order: 1;
+				width: 190px;
+
+			}
+			ul {
+				order: 0;
+				flex-direction: column;
+				justify-content: flex-start;
+				li {
+					margin-bottom: 20px;
+				}
+				h2 {
+					line-height: 15px;
+					border-bottom: none;
+					margin-bottom: 2px;
+				}
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
 	<div class="footer-first">
 		<a
 		id="footer-logo-anchor"

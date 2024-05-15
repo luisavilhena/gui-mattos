@@ -26,26 +26,68 @@
 .text-list ul li strong {
   font-weight: 500;
 }
-#sobre {
+#contato .contato__textos {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'gilroy', sans-serif;
+}
+#contato .contato__textos address {
+  width: 20%;
+  font-family: 'gilroy', sans-serif;
+  font-weight: 300;
+  max-width: 190px;
+  font-size: 15px;
+}
+#contato .contato__textos ul {
+  justify-content: flex-end;
+  width: 70%;
+  display: flex;
+  list-style: none;
+}
+#contato .contato__textos ul li {
+  margin-right: 10px;
+  width: 30%;
+}
+#contato .contato__textos ul li a {
+  text-decoration: none;
+}
+#contato .contato__textos ul h2 {
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+@media screen and (max-width: 1000px) {
+  #contato .contato__textos {
+    flex-direction: column;
+  }
+  #contato .contato__textos address {
+    order: 1;
+    width: 190px;
+  }
+  #contato .contato__textos ul {
+    order: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #contato .contato__textos ul li {
+    margin-bottom: 20px;
+  }
+  #contato .contato__textos ul h2 {
+    line-height: 15px;
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+}
+#cinza {
   background-color: #CACACA;
 }
-#sobre .wp-block-columns {
+#cinza .wp-block-columns {
   margin: 60px 0;
 }
-#sobre .wp-block-columns figure ~ figure {
+#cinza .wp-block-columns figure ~ figure {
   margin: 50px 0;
 }
-#sobre .wp-block-columns .wp-block-columns {
+#cinza .wp-block-columns .wp-block-columns {
   margin: 0;
-}
-.page-template-page-sobre {
-  background-color: #CACACA;
-}
-.page-template-page-sobre #main-header {
-  background-color: #CACACA;
-}
-.page-template-page-sobre footer {
-  background-color: #CACACA;
 }
 .img-block {
   display: flex;
@@ -183,6 +225,9 @@
   max-width: 1700px;
   margin: 0 auto;
   padding: 50px 20px;
+}
+#cinza.structure-container {
+  padding: 3px 20px;
 }
 :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
@@ -847,9 +892,9 @@ header .header__content .header-content__button {
 footer {
   background-color: white;
   color: black;
-  padding-top: 40px;
+  padding-top: 30px;
   padding-left: 35px;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
   padding-right: 35px;
   margin: 0 auto;
   border-top: 1px solid black;
@@ -2049,42 +2094,6 @@ blockquote p:last-of-type,
 q p:last-of-type {
   margin-bottom: 15px;
 }
-@media screen and (max-width: 700px) {
-  h1 {
-    font-size: 30px;
-    line-height: 36px;
-  }
-  h2 {
-    font-size: 28px;
-    line-height: 34px;
-  }
-  h3 {
-    font-size: 18px;
-    line-height: 24px;
-  }
-  h4 {
-    font-size: 16px;
-    line-height: 20px;
-  }
-  h5 {
-    font-size: 15px;
-    line-height: 18px;
-  }
-  h6 {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  p {
-    font-size: 16px;
-    line-height: 18px;
-  }
-  a {
-    font-size: 16px;
-  }
-  .rich-text ul li {
-    margin-bottom: 13px;
-  }
-}
 .block-title {
   margin-top: -200px;
   margin-bottom: 75px;
@@ -2221,201 +2230,6 @@ q p:last-of-type {
   .gallery .gallery__items img:nth-of-type(6n) {
     margin-right: 2px;
   }
-}
-form.wpcf7-form {
-  max-width: 30%;
-  margin: 0 auto 40px auto;
-}
-form.wpcf7-form p {
-  margin-bottom: 0px;
-}
-form.wpcf7-form p:last-of-type {
-  border: none;
-}
-form.wpcf7-form label {
-  height: 32px;
-}
-form.wpcf7-form input,
-form.wpcf7-form textarea {
-  border: none;
-  background-color: #FCE5C4;
-  color: black;
-  padding: 5px 10px;
-  font-size: 9px;
-  font-family: 'CircularStd', sans-serif;
-  box-sizing: border-box;
-  font-weight: 300;
-  border: 1px solid #615e5e;
-  border-bottom: none;
-  width: 100%;
-  border-radius: 0;
-}
-form.wpcf7-form input {
-  height: 29px;
-}
-form.wpcf7-form input::placeholder {
-  color: black;
-  font-size: 9px;
-}
-form.wpcf7-form textarea::placeholder {
-  color: black;
-  font-size: 9px;
-}
-form.wpcf7-form input[type="submit"] {
-  width: auto;
-  margin-top: -3px;
-  padding: 5px 10px;
-  background-color: transparent;
-  font-size: 9px;
-  width: 100%;
-  font-weight: 300;
-  text-align: left;
-  border: 1px solid #615e5e;
-  transition: background-color 0.5s;
-}
-form.wpcf7-form input[type="submit"]:hover {
-  color: white;
-  background-color: black;
-  transition: background-color 0.5s;
-}
-form.wpcf7-form input:-webkit-autofill,
-form.wpcf7-form input:-webkit-autofill:hover,
-form.wpcf7-form input:-webkit-autofill:focus,
-form.wpcf7-form input:-webkit-autofill:active {
-  -webkit-transition-delay: 99999s;
-  background-color: #FCE5C4;
-}
-form.wpcf7-form .wpcf7-radio {
-  display: flex;
-}
-form.wpcf7-form .wpcf7-radio > .wpcf7-list-item {
-  margin: 0;
-  width: 33.33%;
-  border: 1px solid #615e5e;
-  padding: 5px 10px;
-  border-right: none;
-  border-bottom: none;
-  cursor: pointer;
-}
-form.wpcf7-form .wpcf7-radio > .wpcf7-list-item:last-of-type {
-  border-right: 1px solid #615e5e;
-}
-form.wpcf7-form .wpcf7-radio > .wpcf7-list-item:hover {
-  background-color: black;
-  color: white;
-}
-form.wpcf7-form .wpcf7-radio > .wpcf7-list-item .wpcf7-list-item-label {
-  cursor: pointer;
-  font-size: 9px;
-  font-family: 'CircularStd', sans-serif;
-  box-sizing: border-box;
-  font-weight: 300;
-  width: 100%;
-  border-radius: 0;
-}
-form.wpcf7-form .contact-option {
-  display: flex;
-}
-form.wpcf7-form .contact-option div {
-  width: 33.33%;
-  border: 1px solid #615e5e;
-  border-right: none;
-  border-bottom: none;
-  padding: 5px 10px;
-}
-form.wpcf7-form .contact-option div h4 {
-  font-size: 9px;
-}
-form.wpcf7-form .contact-option div:last-of-type {
-  border-right: 1px solid #615e5e;
-}
-form.wpcf7-form input[type="radio"] {
-  display: none;
-}
-form.wpcf7-form .submit-arrow {
-  position: relative;
-}
-form.wpcf7-form .submit-arrow .arrow {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-form.wpcf7-form .submit-arrow .arrow span {
-  background-color: black;
-  height: 1px;
-  width: 9px;
-}
-form.wpcf7-form .submit-arrow .arrow .arrow-1 {
-  transform: rotate(45deg);
-  margin-bottom: 5px;
-}
-form.wpcf7-form .submit-arrow .arrow .arrow-2 {
-  transform: rotate(-45deg);
-}
-form.wpcf7-form .submit-arrow:hover .arrow span {
-  background-color: white;
-}
-.wpcf7 .ajax-loader {
-  display: none;
-}
-@media screen and (min-width: 1700px) {
-  form.wpcf7-form {
-    max-width: 31%;
-  }
-}
-@media screen and (max-width: 1000px) {
-  form.wpcf7-form {
-    margin-bottom: 30px;
-    max-width: 45%;
-  }
-}
-@media screen and (max-width: 700px) {
-  form.wpcf7-form {
-    margin-bottom: 30px;
-    max-width: 99%;
-  }
-}
-.woocommerce .image-columns .text-box .text-box__item br {
-  display: none;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form {
-  margin: 30px auto 0px auto;
-  max-width: 100%;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input,
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form textarea {
-  background-color: #0b1d1c;
-  color: white;
-  border-color: white;
-  margin-top: -1px;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form textarea::placeholder {
-  color: white;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input::placeholder {
-  color: white;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input:-webkit-autofill,
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input:-webkit-autofill:hover,
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input:-webkit-autofill:focus,
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input:-webkit-autofill:active {
-  background-color: #0b1d1c;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form input[type="submit"]:hover {
-  background-color: black;
-  transition: background-color 0.5s;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form .submit-arrow {
-  margin-top: -2px;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form .submit-arrow .arrow {
-  top: 10px;
-}
-.woocommerce .image-columns .text-box .text-box__item form.wpcf7-form .submit-arrow .arrow span {
-  background-color: white;
 }
 @-ms-viewport {
   width: device-width;

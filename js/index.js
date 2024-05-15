@@ -252,6 +252,14 @@ $(document).ready(function(){
     });
 });
   
+document.addEventListener("DOMContentLoaded", function() {
+	// Verifica se há um elemento com ID 'cinza'
+	if (document.getElementById("cinza")) {
+		// Se existir, aplica o background cinza no cabeçalho e no rodapé
+		document.getElementById("main-header").style.backgroundColor = "#CACACA";
+		document.getElementById("footer").style.backgroundColor = "#CACACA";
+	  }
+  });
   
   
 
