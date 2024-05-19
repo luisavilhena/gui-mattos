@@ -53,6 +53,27 @@ header {
 		}
 	}
 }
+
+.corner-element {
+	position: fixed;
+	width: 20px;
+	height: 1px;
+	background-color: black;
+}
+
+/* Estilize os elementos do canto esquerdo */
+.corner-element.left {
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+/* Estilize os elementos do canto direito */
+.corner-element.right {
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
 @media screen and (max-width: @screen-md-2) {
 	header {
 		.header__content {

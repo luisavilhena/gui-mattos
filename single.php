@@ -15,8 +15,8 @@ get_header(); ?>
 		<div class="blog_content">
 			<?php the_content(); ?>
 			<h3>CONTEÚDOS RELACIONADOS</h3>
-		<div id="resultado-posts" class="project-list relacionados">
-			<?php 
+			<div id="resultado-posts" class="project-list relacionados">
+				<?php 
 				$get_posts_blog = get_posts([
 					'taxonomy' => 'post',
 					'order'  => 'desc',
@@ -51,10 +51,38 @@ get_header(); ?>
 						</div>';
 					}
 				}
+				?>
+			</div>
+				<div id="carousel-project">
+				<?php	
+			foreach ($get_posts_blog as $key => $value) {
+				$postId = $value->ID;
+				$url=get_permalink($value->ID);
+				$tags=get_the_tags($value->ID);
+				$thumbnail= get_the_post_thumbnail($value->ID, 'horizontal');
+				$title=$value->post_title;
+				$description=get_the_excerpt($value->ID);
+				if($Id == $postId){
+
+				} else {
+					echo'
+					<div class="carousel-project__item">
+						'.$thumbnail.'
+						<div class="project-list__item-description">
+							<h2 class="post-title">
+								<a href="'.$url.'">
+									'.$title.'
+								</a>
+							</h2>
+							<p>'.$description.' </p>
+						</div>
+					</div>';
+				}
+			}
 			?>
+			</div>
 		</div>
 	</div>
-
 </main>
 <?php endwhile; ?>
 

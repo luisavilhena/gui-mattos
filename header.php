@@ -86,5 +86,6 @@
         </a>
       </nav>
     </div> 
-	  
+	  <div class="corner-element left"></div>
+    <div class="corner-element right"></div>
 	</header>

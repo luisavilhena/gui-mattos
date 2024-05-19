@@ -67,21 +67,30 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#carousel-main-item').slick({
-	  slidesToShow: 1,
-	  slidesToScroll: 1,
-	  autoplay: true,
-	  autoplaySpeed: 3000,
-	  speed: 2000,
-	  fade: true,
-  });
-  $('#carousel-arrow-item').slick({
+	$('#carousel-main-item').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		speed: 2000,
+		fade: true,
+	});
+	$('#carousel-arrow-item').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			speed: 2000,
+			arrows: true,
+		});
+	$('#carousel-project').slick({
+		centerMode: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2000,
 		speed: 2000,
-		arrows: true,
+		dots: true,
 	});
 });
 

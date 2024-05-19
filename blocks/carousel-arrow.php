@@ -24,7 +24,7 @@ function carousel_description() {
 					<?php foreach ($block['carousel'] as $carousel) : ?>
 						<div class="carousel-arrow-item__item">
 						<?php if ($carousel['img']) : ?>
-							<img src="<?php echo wp_get_attachment_image_src($carousel['img'],'image_desktop_full_no_crop')[0]; ?>">
+							<img class="carousel-arrow-item__img" data-featherlight="<?php echo wp_get_attachment_image_src($carousel['img'],'ap_image_desktop_full_no_crop')[0]; ?>" src="<?php echo wp_get_attachment_image_src($carousel['img'],'image_desktop_full_no_crop')[0]; ?>">
 						<?php endif; ?>
 						</div>
 					<?php endforeach;  ?>					
