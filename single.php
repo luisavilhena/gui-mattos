@@ -15,7 +15,7 @@ get_header(); ?>
 		<div class="blog_content">
 			<?php the_content(); ?>
 			<h3>CONTEÚDOS RELACIONADOS</h3>
-		<div class="cards-list">
+		<div id="resultado-posts" class="project-list relacionados">
 			<?php 
 				$get_posts_blog = get_posts([
 					'taxonomy' => 'post',
@@ -28,30 +28,27 @@ get_header(); ?>
 					$postId = $value->ID;
 					$url=get_permalink($value->ID);
 					$tags=get_the_tags($value->ID);
-					$thumbnail= get_the_post_thumbnail($value->ID, 'horizontal-c');
+					$thumbnail= get_the_post_thumbnail($value->ID, 'horizontal');
 					$title=$value->post_title;
 					$description=get_the_excerpt($value->ID);
 					if($Id == $postId){
 
 					} else {
 						echo '
-						<a class="cards-list__item cards-list__item--special" href="'.$url.'">
-							<div class="image-columns__item__img">'.
-								$thumbnail.'
+						<div class="project-list__item"> 
+							<a class="post-thumbnail" href="'.$url.'">
+								'.$thumbnail.'
+								<span></span>
+							</a>
+							<div class="project-list__item-description">
+								<h2 class="post-title">
+									<a href="'.$url.'">
+										'.$title.'
+									</a>
+								</h2>
+								<p>'.$description.' </p>
 							</div>
-							<div class="cards-list__item-text">';
-							if($tags){
-								foreach($tags as $tag) {
-									echo 
-									'<h5>'.
-									$tag->name . ' </h5>'; 
-								}
-							}
-							echo '
-								<h4>'.$title .'</h4>
-								<h4>'.$description.'</h4>
-							</div>
-						</a>';
+						</div>';
 					}
 				}
 			?>

@@ -3,6 +3,8 @@
 	require('text-list.php');
 	require('carousel-team.php');
 	require('img-block.php');
+	require('carousel-arrow.php');
+
 	
 	require('banner.php');
 	require('text-topics.php');
@@ -11,7 +13,6 @@
 	require('equipe.php');
 
 	require('services.php');
-	require('carousel-description.php');
 	require('cards-list.php');
 	require('mail.php');
 	require('link-list.php');

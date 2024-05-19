@@ -251,6 +251,11 @@
   margin: 0 auto;
   padding: 35px 20px;
 }
+@media screen and (max-width: 700px) {
+  .structure-container {
+    padding: 0px 20px;
+  }
+}
 #cinza.structure-container {
   padding: 3px 20px;
 }
@@ -269,8 +274,8 @@
 }
 .header-menu-container #menu-filter {
   margin-right: 70px;
-  padding-bottom: 20px;
-  margin-top: 20px;
+  padding-bottom: 0px;
+  margin-top: 0px;
   margin-bottom: 0;
   font-family: 'gilroy', sans-serif;
   text-transform: uppercase;
@@ -295,6 +300,9 @@ ul#main-menu {
   flex-direction: row;
   font-style: normal;
 }
+ul#main-menu .current-menu-item a {
+  font-weight: 600;
+}
 ul#main-menu li a {
   font-size: 16px;
   color: #18191F;
@@ -304,8 +312,8 @@ ul#main-menu > li {
   display: flex;
   padding-right: 5px;
   margin-right: 40px;
-  padding-bottom: 20px;
-  margin-top: 20px;
+  padding-bottom: 0px;
+  margin-top: 0px;
   margin-bottom: 0;
 }
 ul#main-menu > li > a {
@@ -348,7 +356,11 @@ ul#main-menu > li:last-of-type {
   }
   .header-menu-container #menu-filter {
     order: 0;
-    margin-right: 10px;
+    margin-right: -10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 14px;
   }
   #mobile-menu-trigger {
     order: 1;
@@ -550,6 +562,7 @@ header .header__content {
   max-width: 1700px;
   padding-top: 20px;
   padding-left: 20px;
+  padding-bottom: 10px;
   padding-right: 20px;
   margin: 0 auto;
   display: flex;
@@ -575,6 +588,10 @@ header .header__content .header-content__button {
   }
 }
 @media screen and (max-width: 880px) {
+  header .header__content {
+    padding-top: 10px;
+    padding-bottom: 11px;
+  }
   header .header__content .header-content__button {
     margin-right: 0px;
   }
@@ -1201,48 +1218,26 @@ footer .footer-about a:hover {
     left: 0;
   }
 }
-.carousel-description {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 100px;
+#carousel-arrow #carousel-arrow-item img {
+  width: auto;
+  max-width: 100%;
+  max-height: 600px;
 }
-.carousel-description .carousel-description__item {
-  width: 65%;
-  margin-right: 30px;
-  position: relative;
+#carousel-arrow #carousel-arrow-item .slick-arrow {
+  background-color: transparent;
+  bottom: 0;
+  top: unset;
+  z-index: 100;
 }
-.carousel-description .carousel-description__item img {
-  cursor: pointer;
-  border-radius: 20px;
-  min-width: 600px;
+#carousel-arrow #carousel-arrow-item .slick-prev {
+  left: 48%;
 }
-.carousel-description .carousel-description__item .slick-dots {
-  bottom: -40px;
+#carousel-arrow #carousel-arrow-item .slick-next {
+  right: 46%;
 }
-.carousel-description .carousel-description__item .slick-dots li {
-  margin: 0px;
-}
-.carousel-description .carousel-description__text h3 {
-  color: black;
-  line-height: auto;
-  margin-bottom: 10px;
-}
-.carousel-description .carousel-description__text p {
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 1000px) {
-  .carousel-description {
-    flex-direction: column;
-    margin-bottom: 50px;
-  }
-  .carousel-description .carousel-description__item {
-    width: 100%;
-  }
-  .carousel-description .carousel-description__item img {
-    min-width: 300px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
+#carousel-arrow #carousel-arrow-item .slick-prev:before,
+#carousel-arrow #carousel-arrow-item .slick-next:before {
+  color: transparent;
 }
 .cards-list {
   margin-bottom: 100px;
@@ -1741,6 +1736,7 @@ footer .footer-about a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
+  width: 100%;
 }
 .project-list .project-list__item {
   width: 49.5%;
@@ -1784,6 +1780,9 @@ footer .footer-about a:hover {
   color: black;
   font-weight: 300;
   margin-bottom: 0;
+}
+.project-list.relacionados .project-list__item {
+  width: 24.5%;
 }
 @media screen and (max-width: 600px) {
   #resultado-posts.project-list {

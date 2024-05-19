@@ -61,3 +61,16 @@
 </footer>
 </body>
 </html>
+<?php
+$imgUrl = get_template_directory_uri().'/resources/icons/arrow-next.png';
+$imgUrlPrev = get_template_directory_uri().'/resources/icons/arrow-prev.png';
+
+?>
+
+<script>
+    //add ícone de arrow dentro do carrossel
+    jQuery(document).ready(function($) {
+        $('#carousel-arrow .slick-next').html('<img src="<?php echo $imgUrl; ?>">');
+		$('#carousel-arrow .slick-prev').html('<img src="<?php echo $imgUrlPrev; ?>">');
+    });
+</script>

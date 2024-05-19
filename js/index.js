@@ -1,4 +1,12 @@
-//js functions
+//current menu link bold
+jQuery(document).ready(function($) {
+    var url = window.location.href;
+    $('.menu-item a').each(function() {
+        if (url == (this.href)) {
+            $(this).closest('.menu-item').addClass('current-menu-item');
+        }
+    });
+});
 
 
 
@@ -67,7 +75,17 @@ $(document).ready(function(){
 	  speed: 2000,
 	  fade: true,
   });
+  $('#carousel-arrow-item').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		speed: 2000,
+		arrows: true,
+	});
 });
+
+
 
 
 //LOADING
@@ -218,6 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	if (document.getElementById("cinza")) {
 		// Se existir, aplica o background cinza no cabeçalho e no rodapé
 		document.getElementById("main-header").style.backgroundColor = "#CACACA";
+		$("body").css("backgroundColor", "#CACACA" );
 		document.getElementById("main-header").style.backgroundColor = "#CACACA";
 		document.getElementById("main-menu-container").style.backgroundColor = "#CACACA";
 		document.getElementById("footer").style.backgroundColor = "#CACACA";

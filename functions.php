@@ -323,16 +323,21 @@ function filtrar_posts_por_categoria() {
         if ($query->have_posts()) :
             ob_start();
             while ($query->have_posts()) : $query->the_post();
-                $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                $post_url = get_permalink();
+            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'horizontal');
+            $post_url = get_permalink();
+            $excerpt = get_the_excerpt();
             ?>
             <div class="project-list__item">
                 <?php if ($thumbnail_url) : ?>
                     <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
                         <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                        <span></span>
                     </a>
                 <?php endif; ?>
-                <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+                <div class="project-list__item-description">
+                    <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+                    <p><?php echo $excerpt; ?></p>
+                </div>
             </div>
             <?php
             endwhile ;
@@ -364,26 +369,37 @@ function custom_search() {
     );
 
     $the_query = new WP_Query($args);
+    ?>
+    <div id="resultado-posts" class="project-list">
+    <?php
 
     if ($the_query->have_posts()) {
         while ($the_query->have_posts()) : $the_query->the_post();
-            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-            $post_url = get_permalink();
-            ?>
-            <div class="project-list__item">
-                <?php if ($thumbnail_url) : ?>
-                    <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
-                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
-                    </a>
-                <?php endif; ?>
+        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'horizontal');
+        $post_url = get_permalink();
+        $excerpt = get_the_excerpt();
+        ?>
+        <div class="project-list__item">
+            <?php if ($thumbnail_url) : ?>
+                <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
+                    <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                    <span></span>
+                </a>
+            <?php endif; ?>
+            <div class="project-list__item-description">
                 <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+                <p><?php echo $excerpt; ?></p>
             </div>
-            <?php
+        </div>
+        <?php
         endwhile;
         wp_reset_postdata();
     } else {
-        echo '<p>' . esc_html__( 'No results found.', 'text-domain' ) . '</p>';
+        echo '<p>' . esc_html__( 'Nenhum resultado foi encontrado', 'text-domain' ) . '</p>';
     }
+    ?>
+    </div>
+    <?php
 
     wp_die();
 }

@@ -4,8 +4,8 @@
     align-items: center;
 	#menu-filter {
 		margin-right: 70px;
-		padding-bottom: 20px;
-		margin-top: 20px;
+		padding-bottom: 0px;
+		margin-top: 0px;
 		margin-bottom: 0;
 		font-family: 'gilroy', sans-serif;
 		text-transform: uppercase;
@@ -31,6 +31,11 @@ ul#main-menu {
 	justify-content: center;
 	flex-direction: row;
 	font-style: normal;
+	.current-menu-item {
+		a {
+			font-weight: 600;
+		}
+	}
 	li {
 		a {
 			font-size: 16px;
@@ -43,8 +48,8 @@ ul#main-menu {
 		display: flex;
 		padding-right: 5px;
 		margin-right: 40px;
-		padding-bottom: 20px;
-		margin-top: 20px;
+		padding-bottom: 0px;
+		margin-top: 0px;
 		margin-bottom: 0;
 		> a {
 			position: relative;
@@ -108,7 +113,12 @@ ul#main-menu {
 	.header-menu-container {
 		#menu-filter {
 			order: 0;
-			margin-right: 10px;
+			margin-right: -10px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-size: 14px;
+
 		}
 	}
 	#mobile-menu-trigger {
