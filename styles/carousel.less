@@ -4,9 +4,14 @@
 .carousel-main {
 	padding: 0;
 	.carousel-text {
-		margin: 20px 0 0 0;
+		margin: 20px 0 20px 0;
 		display: flex;
 		justify-content: space-between;
+	}
+	img.slick-slide {
+		height: 70vh;
+		z-index: 999;
+		object-fit: cover;
 	}
 }
 
@@ -29,6 +34,7 @@
 			.slick-slide img {
 				width: inherit;
 				display: block;
+
 			}
 			.slick-track {
 				.carousel__imgs__item {

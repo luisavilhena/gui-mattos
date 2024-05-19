@@ -8,7 +8,32 @@
 		// justify-content: space-between;
 		// align-items: flex-start;
 	}
+	input[type="checkbox"] {
+        width: 11px; /* Define a largura */
+        height: 11px; /* Define a altura */
+        margin: 0 5px 0 0;
+        padding: 0;
+        border: 1px solid black; /* Adiciona uma borda */
+        appearance: none; /* Remove o estilo padrão do navegador */
+        cursor: pointer; /* Altera o cursor */
+    }
+
+    /* Estilize o marcador do checkbox */
+    input[type="checkbox"]::before {
+        content: ""; /* O marcador não tem conteúdo */
+        display: block;
+        width: 100%; /* Preenche todo o espaço do checkbox */
+        height: 100%; /* Preenche todo o espaço do checkbox */
+        background-color: white; /* Cor de fundo do marcador */
+        transition: background-color 0.3s; /* Adiciona uma transição de cor de fundo */
+    }
+
+    /* Altera a cor do marcador quando o checkbox está marcado */
+    input[type="checkbox"]:checked::before {
+        background-color: black; /* Cor de fundo quando marcado */
+    }
 }
+
 
 .search-form {
 	// position: relative;

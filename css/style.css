@@ -251,11 +251,6 @@
   margin: 0 auto;
   padding: 35px 20px;
 }
-@media screen and (max-width: 700px) {
-  .structure-container {
-    padding: 0px 20px;
-  }
-}
 #cinza.structure-container {
   padding: 30px 20px;
 }
@@ -266,6 +261,20 @@
   box-sizing: border-box;
   padding-top: 30px !important;
   padding-bottom: 100px !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+@media screen and (max-width: 700px) {
+  .structure-container {
+    padding: 30px 20px;
+  }
+  .wp-block-spacer {
+    height: 0 !important;
+  }
+  .wp-block-group {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
 }
 .header-menu-container {
   display: flex;
@@ -806,9 +815,14 @@ header .header__content .header-content__button {
   padding: 0;
 }
 .carousel-main .carousel-text {
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
   display: flex;
   justify-content: space-between;
+}
+.carousel-main img.slick-slide {
+  height: 70vh;
+  z-index: 999;
+  object-fit: cover;
 }
 .carousel {
   width: 100%;
@@ -984,6 +998,9 @@ footer a {
   color: black;
   text-decoration: none;
   text-transform: uppercase;
+}
+footer a:hover {
+  font-weight: 600;
 }
 footer .footer-about {
   display: flex;
@@ -1392,9 +1409,42 @@ footer .footer-about a:hover {
 .filter {
   margin-bottom: 20px;
   transition: margin-top 0.5s;
+  /* Estilize o marcador do checkbox */
+  /* Altera a cor do marcador quando o checkbox está marcado */
 }
 .filter .filter-form {
   position: relative;
+}
+.filter input[type="checkbox"] {
+  width: 11px;
+  /* Define a largura */
+  height: 11px;
+  /* Define a altura */
+  margin: 0 5px 0 0;
+  padding: 0;
+  border: 1px solid black;
+  /* Adiciona uma borda */
+  appearance: none;
+  /* Remove o estilo padrão do navegador */
+  cursor: pointer;
+  /* Altera o cursor */
+}
+.filter input[type="checkbox"]::before {
+  content: "";
+  /* O marcador não tem conteúdo */
+  display: block;
+  width: 100%;
+  /* Preenche todo o espaço do checkbox */
+  height: 100%;
+  /* Preenche todo o espaço do checkbox */
+  background-color: white;
+  /* Cor de fundo do marcador */
+  transition: background-color 0.3s;
+  /* Adiciona uma transição de cor de fundo */
+}
+.filter input[type="checkbox"]:checked::before {
+  background-color: black;
+  /* Cor de fundo quando marcado */
 }
 .search-form {
   font-family: 'gilroy', sans-serif;
