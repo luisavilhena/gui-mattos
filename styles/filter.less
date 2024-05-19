@@ -1,7 +1,6 @@
 .filter {
-	margin-top: -86px;
+	// margin-top: -86px;
 	margin-bottom: 20px;
-	padding: 0 20px;
 	transition: margin-top 0.5s;
 	.filter-form {
 		position: relative;
@@ -49,30 +48,48 @@
 	input:checked{
 		background-color: red;
 	}
+	input {
+		margin-left: 0;
+	}
 	.blocos {
 		display: flex;
 		justify-content: flex-start;
-	}
-	.bloco {
-		display: flex;
-		flex-wrap: wrap;
-		position: relative;
-		margin-right: 30px;
-		font-weight: 300;
-		label {
-			position: absolute;
-			top: -30px;
-			width: 100%;
-			border-bottom: 1px solid black;
-		}
-		
-		> div {
+		width: 100%;
+		.blocos-1 {
 			display: flex;
-			flex-direction: column;
-			margin-right: 25px;
+			width: 52%;
+			
+		}
+		.bloco {
+			width: 50%;
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+			margin-right: 15px;
+			font-weight: 300;
+			label {
+				position: absolute;
+				top: -30px;
+				width: 100%;
+				border-bottom: 1px solid black;
+			}
+			
+			> div {
+				display: flex;
+				flex-direction: column;
+				margin-right: 25px;
+			}
+		}
+		>.bloco {
+			label {
+				width: 60%;
+			}
 		}
 	}
 	button {
+		position: absolute;
+		right: 0px;
+		top: 17px;
 		background: white;
 		align-self: center;
 		padding: 10px 48px;
@@ -88,5 +105,57 @@
 			color: white;
 			transition: all 0.3s;
 		} 
+	}
+}
+@media screen and (max-width: 1200px){
+	#filtro-categorias {
+		.blocos {
+			.bloco {
+				flex-direction: column;
+			}
+		}
+	} 
+}
+@media screen and (max-width: 650px){
+	#filtro-categorias {
+		.blocos {
+			flex-direction: column;
+			.bloco {
+				width: 100%;
+				flex-direction: row;
+				margin-bottom: 35px;
+				> div {
+					margin-right: 0;
+					width: 50%;
+				}
+			}
+			>.bloco {
+				label {
+					width: 100%;
+				}
+			}
+			.blocos-1 {
+				width: 100%;
+				flex-direction: column;
+			}
+		}
+		button {
+			bottom: -6px;
+			top: unset;
+			width: 50%;
+		}
+	}
+	.search-form {
+		width: 50%;
+		right: unset;
+		left: 0;
+		bottom: -6px;
+		top: unset;
+		.search-submit {
+			right: 0;
+		}
+		input {
+			width: 98%;
+		}
 	}
 }

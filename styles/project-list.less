@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: 0 20px;
+	padding: 0;
 
 	.project-list__item {
 		width: 49.5%;
@@ -50,4 +50,13 @@
 
 		}
 	}
+}
+@media screen and (max-width: 600px) {
+	#resultado-posts.project-list {
+		flex-direction: column;
+		.project-list__item {
+			width: 100%;
+		}
+	}
+
 }

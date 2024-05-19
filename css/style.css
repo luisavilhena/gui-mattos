@@ -26,6 +26,12 @@
 .text-list ul li strong {
   font-weight: 500;
 }
+#contato > a {
+  margin-bottom: 25px;
+}
+#contato > a img {
+  width: 100%;
+}
 #contato .contato__textos {
   display: flex;
   justify-content: space-between;
@@ -35,6 +41,7 @@
   width: 20%;
   font-family: 'gilroy', sans-serif;
   font-weight: 300;
+  line-height: 18px;
   max-width: 190px;
   font-size: 15px;
 }
@@ -52,12 +59,23 @@
   text-decoration: none;
 }
 #contato .contato__textos ul h2 {
+  font-family: 'gilroy', sans-serif;
   margin-bottom: 5px;
   border-bottom: 1px solid black;
 }
 @media screen and (max-width: 1000px) {
-  #contato .contato__textos {
+  #contato {
+    display: flex;
     flex-direction: column;
+  }
+  #contato > a {
+    order: 1;
+    margin-bottom: 0;
+  }
+  #contato .contato__textos {
+    order: 0;
+    flex-direction: column;
+    margin-bottom: 20px;
   }
   #contato .contato__textos address {
     order: 1;
@@ -69,6 +87,7 @@
     justify-content: flex-start;
   }
   #contato .contato__textos ul li {
+    width: 100%;
     margin-bottom: 20px;
   }
   #contato .contato__textos ul h2 {
@@ -81,7 +100,7 @@
   background-color: #CACACA;
 }
 #cinza .wp-block-columns {
-  margin: 60px 0;
+  margin: 30px 0;
 }
 #cinza .wp-block-columns figure ~ figure {
   margin: 50px 0;
@@ -209,6 +228,12 @@
   background-color: #F4920B;
   transition: background-color 0.2s;
 }
+.social-media > li:last-of-type {
+  margin-right: 0;
+}
+.social-media > li:last-of-type a {
+  margin-right: 0;
+}
 .css-1mewcw8:hover,
 .css-1mewcw8 {
   background-color: #615e5e !important;
@@ -224,7 +249,7 @@
 .structure-container {
   max-width: 1700px;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 35px 20px;
 }
 #cinza.structure-container {
   padding: 3px 20px;
@@ -260,6 +285,9 @@
   transform: rotate(0deg);
   transition: all 0.3s;
 }
+.header-menu-container #menu-filter:hover {
+  font-weight: 600;
+}
 ul#main-menu {
   display: flex;
   align-items: flex-end;
@@ -289,6 +317,9 @@ ul#main-menu > li > a {
   white-space: nowrap;
   font-weight: 300;
 }
+ul#main-menu > li > ul {
+  display: none;
+}
 ul#main-menu > li:hover a {
   font-weight: 600;
 }
@@ -300,22 +331,27 @@ ul#main-menu > li:last-of-type {
 }
 @media screen and (max-width: 1080px) {
   ul#main-menu {
-    background-color: white;
+    background-color: transparent;
     display: none;
     flex-direction: column;
     min-height: 100vh;
   }
   ul#main-menu li {
     padding-left: 0px;
-    padding-bottom: 40px;
+    padding-bottom: 15px;
   }
   ul#main-menu li a {
-    font-size: 14px;
+    font-size: 16px;
   }
   ul#main-menu li:hover a {
     font-weight: bold;
   }
+  .header-menu-container #menu-filter {
+    order: 0;
+    margin-right: 10px;
+  }
   #mobile-menu-trigger {
+    order: 1;
     left: 15px;
     display: flex;
     background-color: transparent;
@@ -332,6 +368,9 @@ ul#main-menu > li:last-of-type {
     opacity: 1;
     transform: rotate(0deg);
     background-color: black;
+  }
+  .menu-open #menu-filter {
+    display: none;
   }
   .menu-open #mobile-menu-trigger {
     right: 41.5%;
@@ -361,10 +400,8 @@ ul#main-menu > li:last-of-type {
     justify-content: end;
   }
   .menu-open ul#main-menu {
-    width: 30%;
     margin-left: 0px;
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-right: 30px;
     padding-top: 30px;
     display: block;
   }
@@ -512,8 +549,8 @@ header ul li {
 header .header__content {
   max-width: 1700px;
   padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -524,21 +561,16 @@ header .header__content .header-content__button {
   margin-right: 30px;
 }
 @media screen and (max-width: 1080px) {
-  header nav {
-    display: none;
-  }
   header .header__content {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   header.menu-open nav {
     display: block;
     position: absolute;
     right: -20px;
     left: 0px;
-    top: 60px;
+    top: 50px;
     background-color: white;
   }
 }
@@ -736,7 +768,7 @@ header .header__content .header-content__button {
   }
 }
 .carousel-main {
-  padding: 0 20px;
+  padding: 0;
 }
 .carousel-main .carousel-text {
   margin: 20px 0 0 0;
@@ -842,8 +874,8 @@ header .header__content .header-content__button {
     line-height: 16px;
   }
   .carousel .description {
-    left: 20px;
-    right: 20px;
+    left: 0px;
+    right: 0px;
     width: auto;
     font-size: 18px;
   }
@@ -892,14 +924,22 @@ header .header__content .header-content__button {
 footer {
   background-color: white;
   color: black;
-  padding-top: 30px;
-  padding-left: 35px;
-  padding-bottom: 10px;
-  padding-right: 35px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
   margin: 0 auto;
   border-top: 1px solid black;
+}
+footer #footer-container {
+  display: none;
+}
+footer .footer-content {
   display: flex;
   justify-content: space-between;
+}
+footer #logo-anchor {
+  display: none;
 }
 footer .footer-first {
   display: flex;
@@ -909,24 +949,7 @@ footer a {
   line-height: normal;
   color: black;
   text-decoration: none;
-}
-footer .menu-menu-footer-container ul {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-footer .menu-menu-footer-container ul li {
-  margin-right: 20px;
-}
-footer .menu-menu-footer-container ul li a {
-  padding: 10px;
-  color: black;
-  text-transform: lowercase;
-  text-decoration: none;
-  font-size: 16px;
-}
-footer .menu-menu-footer-container ul li a:hover {
-  font-weight: bold;
+  text-transform: uppercase;
 }
 footer .footer-about {
   display: flex;
@@ -938,7 +961,7 @@ footer .footer-about div p {
 footer .footer-about p,
 footer .footer-about a {
   color: black;
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 0;
   text-decoration: none;
 }
@@ -946,31 +969,46 @@ footer .footer-about a {
   display: block;
 }
 footer .footer-about a:hover {
-  color: #F4920B;
+  font-weight: 600;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 785px) {
+  .footer-sticky {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+  }
   footer {
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    position: relative;
   }
-  footer #footer-logo-anchor img {
-    width: 85px;
+  footer #logo-anchor {
+    display: block;
     margin-bottom: 20px;
+    margin-left: -8px;
   }
-  footer .menu-menu-footer-container ul {
-    flex-direction: column;
+  footer a {
+    font-size: 12px;
+    margin-right: 0;
+  }
+  footer .footer-first > a {
+    display: none;
+  }
+  footer #footer-container {
+    display: block;
+  }
+  footer #footer-container li a {
+    font-size: 12px;
     margin-bottom: 20px;
   }
   footer .footer-about {
     flex-direction: column;
-    padding-top: 20px;
-    padding-left: 10px;
   }
   footer .footer-about .social-media {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    flex-direction: column;
+  }
+  footer .footer-about .social-media li a {
+    margin-right: 0;
   }
   footer .footer-about div {
     margin-bottom: 0px;
@@ -1300,9 +1338,7 @@ footer .footer-about a:hover {
   }
 }
 .filter {
-  margin-top: -86px;
   margin-bottom: 20px;
-  padding: 0 20px;
   transition: margin-top 0.5s;
 }
 .filter .filter-form {
@@ -1344,29 +1380,44 @@ footer .footer-about a:hover {
 #filtro-categorias input:checked {
   background-color: red;
 }
+#filtro-categorias input {
+  margin-left: 0;
+}
 #filtro-categorias .blocos {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
 }
-#filtro-categorias .bloco {
+#filtro-categorias .blocos .blocos-1 {
+  display: flex;
+  width: 52%;
+}
+#filtro-categorias .blocos .bloco {
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  margin-right: 30px;
+  margin-right: 15px;
   font-weight: 300;
 }
-#filtro-categorias .bloco label {
+#filtro-categorias .blocos .bloco label {
   position: absolute;
   top: -30px;
   width: 100%;
   border-bottom: 1px solid black;
 }
-#filtro-categorias .bloco > div {
+#filtro-categorias .blocos .bloco > div {
   display: flex;
   flex-direction: column;
   margin-right: 25px;
 }
+#filtro-categorias .blocos > .bloco label {
+  width: 60%;
+}
 #filtro-categorias button {
+  position: absolute;
+  right: 0px;
+  top: 17px;
   background: white;
   align-self: center;
   padding: 10px 48px;
@@ -1382,6 +1433,50 @@ footer .footer-about a:hover {
   background-color: black;
   color: white;
   transition: all 0.3s;
+}
+@media screen and (max-width: 1200px) {
+  #filtro-categorias .blocos .bloco {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 650px) {
+  #filtro-categorias .blocos {
+    flex-direction: column;
+  }
+  #filtro-categorias .blocos .bloco {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 35px;
+  }
+  #filtro-categorias .blocos .bloco > div {
+    margin-right: 0;
+    width: 50%;
+  }
+  #filtro-categorias .blocos > .bloco label {
+    width: 100%;
+  }
+  #filtro-categorias .blocos .blocos-1 {
+    width: 100%;
+    flex-direction: column;
+  }
+  #filtro-categorias button {
+    bottom: -6px;
+    top: unset;
+    width: 50%;
+  }
+  .search-form {
+    width: 50%;
+    right: unset;
+    left: 0;
+    bottom: -6px;
+    top: unset;
+  }
+  .search-form .search-submit {
+    right: 0;
+  }
+  .search-form input {
+    width: 98%;
+  }
 }
 #blog-single .blog-single__header {
   margin-top: 30px;
@@ -1645,7 +1740,7 @@ footer .footer-about a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0;
 }
 .project-list .project-list__item {
   width: 49.5%;
@@ -1689,6 +1784,14 @@ footer .footer-about a:hover {
   color: black;
   font-weight: 300;
   margin-bottom: 0;
+}
+@media screen and (max-width: 600px) {
+  #resultado-posts.project-list {
+    flex-direction: column;
+  }
+  #resultado-posts.project-list .project-list__item {
+    width: 100%;
+  }
 }
 #project-single .project-single__header .project-single__header__btn {
   display: flex;
@@ -1988,7 +2091,7 @@ footer .footer-about a:hover {
 }
 figure,
 .wp-block-image {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 figure figcaption,
 .wp-block-image figcaption {
@@ -2054,13 +2157,13 @@ h1,
 h2,
 h4,
 h5 {
-  font-family: "gilroy";
+  font-family: 'gilroy', sans-serif;
   font-weight: 300;
   font-size: 15px;
 }
 h3 {
   font-size: 18px;
-  font-family: "gilroy";
+  font-family: 'gilroy', sans-serif;
   font-weight: 300;
   margin-bottom: 40px;
 }
@@ -2072,6 +2175,7 @@ li {
   font-weight: 300;
 }
 a {
+  font-size: 15px;
   display: block;
   color: black;
 }

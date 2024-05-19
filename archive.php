@@ -20,26 +20,28 @@ $the_query = new WP_Query( $args );
 				<div class=filter-form>
 					<form id="filtro-categorias">
 						<div class=blocos>
-							<div class="bloco">
-								<label>Fase</label><br>
-								<div>
-									<p><input type="checkbox" name="categorias[]" value="16">Concluído<br></p>
-									<p><input type="checkbox" name="categorias[]" value="18">Em Estudo<br></p>
+							<div class="blocos-1">
+								<div class="bloco">
+									<label>Fase</label><br>
+									<div>
+										<p><input type="checkbox" name="categorias[]" value="16">Concluído<br></p>
+										<p><input type="checkbox" name="categorias[]" value="18">Em Estudo<br></p>
+									</div>
+									<div>
+										<p><input type="checkbox" name="categorias[]" value="17">Concurso<br></p>
+										<p><input type="checkbox" name="categorias[]" value="19">Não Executado<br></p>
+									</div>
 								</div>
-								<div>
-									<p><input type="checkbox" name="categorias[]" value="17">Concurso<br></p>
-									<p><input type="checkbox" name="categorias[]" value="19">Não Executado<br></p>
-								</div>
-							</div>
-							<div class="bloco">
-								<label>Local</label><br>
-								<div>
-									<p><input type="checkbox" name="categorias[]" value="10">São Paulo<br></p>
-									<p><input type="checkbox" name="categorias[]" value="9">Interior de SP<br></p>
-								</div>
-								<div>
-									<p><input type="checkbox" name="categorias[]" value="6">Litoral<br></p>
-									<p><input type="checkbox" name="categorias[]" value="8">Exterior<br></p>
+								<div class="bloco">
+									<label>Local</label><br>
+									<div>
+										<p><input type="checkbox" name="categorias[]" value="10">São Paulo<br></p>
+										<p><input type="checkbox" name="categorias[]" value="9">Interior de SP<br></p>
+									</div>
+									<div>
+										<p><input type="checkbox" name="categorias[]" value="6">Litoral<br></p>
+										<p><input type="checkbox" name="categorias[]" value="8">Exterior<br></p>
+									</div>
 								</div>
 							</div>
 							<div class="bloco">
@@ -107,18 +109,19 @@ $the_query = new WP_Query( $args );
 <script>
 $(document).ready(function() {
 	$('#menu-filter').click(function() {
-        $('.filter').toggleClass('active'); 
-        if ($('.filter').hasClass('active')) {
-            $('.filter').css('margin-top', '80px'); 
-        } else {
-            $('.filter').css('margin-top', '-80px');
-        }
+		$('.filter').toggleClass('active'); 
+		var filterHeight = $('.filter').outerHeight(true); // Obtém a altura do elemento .filter
+		if ($('.filter').hasClass('active')) {
+			$('.filter').css('margin-top', '-' + filterHeight + 'px'); // Define a margem superior com a altura do elemento .filter
+		} else {
+			$('.filter').css('margin-top',  filterHeight + 'px'); // Define a margem superior como o negativo da altura do elemento .filter
+		}
 		var topPosition = $('html').offset().top;
 		$('html, body').animate({
 			scrollTop: topPosition
 		}, 1000); 
 		$('#open-filter').toggleClass('filter-arrow-active'); 
-    });
+	});
 	function limparFiltros() {
         $('#filtro-categorias input[type="checkbox"]').prop('checked', false);
     }

@@ -70,22 +70,6 @@ $(document).ready(function(){
 });
 
 
-
-//CONTACT
-$(document).ready(function(){
-	$('.wpcf7-radio .wpcf7-list-item').on("click", function(e){
-		if ($('.wpcf7-radio .wpcf7-list-item').hasClass("structure-color-black")) {
-			$('.wpcf7-radio .wpcf7-list-item').removeClass("structure-color-black")
-			$(this).toggleClass('structure-color-black')
-		} else {
-			$(this).toggleClass('structure-color-black')
-		}
-  })
-})
-
-
-
-
 //LOADING
 $(document).ready(function(){
 	$('.loading').on("click", function(e){
@@ -128,23 +112,6 @@ $(document).ready(function(){
 
 })
 
-//BACKGROUND-COLOR MENU
-// $(document).ready(function(){
-// 		const backgroundColor = $('main').css('background-color')
-// 		const color = $('main').css('color')
-// 		$('header').css('background-color', backgroundColor)
-// 		$('ul#main-menu').css('background-color', backgroundColor)
-// 		$('#mobile-menu-trigger div span').css('background-color', color)
-// 		$('footer').css('background-color', backgroundColor)
-// 		$('header').css('color', color)
-// 		$('footer').css('color', color)
-// 		$('footer svg').css('fill', color)
-// 		$('header svg').css('fill', color)
-// 		$('header h1').css('color', color)
-// 		$('#main-menu li a').css('color', color)
-
-// 	// }
-// })
 
 //ABOUT SCROLL
 $(document).ready(function(){
@@ -155,6 +122,14 @@ $(document).ready(function(){
 	  });
 	});
 })
+//MENU OPEN
+
+$(document).ready(function(){
+	$('#mobile-menu-trigger').on("click", function(e){
+		$('#main-header').toggleClass('menu-open');
+		$('#footer').toggleClass('footer-sticky');
+	});
+});
 
 
 //ABOUT TAMANHO DO FIXED
@@ -165,20 +140,6 @@ $(document).ready(function(){
 	  const height = w - h - 175
 	  $('#part-3').css('margin-bottom', height)
 	});
-})
-//MENU
-$(document).ready(function(){
-	$(window).on('scroll', function(event) {
-			const heightElement2 = window.pageYOffset
-				if (heightElement2 > 150) {
-					$('header').addClass('header-animation-small')
-					$('header').removeClass('header-animation-bigger')
-				} else {
-					$('header').removeClass('header-animation-small')
-					$('header').addClass('header-animation-bigger')
-				} 
-			// }
-		})
 })
 
 
@@ -257,6 +218,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	if (document.getElementById("cinza")) {
 		// Se existir, aplica o background cinza no cabeçalho e no rodapé
 		document.getElementById("main-header").style.backgroundColor = "#CACACA";
+		document.getElementById("main-header").style.backgroundColor = "#CACACA";
+		document.getElementById("main-menu-container").style.backgroundColor = "#CACACA";
 		document.getElementById("footer").style.backgroundColor = "#CACACA";
 	  }
   });
