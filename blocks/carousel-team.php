@@ -8,7 +8,8 @@ add_action( 'after_setup_theme', 'gui-mattos' );
 function carousel_team() {
 	Block::make( 'Carrossel de equipe' )
 		->add_fields( array(
-			Field::make('rich_text', 'text', 'Main description'),
+			Field::make('text', 'text', 'Texto 1'),
+			Field::make('text', 'text_2', 'Texto 2'),
 			Field::make('complex', 'carousel', 'Carousel')
 			  ->add_fields(array(
 			    Field::make('image', 'img', 'Image'),
@@ -36,7 +37,8 @@ function carousel_team() {
 					<?php endforeach;  ?>
 				</div>
 				<div class="description">
-					<?php echo $block['text'] ?>						
+					<p><?php echo $block['text'] ?></p>					
+					<p><?php echo $block['text_2'] ?></p>					
 				</div>
 			</div>
 			<?php
