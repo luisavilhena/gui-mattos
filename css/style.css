@@ -191,11 +191,13 @@
   .img-block .img-block__item .img-block__item-text div {
     flex-direction: column;
   }
+  .img-block .img-block__item .img-block__item-text h2,
   .img-block .img-block__item .img-block__item-text h5,
   .img-block .img-block__item .img-block__item-text h4,
   .img-block .img-block__item .img-block__item-text p {
     padding: 1px;
     margin-bottom: 3px;
+    color: black;
   }
   .img-block .img-block__item .img-block__item-text h5,
   .img-block .img-block__item .img-block__item-text p {
@@ -352,10 +354,12 @@ ul#main-menu > li:last-of-type {
     display: none;
     flex-direction: column;
     min-height: 100vh;
+    margin-top: 60px;
   }
   ul#main-menu li {
     padding-left: 0px;
     padding-bottom: 15px;
+    margin-bottom: 50px;
   }
   ul#main-menu li a {
     font-size: 16px;
@@ -885,6 +889,7 @@ header .header__content .header-content__button {
   font-weight: bold;
 }
 .carousel .description {
+  color: black;
   position: absolute;
   display: flex;
   width: 467px;
@@ -983,6 +988,7 @@ footer #footer-container {
   display: none;
 }
 footer .footer-content {
+  max-width: 1700px;
   display: flex;
   justify-content: space-between;
 }

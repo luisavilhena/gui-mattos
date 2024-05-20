@@ -28,7 +28,7 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
   <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 	<?php wp_head(); ?>
 	

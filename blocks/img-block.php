@@ -20,7 +20,7 @@ function img_block() {
 			// ob_start();
 			?>
  
-			<div class="img-block">
+			<div class="img-block" data-aos="fade-up">
 					<a class="img-block__item" <?php if($block['link']) : ?>href=""<?php endif; ?>>
 						<div class="img-block__item-img">
 							<img class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($block['img'], 'ap_image_desktop_full_no_crop')[0]; ?>">
