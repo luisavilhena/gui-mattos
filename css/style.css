@@ -11,6 +11,7 @@
 .text-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 30px 0;
@@ -21,7 +22,7 @@
   margin-bottom: 20px;
 }
 .text-list ul li {
-  margin-bottom: 0;
+  margin: 0 3px;
 }
 .text-list ul li strong {
   font-weight: 500;
@@ -252,6 +253,7 @@
   max-width: 1700px;
   margin: 0 auto;
   padding: 35px 20px;
+  min-height: 80vh;
 }
 #cinza.structure-container {
   padding: 30px 20px;
@@ -765,7 +767,12 @@ header .header__content .header-content__button {
   max-width: 100% !important;
 }
 .wp-block-columns {
-  margin: 140px 0;
+  margin: 80px 0;
+}
+@media screen and (max-width: 700px) {
+  .wp-block-columns {
+    margin: 40px 0;
+  }
 }
 .home .wp-block-columns {
   margin: 0;
@@ -904,6 +911,9 @@ header .header__content .header-content__button {
 .carousel .slick-next,
 .carousel .slick-prev {
   display: none !important;
+}
+#carousel-arrow {
+  margin-bottom: 70px;
 }
 @media screen and (max-width: 850px) {
   .carousel .carousel__imgs {
@@ -2027,6 +2037,9 @@ footer .footer-about a:hover {
   }
 }
 @media screen and (max-width: 700px) {
+  #blog-single#resultado-posts.project-list {
+    display: none;
+  }
   #carousel-project {
     display: block;
   }
