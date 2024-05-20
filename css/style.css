@@ -100,6 +100,9 @@
 #cinza {
   background-color: #CACACA;
 }
+#cinza .wp-block-columns:first-of-type {
+  margin: 0;
+}
 #cinza .wp-block-columns {
   margin: 30px 0;
 }
@@ -256,7 +259,10 @@
   min-height: 80vh;
 }
 #cinza.structure-container {
-  padding: 30px 20px;
+  padding: 53px 20px;
+}
+#cinza .card-list {
+  margin-bottom: 0;
 }
 :where(.wp-block-columns.is-layout-flex) {
   gap: 1em;
@@ -313,6 +319,12 @@ ul#main-menu {
   flex-direction: row;
   font-style: normal;
 }
+ul#main-menu .menu-item-weglot:first-of-type {
+  margin-left: 100px;
+}
+ul#main-menu .menu-item-weglot {
+  margin-right: 0;
+}
 ul#main-menu .current-menu-item a {
   font-weight: 600;
 }
@@ -357,6 +369,16 @@ ul#main-menu > li:last-of-type {
     flex-direction: column;
     min-height: 100vh;
     margin-top: 60px;
+  }
+  ul#main-menu .menu-item-weglot:first-of-type {
+    position: absolute;
+    top: -30px;
+    right: 91px;
+  }
+  ul#main-menu .menu-item-weglot:last-of-type {
+    position: absolute;
+    top: -30px;
+    right: 100px;
   }
   ul#main-menu li {
     padding-left: 0px;
@@ -611,7 +633,7 @@ header .header__content .header-content__button {
 .corner-element.left {
   top: 50%;
   left: 0;
-  width: 18px;
+  width: 20px;
   transform: translateY(-50%);
 }
 /* Estilize os elementos do canto direito */
@@ -995,6 +1017,9 @@ footer {
   padding-bottom: 20px;
   margin-right: 20px;
   border-top: 1px solid black;
+}
+footer .menu-item-weglot {
+  display: none;
 }
 footer #footer-container {
   display: none;
@@ -1538,6 +1563,7 @@ footer .footer-about a:hover {
   position: absolute;
   right: 0px;
   top: 17px;
+  color: black;
   background: white;
   align-self: center;
   padding: 10px 48px;
@@ -1605,6 +1631,8 @@ footer .footer-about a:hover {
 }
 #blog-single .blog-single__img {
   width: 100%;
+  height: 60vh;
+  object-fit: cover;
 }
 .breadcrumb {
   display: none;

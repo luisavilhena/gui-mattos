@@ -25,12 +25,20 @@
 		font-weight: 600;
 	}
 }
+
+
 ul#main-menu {
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 	flex-direction: row;
 	font-style: normal;
+	.menu-item-weglot:first-of-type {
+		margin-left: 100px;
+	}
+	.menu-item-weglot {
+		margin-right: 0;
+	}
 	.current-menu-item {
 		a {
 			font-weight: 600;
@@ -97,6 +105,17 @@ ul#main-menu {
 		flex-direction: column;
 		min-height: 100vh;
 		margin-top: 60px;
+		.menu-item-weglot:first-of-type {
+			position: absolute;
+			top: -30px;
+			right: 91px;
+		}
+		.menu-item-weglot:last-of-type {
+			position: absolute;
+			top: -30px;
+			right: 100px;
+		}
+
 		li {
 			padding-left: 0px;
 			padding-bottom: 15px;
