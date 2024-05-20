@@ -604,7 +604,6 @@ header .header__content .header-content__button {
 }
 .corner-element {
   position: fixed;
-  width: 20px;
   height: 1px;
   background-color: black;
 }
@@ -612,12 +611,14 @@ header .header__content .header-content__button {
 .corner-element.left {
   top: 50%;
   left: 0;
+  width: 18px;
   transform: translateY(-50%);
 }
 /* Estilize os elementos do canto direito */
 .corner-element.right {
   top: 50%;
   right: 0;
+  width: 20px;
   transform: translateY(-50%);
 }
 @media screen and (max-width: 880px) {
@@ -2037,7 +2038,7 @@ footer .footer-about a:hover {
   }
 }
 @media screen and (max-width: 700px) {
-  #blog-single#resultado-posts.project-list {
+  #blog-single #resultado-posts.project-list {
     display: none;
   }
   #carousel-project {

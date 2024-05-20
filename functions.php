@@ -44,8 +44,6 @@ function crb_attach_theme_options() {
             Field::make( 'text', 'novosprojetos', 'Novos Projetos' ),
             Field::make( 'text', 'imprensa', 'Imprensa' ),
             Field::make( 'rich_text', 'endereco', 'Endereço' ),
-            Field::make( 'image', 'googlemaps', 'Imagem da localização' ),
-            Field::make( 'text', 'link', 'Link da localização' ),
             Field::make( 'text', 'instagram', 'Instagram' ),
             Field::make( 'text', 'youtube', 'Youtube' ),
             Field::make( 'text', 'facebook', 'Facebook' ),
