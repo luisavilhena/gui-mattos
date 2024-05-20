@@ -109,18 +109,18 @@ $the_query = new WP_Query( $args );
 <script>
 $(document).ready(function() {
 	var filterHeight = $('.filter').outerHeight(); // Obtém a altura do elemento .filter
-	$('.filter').css('margin-top', '-' + filterHeight + 'px'); // Define a margem superior com a altura do elemento .filter
+	$('.filter').css('margin-top', '-' + (filterHeight + 30)  + 'px'); // Define a margem superior com a altura do elemento .filter
 	
 	$(window).resize(function() {
     	var filterHeight = $('.filter').outerHeight();
-    	$('.filter').css('margin-top', '-' + filterHeight  + 5 + 'px');
+    	$('.filter').css('margin-top', '-' + (filterHeight + 30) + 'px');
 	});
 	$('#menu-filter').click(function() {
 		$('.filter').toggleClass('active'); 
 		if ($('.filter').hasClass('active')) {
 			$('.filter').css('margin-top',  '60px'); // Define a margem superior com a altura do elemento .filter
 		} else {
-			$('.filter').css('margin-top', '-' + filterHeight + 'px'); // Define a margem superior como o negativo da altura do elemento .filter
+			$('.filter').css('margin-top', '-' + (filterHeight + 30) + 'px'); // Define a margem superior como o negativo da altura do elemento .filter
 		}
 		var topPosition = $('html').offset().top;
 		$('html, body').animate({

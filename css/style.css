@@ -896,6 +896,7 @@ header .header__content .header-content__button {
   right: 20px;
   justify-content: space-between;
   text-transform: uppercase;
+  font-family: 'gilroy', sans-serif;
 }
 .carousel .menu .menu__item .menu__item__title {
   color: white;
@@ -2026,9 +2027,6 @@ footer .footer-about a:hover {
   }
 }
 @media screen and (max-width: 700px) {
-  #resultado-posts.project-list {
-    display: none;
-  }
   #carousel-project {
     display: block;
   }
