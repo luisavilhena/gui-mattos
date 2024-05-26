@@ -36,31 +36,30 @@ $the_query = new WP_Query( $args );
 									<label>Local</label><br>
 									<div>
 										<p><input type="checkbox" name="categorias[]" value="10">São Paulo<br></p>
-										<p><input type="checkbox" name="categorias[]" value="9">Interior de SP<br></p>
+										<p><input type="checkbox" name="categorias[]" value="9">Interior<br></p>
 									</div>
 									<div>
 										<p><input type="checkbox" name="categorias[]" value="6">Litoral<br></p>
-										<p><input type="checkbox" name="categorias[]" value="8">Exterior<br></p>
+										<p><input type="checkbox" name="categorias[]" value="8">Outros<br></p>
 									</div>
 								</div>
 							</div>
 							<div class="bloco">
-								<label>Tipo</label><br>
+								<label>Tipologia</label><br>
 								<div>
 									<p><input type="checkbox" name="categorias[]" value="11">Residencial<br></p>
 									<p><input type="checkbox" name="categorias[]" value="12">Comercial<br></p>
 								</div>
 								<div>
-									<p><input type="checkbox" name="categorias[]" value="13">Edifício<br></p>
+									<p><input type="checkbox" name="categorias[]" value="13">Edifícios<br></p>
 									<p><input type="checkbox" name="categorias[]" value="14">Interiores<br></p>
 								</div>
 								<div>
-									<p><input type="checkbox" name="categorias[]" value="7">Hotéis<br></p>
-									<p><input type="checkbox" name="categorias[]" value="15">Entretenimento<br></p>
+									<p><input type="checkbox" name="categorias[]" value="7">Turismo<br></p>
 								</div>
 							</div>
 						</div>
-						<button type="submit">Filtrar</button>
+						<!-- <button type="submit">Filtrar</button> -->
 					</form>
 					<form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<label>
@@ -128,6 +127,29 @@ $(document).ready(function() {
 		}, 1000); 
 		$('#open-filter').toggleClass('filter-arrow-active'); 
 	});
+	$('#filtro-categorias input[type="checkbox"]').change(function() {
+		var formData = $('#filtro-categorias').serializeArray();
+		var categorias_ids = [];
+
+		$.each(formData, function(index, field) {
+			if (field.name === 'categorias[]') {
+				categorias_ids.push(field.value);
+			}
+		});
+
+		$.ajax({
+			url: '<?php echo admin_url('admin-ajax.php'); ?>',
+			type: 'POST',
+			data: {
+				action: 'filtrar_posts_por_categoria',
+				categorias_ids: categorias_ids
+			},
+			success: function(response) {
+				$('#resultado-posts').html(response);
+			}
+		});
+	});
+
 	function limparFiltros() {
         $('#filtro-categorias input[type="checkbox"]').prop('checked', false);
     }

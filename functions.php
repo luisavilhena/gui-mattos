@@ -314,7 +314,7 @@ function filtrar_posts_por_categoria() {
             'post_type' => 'post', 
             'post_status' => 'publish', 
             'posts_per_page' => -1, 
-            'category__in' => $_POST['categorias_ids'] 
+            'category__and' => $_POST['categorias_ids'] 
         );
 
         $query = new WP_Query($args);
@@ -343,7 +343,7 @@ function filtrar_posts_por_categoria() {
             wp_reset_postdata();
             echo ob_get_clean();
         else :
-            echo '<p>Nenhum post encontrado nessas categorias.</p>';
+            echo '<p>Nenhum projeto encontrado nessas categorias.</p>';
         endif;
         
     }
@@ -394,7 +394,7 @@ function custom_search() {
         endwhile;
         wp_reset_postdata();
     } else {
-        echo '<p>' . esc_html__( 'Nenhum resultado foi encontrado', 'text-domain' ) . '</p>';
+        echo '<p>' . esc_html__( 'Nenhum projeto foi encontrado com essa busca', 'text-domain' ) . '</p>';
     }
     ?>
     </div>

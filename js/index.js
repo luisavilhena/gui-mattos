@@ -180,37 +180,44 @@ $(document).ready(function(){
 ///////////////////CAROUSEL/////////////////////////////
 $(document).ready(function(){
 	function initializeCarousel() {
-	  $('.carousel__imgs').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		speed: 1000,
-		autoplaySpeed: 3000, // Alterei para 3 segundos para uma transição mais suave
-		dots: true,
-		fade: true,
-		waitForAnimate: false,
-	  });
-  
-	  setTimeout(function() {
-		var dots = $('.slick-dots li');
-		dots.each(function(k, v){
-		  $(this).find('button').addClass('heading' + k);
+		$('.carousel__imgs').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			speed: 1000,
+			autoplaySpeed: 3000, // Alterei para 3 segundos para uma transição mais suave
+			dots: true,
+			fade: true,
+			waitForAnimate: false,
 		});
   
-		var items = $('.carousel__imgs').slick('getSlick').$slides;
-		items.each(function(k, v){
-		  var text = $(this).find('h2').text();
-		  $('.heading' + k).text(text);
+		setTimeout(function() {
+			var dots = $('.slick-dots li');
+			dots.each(function(k, v){
+			$(this).find('button').addClass('heading' + k);
+			});
+	
+			var items = $('.carousel__imgs').slick('getSlick').$slides;
+			items.each(function(k, v){
+			var text = $(this).find('h2').text();
+			$('.heading' + k).text(text);
+			});
+		}, 2000);
+  
+		$('.carousel__imgs__item__img').on('click', function(e){
+			$('.carousel__imgs').slick('slickPause');
 		});
-	  }, 2000);
-  
-	  $('.carousel__imgs__item__img').on('click', function(e){
-		$('.carousel__imgs').slick('slickPause');
-	  });
-  
-	  $('.slick-dots li button').on('click', function(e){
-		$('.carousel__imgs').slick('slickPause');
-	  });
+	
+		$('.slick-dots li button').on('click', function(e){
+			$('.carousel__imgs').slick('slickPause');
+			console.log("clicou em cima");
+		});
+	  	$('.slick-dots li button').mouseenter(function() {
+			$(this).click();
+		});
+		$('.slick-dots li button').mouseleave(function() {
+			$('.carousel__imgs').slick('slickPlay');
+		});
 	}
   
 	function checkScreenWidth() {
@@ -244,11 +251,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Verifica se há um elemento com ID 'cinza'
 	if (document.getElementById("cinza")) {
 		// Se existir, aplica o background cinza no cabeçalho e no rodapé
-		document.getElementById("main-header").style.backgroundColor = "#CACACA";
-		$("body").css("backgroundColor", "#CACACA" );
-		document.getElementById("main-header").style.backgroundColor = "#CACACA";
-		document.getElementById("main-menu-container").style.backgroundColor = "#CACACA";
-		document.getElementById("footer").style.backgroundColor = "#CACACA";
+		document.getElementById("main-header").style.backgroundColor = "#DDDEE0";
+		$("body").css("backgroundColor", "#DDDEE0" );
+		document.getElementById("main-header").style.backgroundColor = "#DDDEE0";
+		document.getElementById("main-menu-container").style.backgroundColor = "#DDDEE0";
+		document.getElementById("footer").style.backgroundColor = "#DDDEE0";
 	  }
   });
   

@@ -27,6 +27,15 @@
 .text-list ul li strong {
   font-weight: 500;
 }
+@media screen and (max-width: 1300px) {
+  .text-list {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .text-list ul li p {
+    min-width: 400px;
+  }
+}
 #contato > a {
   margin-bottom: 25px;
 }
@@ -98,7 +107,7 @@
   }
 }
 #cinza {
-  background-color: #CACACA;
+  background-color: #DDDEE0;
 }
 #cinza .wp-block-columns:first-of-type {
   margin: 0;
@@ -595,6 +604,9 @@ header {
 header ul li {
   list-style: none;
 }
+header #logo-anchor img {
+  max-height: 33px;
+}
 header .header__content {
   max-width: 1700px;
   padding-top: 20px;
@@ -1080,6 +1092,9 @@ footer .footer-about a:hover {
     display: block;
     margin-bottom: 20px;
     margin-left: -8px;
+  }
+  footer #logo-anchor img {
+    max-height: 33px;
   }
   footer a {
     font-size: 12px;
