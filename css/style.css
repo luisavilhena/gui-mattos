@@ -384,7 +384,7 @@ ul#main-menu > li:last-of-type {
     min-height: 100vh;
     margin-top: 0px;
   }
-  ul#main-menu .menu-item-weglot:first-of-type {
+  ul#main-menu .menu-item-weglot {
     position: absolute;
     top: -30px;
     right: 140px;
