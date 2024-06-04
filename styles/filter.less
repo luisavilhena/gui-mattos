@@ -9,11 +9,11 @@
 		// align-items: flex-start;
 	}
 	input[type="checkbox"] {
-        width: 11px; /* Define a largura */
-        height: 11px; /* Define a altura */
+        width: 13px; /* Define a largura */
+        height: 13px; /* Define a altura */
         margin: 0 5px 0 0;
         padding: 0;
-        border: 1px solid black; /* Adiciona uma borda */
+        // border: 1px solid black; /* Adiciona uma borda */
         appearance: none; /* Remove o estilo padrão do navegador */
         cursor: pointer; /* Altera o cursor */
     }
@@ -22,6 +22,7 @@
     input[type="checkbox"]::before {
         content: ""; /* O marcador não tem conteúdo */
         display: block;
+		border: 1px solid black;
         width: 100%; /* Preenche todo o espaço do checkbox */
         height: 100%; /* Preenche todo o espaço do checkbox */
         background-color: white; /* Cor de fundo do marcador */
@@ -63,6 +64,9 @@
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
+		img {
+			width: 14px;
+		}
 	}
 }
 #filtro-categorias {

@@ -47,7 +47,7 @@
         aria-label="ir para home"
         id="logo-anchor"
         href="<?php echo get_home_url(); ?>">
-        <img alt="logo Gui Mattos" src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-gui-mattos.png">
+        <img alt="logo Gui Mattos" width="166" height="36" src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-gui-mattos.png">
       </a>
 
       <button

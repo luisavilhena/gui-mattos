@@ -17,7 +17,7 @@ add_action( 'enqueue_block_editor_assets', 'legit_block_editor_styles' );
 function guimattos_add_custom_image_sizes() {
 
      // Add "vertical" image
-    add_image_size( 'vertical', 600, 700, true);
+    add_image_size( 'vertical', 600, 730, true);
     add_image_size( 'vertical-larger', 890, 970, true);
     //horizontal
     add_image_size( 'horizontal', 740, 540, true);

@@ -80,7 +80,7 @@
     flex-direction: column;
   }
   #contato .wp-block-image img {
-    height: 46vh;
+    height: 40vh;
     object-fit: cover;
   }
   #contato > a {
@@ -384,7 +384,7 @@ ul#main-menu > li:last-of-type {
     min-height: 100vh;
     margin-top: 0px;
   }
-  ul#main-menu .menu-item-weglot:nth-of-type(2) {
+  ul#main-menu .menu-item-weglot:first-of-type {
     position: absolute;
     top: -30px;
     right: 140px;
@@ -1086,12 +1086,15 @@ footer .footer-about a:hover {
   font-weight: 600;
 }
 @media screen and (max-width: 785px) {
-  .footer-sticky {
+  footer.footer-sticky {
     position: sticky;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 10000;
+  }
+  footer.footer-sticky .projeto {
+    display: none;
   }
   footer {
     position: relative;
@@ -1493,14 +1496,12 @@ footer .footer-about a:hover {
   position: relative;
 }
 .filter input[type="checkbox"] {
-  width: 11px;
+  width: 13px;
   /* Define a largura */
-  height: 11px;
+  height: 13px;
   /* Define a altura */
   margin: 0 5px 0 0;
   padding: 0;
-  border: 1px solid black;
-  /* Adiciona uma borda */
   appearance: none;
   /* Remove o estilo padrão do navegador */
   cursor: pointer;
@@ -1510,6 +1511,7 @@ footer .footer-about a:hover {
   content: "";
   /* O marcador não tem conteúdo */
   display: block;
+  border: 1px solid black;
   width: 100%;
   /* Preenche todo o espaço do checkbox */
   height: 100%;
@@ -1549,6 +1551,9 @@ footer .footer-about a:hover {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.search-form .search-submit img {
+  width: 14px;
 }
 #filtro-categorias {
   display: flex;
