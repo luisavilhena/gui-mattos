@@ -79,6 +79,10 @@
     display: flex;
     flex-direction: column;
   }
+  #contato .wp-block-image img {
+    height: 46vh;
+    object-fit: cover;
+  }
   #contato > a {
     order: 1;
     margin-bottom: 0;
@@ -265,11 +269,11 @@
 .structure-container {
   max-width: 1700px;
   margin: 0 auto;
-  padding: 35px 20px;
+  padding: 100px 20px 35px 20px;
   min-height: 80vh;
 }
 #cinza.structure-container {
-  padding: 53px 20px;
+  padding: 70px 20px;
 }
 #cinza .card-list {
   margin-bottom: 0;
@@ -286,7 +290,7 @@
 }
 @media screen and (max-width: 700px) {
   .structure-container {
-    padding: 30px 20px;
+    padding: 70px 20px 30px 20px;
   }
   .wp-block-spacer {
     height: 0 !important;
@@ -378,12 +382,12 @@ ul#main-menu > li:last-of-type {
     display: none;
     flex-direction: column;
     min-height: 100vh;
-    margin-top: 60px;
+    margin-top: 0px;
   }
-  ul#main-menu .menu-item-weglot:nth-of-type(1) {
+  ul#main-menu .menu-item-weglot:nth-of-type(2) {
     position: absolute;
     top: -30px;
-    right: 91px;
+    right: 140px;
   }
   ul#main-menu .menu-item-weglot:last-of-type {
     position: absolute;
@@ -393,7 +397,7 @@ ul#main-menu > li:last-of-type {
   ul#main-menu li {
     padding-left: 0px;
     padding-bottom: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   ul#main-menu li a {
     font-size: 16px;
@@ -612,7 +616,7 @@ header .header__content {
   max-width: 1700px;
   padding-top: 20px;
   padding-left: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
   padding-right: 20px;
   margin: 0 auto;
   display: flex;
@@ -639,7 +643,7 @@ header .header__content .header-content__button {
 }
 .corner-element {
   position: fixed;
-  height: 1px;
+  height: 0.5px;
   background-color: black;
 }
 /* Estilize os elementos do canto esquerdo */
@@ -659,7 +663,7 @@ header .header__content .header-content__button {
 @media screen and (max-width: 880px) {
   header .header__content {
     padding-top: 10px;
-    padding-bottom: 11px;
+    padding-bottom: 20px;
   }
   header .header__content .header-content__button {
     margin-right: 0px;
@@ -1031,6 +1035,9 @@ footer {
   margin-right: 20px;
   border-top: 1px solid black;
 }
+footer .projeto {
+  display: none;
+}
 footer .menu-item-weglot {
   display: none;
 }
@@ -1088,6 +1095,7 @@ footer .footer-about a:hover {
   }
   footer {
     position: relative;
+    margin-top: 50px;
   }
   footer #logo-anchor {
     display: block;
@@ -1096,6 +1104,16 @@ footer .footer-about a:hover {
   }
   footer #logo-anchor img {
     max-height: 33px;
+  }
+  footer .projeto {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    left: 0;
+    height: 30px;
+    border-top: 1px solid black;
+    padding-top: 19px;
+    display: block;
   }
   footer a {
     font-size: 12px;
@@ -1335,10 +1353,10 @@ footer .footer-about a:hover {
 }
 @media screen and (max-width: 1000px) {
   #carousel-arrow #carousel-arrow-item .slick-prev {
-    left: 43%;
+    left: 45%;
   }
   #carousel-arrow #carousel-arrow-item .slick-next {
-    right: 40%;
+    right: 43%;
   }
 }
 .cards-list {
@@ -1635,6 +1653,9 @@ footer .footer-about a:hover {
   }
   .search-form .search-submit {
     right: 0;
+  }
+  .search-form .search-submit img {
+    width: 13pxs;
   }
   .search-form input {
     width: 98%;

@@ -1,5 +1,13 @@
 <footer id="footer">
 	<a
+		id="footer-logo-anchor"
+		class="animationbacktotop projeto"
+		href="">
+		Voltar ao topo
+		<img alt="voltar ao topo" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
+
+	</a>
+	<a
         aria-label="ir para home"
         id="logo-anchor"
         href="<?php echo get_home_url(); ?>">

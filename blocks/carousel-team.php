@@ -17,6 +17,11 @@ function carousel_team() {
 			    Field::make('rich_text', 'description', 'Description'),
 			  ))
 			  ->set_layout('tabbed-vertical')
+			  ->set_header_template( '
+			  <% if (title) { %>
+				  <%- title %>
+			  <% } %>
+		  ' )
 		) )
 		->set_render_callback( function ( $block ) {
  
