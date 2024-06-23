@@ -9,6 +9,14 @@ header {
 	margin: 0 auto;
 	z-index: 9999;
 	background-color: white;
+	.header-1{
+		width: 49%;
+	}
+	.header-2 {
+		width: 49.5%;
+    	display: flex;
+    	justify-content: end;
+	}
 	ul {
 		li{
 			list-style: none;
@@ -16,21 +24,23 @@ header {
 	}
 	#logo-anchor {
 		img {
-			max-height: 33px;
+			width: auto;
+			// max-height: 33px;
 		}
 	}
 
 	.header__content {
 		max-width: @screen-lg;
-		padding-top: 20px;
+		padding-top: 15px;
 		padding-left:20px;
-		padding-bottom: 40px;
+		padding-bottom: 15px;
 		padding-right: 20px;
 		margin: 0 auto;
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		align-items: center;
 		box-sizing: border-box;
+
 			.header-content__button {
 				margin-right: 30px;
 			}

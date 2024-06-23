@@ -43,48 +43,61 @@
     class="active structure-block"
     data-component="collapsible-header">
     <div class="header__content">
-      <a
-        aria-label="ir para home"
-        id="logo-anchor"
-        href="<?php echo get_home_url(); ?>">
-        <img alt="logo Gui Mattos" width="166" height="36" src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-gui-mattos.png">
-      </a>
-
-      <button
-        aria-label="abrir menu mobile"
-        id="mobile-menu-trigger"
-        data-component="trigger"
-        data-trigger-target="body">
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
-
-      <nav
-        class="header-menu-container"
-        id="main-menu-container"
-        data-component="menu">
-        <?php 
-          if (is_archive()) {
-              echo '<div id="menu-filter">Filtrar por 
-              <img id="open-filter"alt="abrir filtro" src="'.get_template_directory_uri().'/resources/icons/seta-top.png">
-              </div>';
-          }
-        ?>
-        <?php
-          wp_nav_menu(array(
-            'theme_location' => 'main-menu',
-            'menu_id'        => 'main-menu',
-          ));
-        ?>
-
+      <div class="header-1">
         <a
-          class="cc-menu-search link link--icon-lg"
-          href="<?php echo get_home_url(); ?>?s=">
+          aria-label="ir para home"
+          id="logo-anchor"
+          href="<?php echo get_home_url(); ?>">
+          <img alt="logo Gui Mattos" width="166" height="36" src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-gui-mattos.png">
         </a>
-      </nav>
+
+      </div>
+      <div class="header-2">
+        <button
+          aria-label="abrir menu mobile"
+          id="mobile-menu-trigger"
+          data-component="trigger"
+          data-trigger-target="body">
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
+        <nav
+          class="<?php if (is_archive()){echo"header-justify";}?> header-menu-container"
+          id="main-menu-container"
+          data-component="menu">
+          <?php 
+            if (is_archive()) {
+                echo '<div id="menu-filter">Filtrar por 
+                <img id="open-filter"alt="abrir filtro" src="'.get_template_directory_uri().'/resources/icons/seta-top.png">
+                </div>';
+            }
+          ?>
+          <?php
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'menu_id'        => 'main-menu',
+            ));
+          ?>
+            <form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+              <label>
+                <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ); ?></span>
+                <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'PROCURAR', 'placeholder' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+              </label>
+              <button type="submit" class="search-submit">
+                <img alt="search" src="<?php echo get_template_directory_uri() ?>/resources/icons/search.png">
+              </button>
+            </form>
+
+          <a
+            class="cc-menu-search link link--icon-lg"
+            href="<?php echo get_home_url(); ?>?s=">
+          </a>
+        </nav>
+      </div>
     </div> 
 	  <div class="corner-element left"></div>
     <div class="corner-element right"></div>

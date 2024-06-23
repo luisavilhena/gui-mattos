@@ -112,7 +112,7 @@
   }
 }
 #cinza {
-  background-color: #DDDEE0;
+  background-color: #e7e7e7;
 }
 #cinza .wp-block-columns:first-of-type {
   margin: 0;
@@ -167,7 +167,8 @@
 }
 .img-block .img-block__item .img-block__item-text div {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .img-block .img-block__item .img-block__item-text h2 {
   transition: color 0.3s;
@@ -176,6 +177,7 @@
   text-transform: uppercase;
   margin-bottom: 0;
   font-family: 'gilroy', sans-serif;
+  margin-right: 10px;
 }
 .img-block .img-block__item .img-block__item-text > p {
   max-width: 320px;
@@ -302,8 +304,12 @@
 }
 .header-menu-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  width: 100%;
+}
+.header-menu-container.header-justify {
+  justify-content: space-between;
 }
 .header-menu-container #menu-filter {
   margin-right: 70px;
@@ -350,7 +356,7 @@ ul#main-menu > li {
   position: relative;
   display: flex;
   padding-right: 5px;
-  margin-right: 40px;
+  margin-right: 15px;
   padding-bottom: 0px;
   margin-top: 0px;
   margin-bottom: 0;
@@ -606,21 +612,29 @@ header {
   z-index: 9999;
   background-color: white;
 }
+header .header-1 {
+  width: 49%;
+}
+header .header-2 {
+  width: 49.5%;
+  display: flex;
+  justify-content: end;
+}
 header ul li {
   list-style: none;
 }
 header #logo-anchor img {
-  max-height: 33px;
+  width: auto;
 }
 header .header__content {
   max-width: 1700px;
-  padding-top: 20px;
+  padding-top: 15px;
   padding-left: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 15px;
   padding-right: 20px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
 }
@@ -893,6 +907,7 @@ header .header__content .header-content__button {
 }
 .carousel .carousel__imgs .slick-list {
   width: 40%;
+  max-width: 400px;
 }
 .carousel .carousel__imgs .slick-list .slick-slide img {
   width: inherit;
@@ -918,6 +933,7 @@ header .header__content .header-content__button {
   margin-bottom: 10px;
   border-bottom: none;
   list-style: none;
+  min-width: 180px;
 }
 .carousel .carousel__imgs .slick-dots li button {
   color: black;
