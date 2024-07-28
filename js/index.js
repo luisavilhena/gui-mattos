@@ -82,6 +82,7 @@ $(document).ready(function(){
 			autoplaySpeed: 2000,
 			speed: 2000,
 			arrows: true,
+			fade: true,
 		});
 	$('#carousel-project').slick({
 		centerMode: true,
@@ -251,11 +252,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Verifica se há um elemento com ID 'cinza'
 	if (document.getElementById("cinza")) {
 		// Se existir, aplica o background cinza no cabeçalho e no rodapé
-		document.getElementById("main-header").style.backgroundColor = "#DDDEE0";
-		$("body").css("backgroundColor", "#DDDEE0" );
-		document.getElementById("main-header").style.backgroundColor = "#DDDEE0";
-		document.getElementById("main-menu-container").style.backgroundColor = "#DDDEE0";
-		document.getElementById("footer").style.backgroundColor = "#DDDEE0";
+		document.getElementById("main-header").style.backgroundColor = "#e7e7e7";
+		$("body").css("backgroundColor", "#e7e7e7" );
+		document.getElementById("main-header").style.backgroundColor = "#e7e7e7";
+		document.getElementById("main-menu-container").style.backgroundColor = "#e7e7e7";
+		document.getElementById("footer").style.backgroundColor = "#e7e7e7";
 	  }
   });
   

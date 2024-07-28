@@ -402,6 +402,93 @@ function custom_search() {
 
     wp_die();
 }
+// Adicione no functions.php do seu tema ou plugin
+
+add_action('wp_ajax_filtrar_posts', 'filtrar_posts_callback');
+add_action('wp_ajax_nopriv_filtrar_posts', 'filtrar_posts_callback'); // Para usuários não logados
+
+function filtrar_posts_callback() {
+    // Receber os dados do AJAX
+    $tipologia = isset($_GET['tipologia']) ? $_GET['tipologia'] : '';
+    $local = isset($_GET['local']) ? $_GET['local'] : '';
+    $fase = isset($_GET['fase']) ? $_GET['fase'] : '';
+
+    // Construir os argumentos da consulta WP_Query baseado nos filtros
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'order' => 'DESC',
+        'orderby' => 'date',
+        'posts_per_page' => -1,
+        'tax_query' => array(
+            'relation' => 'AND', // Pode ser AND ou OR, dependendo da lógica desejada
+        )
+    );
+
+    // Adicionar condições baseadas nos valores dos selects
+    if (!empty($tipologia)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'category',
+            'field' => 'term_id',
+            'terms' => $tipologia
+        );
+    }
+
+    if (!empty($local)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'category',
+            'field' => 'term_id',
+            'terms' => $local
+        );
+    }
+
+    if (!empty($fase)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'category',
+            'field' => 'term_id',
+            'terms' => $fase
+        );
+    }
+
+    // Executar a consulta WP_Query
+    $query = new WP_Query($args);
+
+    // Preparar o HTML para os posts filtrados
+    ob_start();
+    if ($query->have_posts()) {
+        while ($query->have_posts()) : $query->the_post();
+
+            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'horizontal');
+            $post_url = get_permalink();
+            $excerpt = get_the_excerpt();
+            ?>
+            <div class="project-list__item">
+                <?php if ($thumbnail_url) : ?>
+                    <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
+                        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                        <span></span>
+                    </a>
+                <?php endif; ?>
+                <div class="project-list__item-description">
+                    <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+                    <p><?php echo $excerpt; ?></p>
+                </div>
+            </div>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+    } else {
+        echo '<p>Nenhum projeto encontrado.</p>';
+    }
+
+    $output = ob_get_clean();
+
+    // Retornar o HTML gerado
+    echo $output;
+
+    // Importante: Parar a execução do script
+    die();
+}
 
 
 

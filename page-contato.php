@@ -9,9 +9,9 @@ while (have_posts()) : the_post();
 <div id="contato" class="structure-container">
     <?php the_content();?>
     <div class="contato__textos">
-        <address>
+        <div class="address">
             <?php echo carbon_get_theme_option('endereco'); ?>
-        </address>
+        </div>
         <ul class="contato-emails">
             <li>
                 <h2>Geral</h2>

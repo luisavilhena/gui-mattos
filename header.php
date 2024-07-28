@@ -69,6 +69,12 @@
           class="<?php if (is_archive()){echo"header-justify";}?> header-menu-container"
           id="main-menu-container"
           data-component="menu">
+          <?php
+            wp_nav_menu(array(
+              'theme_location' => 'main-menu',
+              'menu_id'        => 'main-menu',
+            ));
+          ?>
           <?php 
             if (is_archive()) {
                 echo '<div id="menu-filter">Filtrar por 
@@ -76,26 +82,23 @@
                 </div>';
             }
           ?>
-          <?php
-            wp_nav_menu(array(
-              'theme_location' => 'main-menu',
-              'menu_id'        => 'main-menu',
-            ));
-          ?>
-            <form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-              <label>
-                <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ); ?></span>
-                <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'PROCURAR', 'placeholder' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-              </label>
-              <button type="submit" class="search-submit">
-                <img alt="search" src="<?php echo get_template_directory_uri() ?>/resources/icons/search.png">
-              </button>
-            </form>
+          <form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url(home_url('/projetos')); ?>">
+            <label>
+              <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
+              <input type="text" class="search-field"  value="<?php echo get_search_query(); ?>" name="s" />
+            </label>
+            <button type="submit" class="search-submit">
+              <img alt="search" src="<?php echo get_template_directory_uri(); ?>/resources/icons/search.png">
+            </button>
+          </form>
 
-          <a
+
+
+
+          <!-- <a
             class="cc-menu-search link link--icon-lg"
             href="<?php echo get_home_url(); ?>?s=">
-          </a>
+          </a> -->
         </nav>
       </div>
     </div> 
