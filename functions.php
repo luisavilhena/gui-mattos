@@ -461,6 +461,18 @@ function filtrar_posts_callback() {
             $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'horizontal');
             $post_url = get_permalink();
             $excerpt = get_the_excerpt();
+            $categories = get_the_terms(get_the_ID(), 'category');
+
+                            $category_names = array();
+                    
+                            foreach ($categories as $category) {
+                                $category_names[] = $category->name;
+                                
+                            }
+                    
+                            $categories_list = implode(', ', $category_names);
+                            echo '<p class="categoria" style="display:none">'.$categories_list.'</p>';
+                        
             ?>
             <div class="project-list__item">
                 <?php if ($thumbnail_url) : ?>
@@ -474,6 +486,46 @@ function filtrar_posts_callback() {
                     <p><?php echo $excerpt; ?></p>
                 </div>
             </div>
+            <script>
+                    var selects = document.querySelectorAll('select');
+
+selects.forEach(select => {
+    select.addEventListener('change', function() {
+        setTimeout(() => {
+            console.log('modificou');
+            console.log('Verificando elementos <p class="categoria">');
+
+            var elementosCategorias = Array.from(document.querySelectorAll('p.categoria'));
+            console.log(elementosCategorias); // Verifique o conteúdo da variável
+
+            // Inicializa um array para armazenar as categorias
+            var categorias = [];
+            // Itera sobre todos os elementos encontrados
+            elementosCategorias.forEach(elemento => {
+                const texto = elemento.textContent.trim();
+                const categoriasDivididas = texto.split(',').map(item => item.trim());
+                categorias.push(...categoriasDivididas);
+            });
+
+            const categoriasUnicas = [...new Set(categorias)];
+            console.log('Categorias únicas:', categoriasUnicas);
+
+            const selects = document.querySelectorAll('select');
+            selects.forEach(select => {
+                const options = select.querySelectorAll('option');
+                options.forEach(option => {
+                    if (!categoriasUnicas.includes(option.textContent.trim())) {
+                        option.style.display = 'none';
+                    } else {
+                        option.style.display = '';
+                    }
+                });
+            });
+        }, 2000);
+    });
+});
+
+            </script>
         <?php
         endwhile;
         wp_reset_postdata();

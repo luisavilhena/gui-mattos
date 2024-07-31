@@ -76,11 +76,11 @@
             ));
           ?>
           <?php 
-            if (is_archive()) {
-                echo '<div id="menu-filter">Filtrar por 
-                <img id="open-filter"alt="abrir filtro" src="'.get_template_directory_uri().'/resources/icons/seta-top.png">
-                </div>';
-            }
+            // if (is_archive()) {
+            //     echo '<div id="menu-filter">Filtrar por 
+            //     <img id="open-filter"alt="abrir filtro" src="'.get_template_directory_uri().'/resources/icons/seta-top.png">
+            //     </div>';
+            // }
           ?>
           <form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url(home_url('/projetos')); ?>">
             <label>

@@ -26,81 +26,84 @@ $the_query = new WP_Query( $args );
 			<div class="filter">
 			<?php $categorias = get_categories();?>
 				<div class=filter-form>
-					<form id="filtro-categorias">
-						<div class="blocos">
-							<div class="blocos-1">
-								<div class="bloco">
-									<?php
-									$tipo = 'tipologia';
-									$tipo_term = get_term_by('slug', $tipo, 'category');
-									$taxonomy = 'category';
-									$terms = get_terms(array(
-										'taxonomy' => $taxonomy,
-										'hide_empty' => true,
-										'parent' => $tipo_term->term_id,
-									));
-									?>
-									<div class="selections">
-										<select name="tipologia" id="select-tipologia">
-											<option value=""><?php echo $tipo_term->name; ?></option>
-											<?php
-											foreach ($terms as $term) {
-												echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
-											}
-											?>
-										</select>
-										<img alt="selecionar" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
-									</div>
-								</div>
-								<div class="bloco">
-									<?php
-									$tipo = 'local';
-									$tipo_term = get_term_by('slug', $tipo, 'category');
-									$taxonomy = 'category';
-									$terms = get_terms(array(
-										'taxonomy' => $taxonomy,
-										'hide_empty' => true,
-										'parent' => $tipo_term->term_id,
-									));
-									?>
-									<div class="selections">
-										<select name="local" id="select-local">
-											<option value=""><?php echo $tipo_term->name; ?></option>
-											<?php
-											foreach ($terms as $term) {
-												echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
-											}
-											?>
-										</select>
-										<img alt="voltar ao topo" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
-									</div>
-								</div>
-							</div>
-							<div class="bloco">
-								<?php
-								$tipo = 'fase';
-								$tipo_term = get_term_by('slug', $tipo, 'category');
-								$taxonomy = 'category';
-								$terms = get_terms(array(
-									'taxonomy' => $taxonomy,
-									'hide_empty' => true,
-									'parent' => $tipo_term->term_id,
-								));
-								?>
-								<div class="selections selection-last">
-									<select name="fase" id="select-fase">
-										<option value=""><?php echo $tipo_term->name; ?></option>
-										<?php
-										foreach ($terms as $term) {
-											echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
-										}
-										?>
-									</select>
-									<img alt="selecionar" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
-								</div>
-							</div>
-						</div>
-					</form>
+                <form id="filtro-categorias" method="GET">
+    <div class="blocos">
+        <div class="blocos-1">
+            <div class="bloco">
+                <?php
+                $tipo = 'tipologia';
+                $tipo_term = get_term_by('slug', $tipo, 'category');
+                $taxonomy = 'category';
+                $terms = get_terms(array(
+                    'taxonomy' => $taxonomy,
+                    'hide_empty' => true,
+                    'parent' => $tipo_term->term_id,
+                ));
+                ?>
+                <div class="selections">
+                    <select name="tipologia" id="select-tipologia" >
+                        <option value=""><?php echo $tipo_term->name; ?></option>
+                        <?php
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <img alt="selecionar" class="select-trigger" data-select-id="select-tipologia" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
+                </div>
+            </div>
+            <div class="bloco">
+                <?php
+                $tipo = 'local';
+                $tipo_term = get_term_by('slug', $tipo, 'category');
+                $terms = get_terms(array(
+                    'taxonomy' => $taxonomy,
+                    'hide_empty' => true,
+                    'parent' => $tipo_term->term_id,
+                ));
+                ?>
+                <div class="selections">
+                    <select name="local" id="select-local" class="select-filter">
+                        <option value=""><?php echo $tipo_term->name; ?></option>
+                        <?php
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <img alt="voltar ao topo" class="select-trigger" data-select-id="select-local" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
+                </div>
+            </div>
+        </div>
+        <div class="bloco">
+            <?php
+            $tipo = 'fase';
+            $tipo_term = get_term_by('slug', $tipo, 'category');
+            $terms = get_terms(array(
+                'taxonomy' => $taxonomy,
+                'hide_empty' => true,
+                'parent' => $tipo_term->term_id,
+            ));
+            ?>
+            <div class="selections selection-last">
+                <select name="fase" id="select-fase" class="select-filter">
+                    <option value=""><?php echo $tipo_term->name; ?></option>
+                    <?php
+                    foreach ($terms as $term) {
+                        echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+                    }
+                    ?>
+                </select>
+                <img alt="selecionar" class="select-trigger" data-select-id="select-fase" src="<?php echo get_template_directory_uri() ?>/resources/icons/vector.png">
+            </div>
+            <button id="limpar-filtros">
+            limpar filtro
+            </button>
+        </div>
+
+    </div>
+</form>
+
 				</div>
 			</div>
 			<div id="resultado-posts" class="project-list">
@@ -111,6 +114,18 @@ $the_query = new WP_Query( $args );
 						$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'horizontal');
 						$post_url = get_permalink();
 						$excerpt = get_the_excerpt();
+                        $categories = get_the_terms(get_the_ID(), 'category');
+
+                            $category_names = array();
+                    
+                            foreach ($categories as $category) {
+                                $category_names[] = $category->name;
+                                
+                            }
+                    
+                            $categories_list = implode(', ', $category_names);
+                            echo '<p class="categoria" style="display:none">'.$categories_list.'</p>';
+                        
 						?>
 						<div class="project-list__item">
 							<?php if ($thumbnail_url) : ?>
@@ -137,110 +152,82 @@ $the_query = new WP_Query( $args );
 
 <?php get_footer(); ?>
 <script>
-$(document).ready(function() {
-	var filterHeight = $('.filter').outerHeight(); 
-	$('.filter').css('margin-top', '-' + (filterHeight + 50)  + 'px');
-	
-	$(window).resize(function() {
-    	var filterHeight = $('.filter').outerHeight();
-    	$('.filter').css('margin-top', '-' + (filterHeight + 50) + 'px');
-	});
-	$('#menu-filter').click(function() {
-		$('.filter').toggleClass('active'); 
-		if ($('.filter').hasClass('active')) {
-			$('.filter').css('margin-top',  '10px'); // Define a margem superior com a altura do elemento .filter
-		} else {
-			$('.filter').css('margin-top', '-' + (filterHeight + 50) + 'px'); // Define a margem superior como o negativo da altura do elemento .filter
-		}
-		var topPosition = $('html').offset().top;
-		$('html, body').animate({
-			scrollTop: topPosition
-		}, 1000); 
-		$('#open-filter').toggleClass('filter-arrow-active'); 
-	});
-	// $('#filtro-categorias input[type="checkbox"]').change(function() {
-	// 	var formData = $('#filtro-categorias').serializeArray();
-	// 	var categorias_ids = [];
-
-	// 	$.each(formData, function(index, field) {
-	// 		if (field.name === 'categorias[]') {
-	// 			categorias_ids.push(field.value);
-	// 		}
-	// 	});
-
-	// 	$.ajax({
-	// 		url: '<?php echo admin_url('admin-ajax.php'); ?>',
-	// 		type: 'POST',
-	// 		data: {
-	// 			action: 'filtrar_posts_por_categoria',
-	// 			categorias_ids: categorias_ids
-	// 		},
-	// 		success: function(response) {
-	// 			$('#resultado-posts').html(response);
-	// 		}
-	// 	});
-	// });
-
-	// function limparFiltros() {
-    //     $('#filtro-categorias input[type="checkbox"]').prop('checked', false);
-    // }
-    // $('#filtro-categorias').submit(function(e) {
-    //     e.preventDefault();
-
-	// 	var formData = $(this).serializeArray();
-	// 	var categorias_ids = [];
+document.addEventListener('DOMContentLoaded', function() {
+ 
+ 
 
 
-	// 	$.each(formData, function(index, field) {
-	// 		if (field.name === 'categorias[]') {
-	// 			categorias_ids.push(field.value);
-	// 		}
-	// 	});
-
-    //     $.ajax({
-    //         url: '<?php echo admin_url('admin-ajax.php'); ?>',
-    //         type: 'POST',
-    //         data: {
-    //             action: 'filtrar_posts_por_categoria',
-    //             categorias_ids: categorias_ids
-    //         },
-    //         success: function(response) {
-    //             $('#resultado-posts').html(response);
-    //         }
-    //     });
-    // });
-
-    // $('#search-form').submit(function(e) {
-    //     e.preventDefault();
-	// 	limparFiltros();
 
 
-    //     var formData = $(this).serialize();
-		
-    //     $.ajax({
-    //         url: '<?php echo admin_url('admin-ajax.php'); ?>',
-    //         type: 'GET',
-    //         data: formData + '&action=custom_search', 
-    //         success: function(response) {
-    //             $('#resultado-posts').html(response);
-    //         }
-    //     });
-    // });
-	var usuarioInteragiu = false; // Variável para controlar se o usuário já interagiu com os selects
+    // Adiciona um ouvinte de evento para cada <select>
+    var selects = document.querySelectorAll('select');
 
-    // Função para realizar a filtragem
+    selects.forEach(select => {
+        select.addEventListener('change', function() {
+            setTimeout(() => {
+                console.log('modificou');
+                console.log('Verificando elementos <p class="categoria">');
+
+                var elementosCategorias = Array.from(document.querySelectorAll('p.categoria'));
+                console.log(elementosCategorias); // Verifique o conteúdo da variável
+
+                // Inicializa um array para armazenar as categorias
+                var categorias = [];
+                // Itera sobre todos os elementos encontrados
+                elementosCategorias.forEach(elemento => {
+                    const texto = elemento.textContent.trim();
+                    const categoriasDivididas = texto.split(',').map(item => item.trim());
+                    categorias.push(...categoriasDivididas);
+                });
+
+                const categoriasUnicas = [...new Set(categorias)];
+                console.log('Categorias únicas:', categoriasUnicas);
+
+                const selects = document.querySelectorAll('select');
+                selects.forEach(select => {
+                    const options = select.querySelectorAll('option');
+                    options.forEach(option => {
+                        if (!categoriasUnicas.includes(option.textContent.trim())) {
+                            option.style.display = 'none';
+                        } else {
+                            option.style.display = '';
+                        }
+                    });
+                });
+            }, 2000);
+        });
+    });
+
+    
+
+    // Exibe as categorias únicas no console (opcional)
+
+    function atualizarURL() {
+        var tipologia = document.getElementById('select-tipologia').value;
+        var local = document.getElementById('select-local').value;
+        var fase = document.getElementById('select-fase').value;
+
+        var queryString = [];
+        if (tipologia) queryString.push('tipologia=' + encodeURIComponent(tipologia));
+        if (local) queryString.push('local=' + encodeURIComponent(local));
+        if (fase) queryString.push('fase=' + encodeURIComponent(fase));
+
+        var url = window.location.pathname;
+        if (queryString.length > 0) {
+            url += '?' + queryString.join('&');
+        }
+
+        history.replaceState(null, '', url);
+    }
+
     function filtrarPosts() {
         var tipologia = document.getElementById('select-tipologia').value;
         var local = document.getElementById('select-local').value;
         var fase = document.getElementById('select-fase').value;
 
-        // Mostrar indicador de carregamento apenas se o usuário já interagiu
-        if (usuarioInteragiu) {
-            var resultadoPosts = document.getElementById('resultado-posts');
-            resultadoPosts.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
-        }
+        var resultadoPosts = document.getElementById('resultado-posts');
+        resultadoPosts.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
 
-        // Configuração do objeto de dados para o AJAX
         var data = {
             action: 'filtrar_posts',
             tipologia: tipologia,
@@ -248,17 +235,14 @@ $(document).ready(function() {
             fase: fase
         };
 
-        // Formatar os dados para URL
         var queryString = Object.keys(data).map(function(key) {
             return key + '=' + encodeURIComponent(data[key]);
         }).join('&');
 
-        // Criar uma requisição AJAX
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    // Atualizar o conteúdo com os posts filtrados
                     resultadoPosts.innerHTML = xhr.responseText;
                 } else {
                     console.error('Ocorreu um erro: ' + xhr.status);
@@ -266,36 +250,51 @@ $(document).ready(function() {
             }
         };
 
-        // Configurar e enviar a requisição
         xhr.open('GET', '<?php echo admin_url('admin-ajax.php'); ?>?' + queryString);
         xhr.send();
     }
 
-    // Captura a mudança nos selects e chama a função de filtragem
     document.getElementById('select-tipologia').addEventListener('change', function() {
-        if (!usuarioInteragiu) {
-            usuarioInteragiu = true; // Marcar que o usuário interagiu com os selects pela primeira vez
-        }
+        atualizarURL();
         filtrarPosts();
     });
     document.getElementById('select-local').addEventListener('change', function() {
-        if (!usuarioInteragiu) {
-            usuarioInteragiu = true; // Marcar que o usuário interagiu com os selects pela primeira vez
-        }
+        atualizarURL();
         filtrarPosts();
     });
     document.getElementById('select-fase').addEventListener('change', function() {
-        if (!usuarioInteragiu) {
-            usuarioInteragiu = true; // Marcar que o usuário interagiu com os selects pela primeira vez
-        }
+        atualizarURL();
         filtrarPosts();
     });
-	if (usuarioInteragiu) {
-        var resultadoPosts = document.getElementById('resultado-posts');
-        resultadoPosts.innerHTML = '<div class="loading"><div class="loading-spinner"></div><p>Carregando...</p></div>';
+});
+function atualizarSelects(tipologiaId) {
+        fetch(`<?php echo admin_url('admin-ajax.php'); ?>`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `action=carregar_termos_filhos&tipologia_id=${tipologiaId}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            const selectLocal = document.getElementById('select-local');
+            const selectFase = document.getElementById('select-fase');
+
+            selectLocal.innerHTML = data.local;
+            selectFase.innerHTML = data.fase;
+        })
+        .catch(error => {
+            console.error('Erro ao carregar termos filhos:', error);
+        });
     }
 
-});
+    // Carregar as opções iniciais de Local e Fase (se a Tipologia estiver definida)
+    const tipologia = document.getElementById('select-tipologia').value;
+    if (tipologia) {
+        atualizarSelects(tipologia);
+    }
+
+
 
 
 </script>

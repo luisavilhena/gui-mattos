@@ -648,10 +648,10 @@ header {
   background-color: white;
 }
 header .header-1 {
-  width: 49%;
+  width: 48%;
 }
 header .header-2 {
-  width: 49.5%;
+  width: 48.5%;
   display: flex;
   justify-content: end;
 }
@@ -994,7 +994,7 @@ header .header__content .header-content__button {
   position: absolute;
   display: flex;
   width: 467px;
-  right: 20px;
+  right: 67px;
   justify-content: space-between;
   text-transform: uppercase;
   font-family: 'gilroy', sans-serif;
@@ -1422,7 +1422,7 @@ footer .footer-about a:hover {
   flex-wrap: wrap;
 }
 .cards-list .cards-list__item {
-  width: 49.5%;
+  width: 48.5%;
   min-width: 110px;
   display: block;
   color: black;
@@ -1593,7 +1593,7 @@ footer .footer-about a:hover {
 }
 .bloco select * {
   font-family: 'gilroy', sans-serif;
-  background-color: white !important;
+  background-color: white;
   color: black;
   text-transform: capitalize;
 }
@@ -1654,22 +1654,44 @@ footer .footer-about a:hover {
 #filtro-categorias input {
   margin-left: 0;
 }
+#filtro-categorias select {
+  background-color: transparent;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+#filtro-categorias select option {
+  font-family: 'gilroy', sans-serif;
+  background-color: white;
+  font-weight: 300;
+  padding: 10px 0;
+  display: block;
+}
+#filtro-categorias select option:hover {
+  background-color: #BCBCBC;
+}
+#filtro-categorias img {
+  z-index: 1;
+  cursor: pointer;
+}
 #filtro-categorias .blocos {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
 }
 #filtro-categorias .blocos .blocos-1 {
   display: flex;
-  width: 52%;
+  width: 49.8%;
 }
 #filtro-categorias .blocos .bloco {
-  width: 50%;
+  width: 48.5%;
   display: flex;
   flex-wrap: wrap;
   position: relative;
   margin-right: 15px;
   font-weight: 300;
+  align-items: center;
+  justify-content: space-between;
 }
 #filtro-categorias .blocos .bloco label {
   position: absolute;
@@ -1677,17 +1699,19 @@ footer .footer-about a:hover {
   width: 100%;
   border-bottom: 1px solid black;
 }
+#filtro-categorias .blocos > .bloco {
+  margin-right: 0;
+}
 #filtro-categorias .blocos > .bloco label {
   width: 60%;
 }
-#filtro-categorias button {
-  position: absolute;
-  right: 0px;
-  top: 17px;
+#filtro-categorias #limpar-filtros {
+  text-wrap: nowrap;
   color: black;
   background: white;
   align-self: center;
-  padding: 10px 48px;
+  padding: 13px 48px;
+  width: 48%;
   font-weight: 300;
   line-height: 14px;
   text-transform: uppercase;
@@ -1696,12 +1720,12 @@ footer .footer-about a:hover {
   cursor: pointer;
   font-family: 'gilroy', sans-serif;
 }
-#filtro-categorias button:hover {
+#filtro-categorias #limpar-filtros:hover {
   background-color: black;
   color: white;
   transition: all 0.3s;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 650px) {
   #filtro-categorias .blocos .bloco {
     flex-direction: column;
   }
@@ -1719,6 +1743,10 @@ footer .footer-about a:hover {
     margin-right: 0;
     width: 100%;
   }
+  #filtro-categorias .blocos > .bloco {
+    flex-direction: column;
+    justify-content: center;
+  }
   #filtro-categorias .blocos > .bloco label {
     width: 100%;
   }
@@ -1726,10 +1754,9 @@ footer .footer-about a:hover {
     width: 100%;
     flex-direction: column;
   }
-  #filtro-categorias button {
-    bottom: -6px;
-    top: unset;
-    width: 50%;
+  #filtro-categorias #limpar-filtros {
+    margin-top: 20px;
+    width: auto;
   }
   .search-form {
     width: 50%;
@@ -1742,7 +1769,7 @@ footer .footer-about a:hover {
     right: 0;
   }
   .search-form .search-submit img {
-    width: 13pxs;
+    width: 13px;
   }
   .search-form input {
     width: 98%;
@@ -1776,9 +1803,19 @@ footer .footer-about a:hover {
   }
 }
 #blog-single .blog-single__header {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+#blog-single .blog-single__header h2 {
+  line-height: 22px;
+  margin-right: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#blog-single .blog-single__header p {
+  margin-bottom: 0;
 }
 #blog-single .blog-single__img {
   width: 100%;
@@ -2043,7 +2080,7 @@ footer .footer-about a:hover {
   width: 100%;
 }
 .project-list .project-list__item {
-  width: 49.5%;
+  width: 48.5%;
 }
 .project-list .project-list__item img {
   width: 100%;
