@@ -30,14 +30,13 @@ header {
 	}
 
 	.header__content {
-		max-width: @screen-lg;
 		padding-top: 15px;
-		padding-left:20px;
-		padding-bottom: 15px;
-		padding-right: 20px;
+		padding-left:50px;
+		padding-bottom: 45px;
+		padding-right: 50px;
 		margin: 0 auto;
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
 		align-items: center;
 		box-sizing: border-box;
 
@@ -53,8 +52,6 @@ header {
 			// position: absolute;
 		}
 		.header__content {
-			padding-left:15px;
-			padding-right: 15px;
 		}
 	}
 	header.menu-open {
@@ -79,7 +76,7 @@ header {
 .corner-element.left {
 	top: 50%;
 	left: 0;
-	width: 20px;
+	width: 50px;
 	transform: translateY(-50%);
 }
 
@@ -87,12 +84,14 @@ header {
 .corner-element.right {
 	top: 50%;
 	right: 0;
-	width: 20px;
+	width: 50px;
 	transform: translateY(-50%);
 }
 @media screen and (max-width: @screen-md-2) {
 	header {
 		.header__content {
+			padding-left:15px;
+			padding-right: 15px;
 			padding-top: 10px;
 			padding-bottom: 20px;
 			.header-content__button {
@@ -102,5 +101,9 @@ header {
 		.header-2 {
 			align-items: center;
 		}
+	}
+	.corner-element.right,
+	.corner-element.left {
+		width: 15px;
 	}
 }

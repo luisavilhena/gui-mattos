@@ -1,10 +1,11 @@
 .cards-list {
 	// margin-bottom: 100px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	.cards-list__item {
-		width: 48.5%;
+		width: 32%;
+		margin-right: 2%;
 		min-width: 110px;
 		display: block;
 		color: black;
@@ -14,6 +15,9 @@
 		max-width: 100%;
 		margin-bottom: 40px;
 		cursor: pointer;
+		&:nth-of-type(3n){
+			margin-right: 0;
+		}
 		.cards-list__item-img {
 			position: relative;
 		}
@@ -80,19 +84,13 @@
 
 @media screen and (max-width: @screen-md) {
 	.page-template-page-cinza .cards-list {
-		justify-content: space-between;
-
-		.cards-list__item {
-			width: 49.5%;
-		}
 		
 	}
 
 	.cards-list {
 		margin-bottom: 50px;
-		justify-content: center;
 		.cards-list__item {
-			width: 40%;
+	
 			.cards-list__item-text {
 				left: 5px;
 				bottom: 5px;

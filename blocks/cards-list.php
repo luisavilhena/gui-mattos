@@ -28,7 +28,7 @@ function cards_list() {
 				<?php foreach ($block['imgs'] as $imgs) : ?>
 					<a class="cards-list__item" <?php if($imgs['link']) : ?> target="_blank" href="<?php echo $imgs['link']?>"<?php endif; ?>>
 						<div class="cards-list__item-img">
-							<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'horizontal16x9')[0]; ?>">
+							<img data-featherlight="<?php echo wp_get_attachment_image_src($imgs['img'],'ap_image_desktop_full_no_crop')[0]; ?>" class="image-columns__item__img" src="<?php echo wp_get_attachment_image_src($imgs['img'], 'horizontal')[0]; ?>">
 							<span></span>
 						</div>
 						<div class="cards-list__item-text">

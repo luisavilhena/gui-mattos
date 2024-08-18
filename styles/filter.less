@@ -34,6 +34,17 @@
         background-color: black; /* Cor de fundo quando marcado */
     }
 }
+.bold {
+	font-weight: bold;
+}
+#filtro-categorias {
+	padding-bottom: 0px;
+	transition: all 0.3s;
+	&.open {
+		padding-bottom: 40px;
+		transition: all 0.3s;
+	}
+}
 .bloco {
 	select {
 		appearance: none;
@@ -53,9 +64,10 @@
 			text-transform: capitalize;
 		}
 	}
+
 	.selections {
-		width: 100%;
-		position: relative;
+		// width: 100%;
+		// position: relative;
 		img {
 			position: absolute;
 			left: 93%;
@@ -115,33 +127,8 @@
     justify-content: space-between;
 	font-family: 'gilroy', sans-serif;
 	width: 100%;
-	input:checked{
-		background-color: red;
-	}
-	input {
-		margin-left: 0;
-	}
-	select {
-		background-color: transparent;
-		position: relative;
-		z-index: 100;
-		cursor: pointer;
-		option {
-			font-family: 'gilroy', sans-serif;
-			background-color: white;
-			font-weight: 300;
-			padding: 10px 0;
-			display: block;
-			&:hover {
-				background-color: #BCBCBC;
-			}
-		}
-	}
-	img {
-		z-index: 1;
-		cursor: pointer;
-	}
 	.blocos {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
@@ -152,19 +139,59 @@
 		}
 
 		.bloco {
-			width: 48.5%;
-			display: flex;
-			flex-wrap: wrap;
-			position: relative;
+			// width: 48.5%;
+			// display: flex;
+			// flex-wrap: wrap;
+			// position: relative;
 			margin-right: 15px;
 			font-weight: 300;
-			align-items: center;
-			justify-content: space-between;
+			margin-right: 30px;
+			// align-items: center;
+			// justify-content: space-between;
 			label {
 				position: absolute;
 				top: -30px;
 				width: 100%;
 				border-bottom: 1px solid black;
+			}
+			.filter-selected {
+				font-weight: bold;
+				word-spacing: 5px;
+				cursor: pointer;
+			}
+			.category {
+				text-transform: capitalize;
+				cursor: pointer;
+				&:hover {
+					font-weight: bold;
+				}
+			}
+			ul {
+				position: absolute;
+				display: flex;
+				overflow: hidden;
+				max-height: 0;
+				padding-top: 20px;
+				left: 0;
+				transition: all 0.3s;
+				&.active {
+					max-height: 500px;
+					transition: all 0.3s;
+
+				}
+				li {
+					margin-right: 30px;
+					cursor: pointer;
+					&:hover {
+						font-weight: bold;
+					}
+				}
+				.no-projects {
+					color: lightgray;
+					&:hover {
+						font-weight: 300;
+					}
+				}
 			}
 			
 			// > div {

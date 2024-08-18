@@ -1,12 +1,13 @@
 .project-list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	padding: 0;
 	width: 100%;
 
 	.project-list__item {
-		width: 48.5%;
+		width: 18%;
+		margin-right: 2.4%;
 		img {
 			width: 100%;
 		}
@@ -28,16 +29,21 @@
 				transition: background 0.3s;
 			}
 		}
+		&:nth-of-type(5n) {
+			margin-right: 0;
+		}
 	}
 }
+
 .project-list__item-description {
 	display: flex;
-	justify-content: space-between;;
+	justify-content: flex-start;
 	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	h2 {
 		margin-bottom: 0;
-		line-height: normal;
+		line-height: 22px;
+		margin-right: 10px;
 		a {
 			font-weight: 600;
 			color: black;
@@ -50,7 +56,6 @@
 		font-weight: 300;
 		margin-bottom: 0;
 	}
-
 }
 .project-list.relacionados {
 	.project-list__item {
