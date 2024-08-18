@@ -128,8 +128,8 @@ foreach ($all_terms as $term) {
             <div class="filter-form">
                 <form id="filtro-categorias" method="GET">
                 <div id="loading" class="loading">
-                    <div class="spinner"></div>
-                </div>
+                <div class="spinner"></div>
+            </div>
                     <div class="blocos">
                         <div class="blocos-1">
                             <!-- Tipologia -->
@@ -295,6 +295,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adiciona evento de clique aos itens <li>
     document.querySelectorAll('.selections li').forEach(function(item) {
         item.addEventListener('click', function() {
+            if (this.classList.contains('no-projects')) {
+                return; // Não faz nada se o item tiver a classe 'no-projects'
+            }
+
             const filterType = this.getAttribute('data-filter');
             const termId = this.getAttribute('data-term-id');
             const termText = this.textContent;

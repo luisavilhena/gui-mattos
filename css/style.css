@@ -1691,11 +1691,16 @@ footer .footer-about a:hover {
   max-height: 0;
   padding-top: 20px;
   left: 0;
-  transition: all 0.3s;
+  transition: all 0.2s;
+}
+@media screen and (max-width: 650px) {
+  #filtro-categorias .blocos .bloco ul {
+    position: relative;
+  }
 }
 #filtro-categorias .blocos .bloco ul.active {
   max-height: 500px;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 #filtro-categorias .blocos .bloco ul li {
   margin-right: 30px;
@@ -1706,6 +1711,7 @@ footer .footer-about a:hover {
 }
 #filtro-categorias .blocos .bloco ul .no-projects {
   color: lightgray;
+  cursor: not-allowed;
 }
 #filtro-categorias .blocos .bloco ul .no-projects:hover {
   font-weight: 300;
@@ -1748,7 +1754,7 @@ footer .footer-about a:hover {
   #filtro-categorias .blocos .bloco {
     width: 100%;
     flex-direction: row;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
   }
   #filtro-categorias .blocos .bloco > div {
     margin-right: 0;
