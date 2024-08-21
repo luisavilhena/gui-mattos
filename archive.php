@@ -5,6 +5,8 @@ $tipologia = isset($_GET['tipologia']) ? intval($_GET['tipologia']) : '';
 $local = isset($_GET['local']) ? intval($_GET['local']) : '';
 $fase = isset($_GET['fase']) ? intval($_GET['fase']) : '';
 $decada = isset($_GET['decada']) ? intval($_GET['decada']) : ''; // Novo filtro de década
+$search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : ''; // Parâmetro de busca
+
 
 // Configura os argumentos para a consulta principal
 $args = array(
@@ -13,6 +15,7 @@ $args = array(
     'order' => 'DESC',
     'orderby' => 'date',
     'posts_per_page' => -1,
+    's' => $search_query, // Adiciona a busca aos argumentos
     'tax_query' => array('relation' => 'AND'),
 );
 
@@ -68,6 +71,7 @@ foreach ($all_terms as $term) {
     $term_args = array(
         'post_type' => 'post',
         'post_status' => 'publish',
+        's' => $search_query, // Inclui a busca na consulta dos termos
         'tax_query' => array('relation' => 'AND'),
     );
 
@@ -306,6 +310,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Atualiza a URL com o filtro selecionado
             const urlParams = new URLSearchParams(window.location.search);
             urlParams.set(filterType, termId);
+
+            // Remove o parâmetro de busca 's'
+            urlParams.delete('s');
             window.location.search = urlParams.toString();  // Recarrega a página com novos parâmetros de filtro
 
             // Armazena todos os filtros aplicados no armazenamento local
@@ -412,9 +419,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
-
-
 
 </script>

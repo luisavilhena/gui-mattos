@@ -82,15 +82,15 @@
             //     </div>';
             // }
           ?>
-          <form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url(home_url('/projetos')); ?>">
+        <form role="search" method="get" class="search-form" id="search-form" action="<?php echo esc_url(home_url('/projetos')); ?>">
             <label>
-              <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
-              <input type="text" class="search-field"  value="<?php echo get_search_query(); ?>" name="s" />
+                <span class="screen-reader-text"><?php echo _x('Search for:', 'label'); ?></span>
+                <input type="text" class="search-field" value="<?php echo get_search_query(); ?>" name="s" />
             </label>
             <button type="submit" class="search-submit">
-              <img alt="search" src="<?php echo get_template_directory_uri(); ?>/resources/icons/search.png">
+                <img alt="search" src="<?php echo get_template_directory_uri(); ?>/resources/icons/search.png">
             </button>
-          </form>
+        </form>
 
 
 
