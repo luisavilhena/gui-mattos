@@ -35,20 +35,20 @@ get_header(); ?>
 
 					} else {
 						echo '
-						<div class="project-list__item"> 
-							<a class="post-thumbnail" href="'.$url.'">
+						<a href="'.$url.'"class="project-list__item"> 
+							<div class="post-thumbnail" href="'.$url.'">
 								'.$thumbnail.'
 								<span></span>
-							</a>
+							</div>
 							<div class="project-list__item-description">
 								<h2 class="post-title">
-									<a href="'.$url.'">
+								
 										'.$title.'
-									</a>
+								
 								</h2>
 								<p>'.$description.' </p>
 							</div>
-						</div>';
+						</a>';
 					}
 				}
 				?>
@@ -66,17 +66,16 @@ get_header(); ?>
 
 				} else {
 					echo'
-					<div class="carousel-project__item">
+					<a href="'.$url.'" class="carousel-project__item">
 						'.$thumbnail.'
 						<div class="project-list__item-description">
 							<h2 class="post-title">
-								<a href="'.$url.'">
+								
 									'.$title.'
-								</a>
 							</h2>
 							<p>'.$description.' </p>
 						</div>
-					</div>';
+					</a>';
 				}
 			}
 			?>
