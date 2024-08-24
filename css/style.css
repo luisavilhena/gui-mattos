@@ -466,7 +466,7 @@ ul#main-menu > li:last-of-type {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    min-height: 60vh;
+    min-height: 100vh;
   }
   .menu-open #menu-filter {
     display: none;
@@ -496,7 +496,7 @@ ul#main-menu > li:last-of-type {
   }
   .menu-open #search-form {
     display: block;
-    margin-bottom: 50px;
+    margin-bottom: 350px;
     right: 50%;
     transform: translate(-50%, -50%);
   }
@@ -1687,6 +1687,7 @@ footer .footer-about a:hover {
 #filtro-categorias .blocos .bloco ul {
   position: absolute;
   display: flex;
+  flex-wrap: wrap;
   overflow: hidden;
   max-height: 0;
   padding-top: 20px;
@@ -1703,7 +1704,7 @@ footer .footer-about a:hover {
   transition: all 0.2s;
 }
 #filtro-categorias .blocos .bloco ul li {
-  margin-right: 30px;
+  margin-right: 20px;
   cursor: pointer;
 }
 #filtro-categorias .blocos .bloco ul li:hover {
