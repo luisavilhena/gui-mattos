@@ -27,6 +27,12 @@
 .text-list ul li strong {
   font-weight: 500;
 }
+@media screen and (max-width: 600px) {
+  .text-list p {
+    margin-right: 0px;
+    min-width: auto;
+  }
+}
 @media screen and (max-width: 1300px) {
   .text-list {
     align-items: flex-end;
@@ -466,7 +472,7 @@ ul#main-menu > li:last-of-type {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    min-height: 100vh;
+    height: 100vh;
   }
   .menu-open #menu-filter {
     display: none;
