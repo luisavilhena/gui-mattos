@@ -27,12 +27,6 @@
 .text-list ul li strong {
   font-weight: 500;
 }
-@media screen and (max-width: 600px) {
-  .text-list p {
-    margin-right: 0px;
-    min-width: auto;
-  }
-}
 @media screen and (max-width: 1300px) {
   .text-list {
     align-items: flex-end;
@@ -41,6 +35,12 @@
   .text-list p {
     margin-right: 20px;
     min-width: 400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .text-list p {
+    margin-right: 0px;
+    min-width: auto;
   }
 }
 #contato > a {
