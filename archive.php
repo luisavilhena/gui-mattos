@@ -269,18 +269,19 @@ foreach ($all_terms as $term) {
                     echo '<p class="categoria" style="display:none">' . $categories_list . '</p>';
 
                     ?>
-                    <div class="project-list__item">
+                    <a href="<?php echo esc_url($post_url); ?>" class="project-list__item">
                         <?php if ($thumbnail_url) : ?>
-                            <a href="<?php echo esc_url($post_url); ?>" class="post-thumbnail">
+                            <div class="post-thumbnail">
                                 <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
                                 <span></span>
-                            </a>
+                        </div>
                         <?php endif; ?>
                         <div class="project-list__item-description">
-                            <h2 class="post-title"><a href="<?php echo esc_url($post_url); ?>"><?php the_title(); ?></a></h2>
+                            <h2 class="post-title">
+                                <?php the_title(); ?></h2>
                             <p><?php echo $excerpt; ?></p>
                         </div>
-                    </div>
+                        </a>
                     <?php
 
                 endwhile;

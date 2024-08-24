@@ -2103,6 +2103,7 @@ footer .footer-about a:hover {
 .project-list .project-list__item {
   width: 18%;
   margin-right: 2.4%;
+  text-decoration: none;
 }
 .project-list .project-list__item img {
   width: 100%;
@@ -2151,6 +2152,7 @@ footer .footer-about a:hover {
 .project-list.relacionados .project-list__item {
   width: 22.5%;
   margin-right: 2.5%;
+  text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   #resultado-posts.project-list {
@@ -2240,6 +2242,9 @@ footer .footer-about a:hover {
 #carousel-project {
   display: none;
   margin-bottom: 50px;
+}
+#carousel-project .slick-slide {
+  text-decoration: none;
 }
 #carousel-project .slick-slide img {
   margin: 0 auto 5px auto;
