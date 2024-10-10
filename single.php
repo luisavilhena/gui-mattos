@@ -16,12 +16,47 @@ get_header(); ?>
 			<?php the_content(); ?>
 			<h3>CONTEÚDOS RELACIONADOS</h3>
 			<div id="resultado-posts" class="project-list relacionados">
+				
 				<?php 
+				$categories = get_the_category();
+
+				$category_ids = wp_list_pluck($categories, 'term_id');
+				if (count($category_ids) > 1) {
+					
+					$get_posts_blog = get_posts([
+						'post_type'      => 'post',
+						'order'          => 'DESC',
+						'posts_per_page' => 5,
+						'post__not_in'   => [get_the_ID()],
+						'tax_query'      => [
+							[
+								'taxonomy' => 'category',
+								'field'    => 'term_id',
+								'terms'    => $category_ids,
+								'operator' => 'IN',
+							],
+						],
+					]);
+					if (count($get_posts_blog) < 5) {
+						$recent_posts = get_posts([
+							'post_type'      => 'post',
+							'order'          => 'DESC',
+							'posts_per_page' => 4,
+							'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($get_posts_blog, 'ID')), // Exclui o post atual e os já encontrados
+						]);
+	
+						// Adiciona os posts recentes ao array
+						$get_posts_blog = array_merge($get_posts_blog, $recent_posts);
+					}
+		
+				} else {
 				$get_posts_blog = get_posts([
 					'taxonomy' => 'post',
 					'order'  => 'desc',
 					'posts_per_page' => 5,
+					
 				]);
+				}
 				$latest_cpt = get_posts("post_type=post&numberposts=1");
 				$Id= $latest_cpt[0]->ID;
 				foreach ($get_posts_blog as $key => $value) {
