@@ -18,45 +18,53 @@ get_header(); ?>
 			<div id="resultado-posts" class="project-list relacionados">
 				
 				<?php 
-				$categories = get_the_category();
+	$current_url = home_url(add_query_arg([], $wp->request));
+                $parts = explode('/', $current_url);
+                $category_slug = $parts[count($parts) - 2]; // Pega o penúltimo segmento da URL como slug da categoria
 
-				$category_ids = wp_list_pluck($categories, 'term_id');
-				if (count($category_ids) > 1) {
-					
-					$get_posts_blog = get_posts([
-						'post_type'      => 'post',
-						'order'          => 'DESC',
-						'posts_per_page' => 5,
-						'post__not_in'   => [get_the_ID()],
-						'tax_query'      => [
-							[
-								'taxonomy' => 'category',
-								'field'    => 'term_id',
-								'terms'    => $category_ids,
-								'operator' => 'IN',
-							],
-						],
-					]);
-					if (count($get_posts_blog) < 5) {
-						$recent_posts = get_posts([
-							'post_type'      => 'post',
-							'order'          => 'DESC',
-							'posts_per_page' => 4,
-							'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($get_posts_blog, 'ID')), // Exclui o post atual e os já encontrados
-						]);
-	
-						// Adiciona os posts recentes ao array
-						$get_posts_blog = array_merge($get_posts_blog, $recent_posts);
-					}
-		
-				} else {
-				$get_posts_blog = get_posts([
-					'taxonomy' => 'post',
-					'order'  => 'desc',
-					'posts_per_page' => 5,
-					
-				]);
-				}
+                // Consulta para obter a categoria com base no slug
+                $category = get_category_by_slug($category_slug);
+
+                if ($category) {
+                    $category_id = $category->term_id;
+
+                    // Busca os projetos nessa categoria
+                    $get_posts_blog = get_posts([
+                        'post_type'      => 'post',
+                        'order'          => 'DESC',
+                        'posts_per_page' => 4,
+                        'post__not_in'   => [get_the_ID()],
+                        'tax_query'      => [
+                            [
+                                'taxonomy' => 'category',
+                                'field'    => 'term_id',
+                                'terms'    => $category_id,
+                            ],
+                        ],
+                    ]);
+
+                    // Se não houver 4 posts, busca os mais recentes
+                    if (count($get_posts_blog) < 4) {
+                        $recent_posts = get_posts([
+                            'post_type'      => 'post',
+                            'order'          => 'DESC',
+                            'posts_per_page' => 4 - count($get_posts_blog), // Apenas o que falta
+                            'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($get_posts_blog, 'ID')), // Exclui os já encontrados
+                        ]);
+
+                        // Adiciona os posts mais novos
+                        $get_posts_blog = array_merge($get_posts_blog, $recent_posts);
+                    }
+                } else {
+                    // Se não houver categoria, busca apenas os posts mais recentes
+                    $get_posts_blog = get_posts([
+                        'post_type'      => 'post',
+                        'order'          => 'DESC',
+                        'posts_per_page' => 5,
+                        'post__not_in'   => [get_the_ID()],
+                    ]);
+                }
+				
 				$latest_cpt = get_posts("post_type=post&numberposts=1");
 				$Id= $latest_cpt[0]->ID;
 				foreach ($get_posts_blog as $key => $value) {
