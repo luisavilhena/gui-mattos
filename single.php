@@ -32,7 +32,7 @@ get_header(); ?>
                     $get_posts_blog = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
-                        'posts_per_page' => 4,
+                        'posts_per_page' => 5,
                         'post__not_in'   => [get_the_ID()],
                         'tax_query'      => [
                             [
@@ -48,7 +48,7 @@ get_header(); ?>
                         $recent_posts = get_posts([
                             'post_type'      => 'post',
                             'order'          => 'DESC',
-                            'posts_per_page' => 4 - count($get_posts_blog), // Apenas o que falta
+                            'posts_per_page' => 5 - count($get_posts_blog), // Apenas o que falta
                             'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($get_posts_blog, 'ID')), // Exclui os já encontrados
                         ]);
 
