@@ -32,7 +32,7 @@ get_header(); ?>
                     $get_posts_blog = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
-                        'posts_per_page' => 5,
+                        'posts_per_page' => 4,
                         'post__not_in'   => [get_the_ID()],
                         'tax_query'      => [
                             [
