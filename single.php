@@ -18,18 +18,36 @@ get_header(); ?>
 			<div id="resultado-posts" class="project-list relacionados">
 				
 				<?php 
-	$current_url = home_url(add_query_arg([], $wp->request));
-                $parts = explode('/', $current_url);
-                $category_slug = $parts[count($parts) - 2]; // Pega o penúltimo segmento da URL como slug da categoria
+                // Obter as categorias do post atual
+                $current_post_categories = get_the_category();
+				 $matching_tipologia_id = null;
+				// var_dump($current_post_categories);
+                $tipologia_ids = [];
+				$tipologia_category = get_category_by_slug('tipologia');
 
-                // Consulta para obter a categoria com base no slug
-                $category = get_category_by_slug($category_slug);
+                
+                // Se a categoria "tipologia" existir, buscar suas categorias filhas
+                if ($tipologia_category) {
+                    $tipologia_ids = get_categories([
+                        'child_of' => $tipologia_category->term_id,
+                        'hide_empty' => false,
+                    ]);
+                }
 
-                if ($category) {
-                    $category_id = $category->term_id;
+                foreach ($current_post_categories as $current_category) {
+                    foreach ($tipologia_ids as $child_category) {
+                        if ($current_category->term_id === $child_category->term_id) {
+                            $matching_tipologia_id = $current_category->term_id; // Armazena o ID correspondente
+                            break 2; // Sai dos dois loops
+                        }
+                    }
+                }
+				
 
-                    // Busca os projetos nessa categoria
-                    $get_posts_blog = get_posts([
+                // Filtrar categorias que têm o slug "tipologia"
+        		$related_posts = [];
+                if ($matching_tipologia_id) {
+                    $related_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
                         'posts_per_page' => 4,
@@ -38,90 +56,54 @@ get_header(); ?>
                             [
                                 'taxonomy' => 'category',
                                 'field'    => 'term_id',
-                                'terms'    => $category_id,
+                                'terms'    => $matching_tipologia_id, // Usa o ID correspondente
                             ],
                         ],
                     ]);
+                }
 
-                    // Se não houver 4 posts, busca os mais recentes
-                    if (count($get_posts_blog) < 4) {
-                        $recent_posts = get_posts([
-                            'post_type'      => 'post',
-                            'order'          => 'DESC',
-                            'posts_per_page' => 5 - count($get_posts_blog), // Apenas o que falta
-                            'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($get_posts_blog, 'ID')), // Exclui os já encontrados
-                        ]);
-
-                        // Adiciona os posts mais novos
-                        $get_posts_blog = array_merge($get_posts_blog, $recent_posts);
-                    }
-                } else {
-                    // Se não houver categoria, busca apenas os posts mais recentes
-                    $get_posts_blog = get_posts([
+                // Se não houver posts relacionados ou se forem menos que 4, buscar os mais recentes
+                if (count($related_posts) < 4) {
+                    $recent_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
-                        'posts_per_page' => 5,
+                        'posts_per_page' => 4 - count($related_posts), // Quantidade que falta
+                        'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($related_posts, 'ID')), // Exclui já encontrados
+                    ]);
+
+                    // Adiciona os posts mais recentes aos relacionados
+                    $related_posts = array_merge($related_posts, $recent_posts);
+                }else {
+                    // Se não houver posts relacionados, busca os mais recentes
+                    $related_posts = get_posts([
+                        'post_type'      => 'post',
+                        'order'          => 'DESC',
+                        'posts_per_page' => 4,
                         'post__not_in'   => [get_the_ID()],
                     ]);
                 }
-				
-				$latest_cpt = get_posts("post_type=post&numberposts=1");
-				$Id= $latest_cpt[0]->ID;
-				foreach ($get_posts_blog as $key => $value) {
-					$postId = $value->ID;
-					$url=get_permalink($value->ID);
-					$tags=get_the_tags($value->ID);
-					$thumbnail= get_the_post_thumbnail($value->ID, 'horizontal');
-					$title=$value->post_title;
-					$description=get_the_excerpt($value->ID);
-					if($Id == $postId){
 
-					} else {
-						echo '
-						<a href="'.$url.'"class="project-list__item"> 
-							<div class="post-thumbnail" href="'.$url.'">
-								'.$thumbnail.'
-								<span></span>
-							</div>
-							<div class="project-list__item-description">
-								<h2 class="post-title">
-								
-										'.$title.'
-								
-								</h2>
-								<p>'.$description.' </p>
-							</div>
-						</a>';
-					}
-				}
-				?>
-			</div>
-				<div id="carousel-project">
-				<?php	
-			foreach ($get_posts_blog as $key => $value) {
-				$postId = $value->ID;
-				$url=get_permalink($value->ID);
-				$tags=get_the_tags($value->ID);
-				$thumbnail= get_the_post_thumbnail($value->ID, 'horizontal');
-				$title=$value->post_title;
-				$description=get_the_excerpt($value->ID);
-				if($Id == $postId){
 
-				} else {
-					echo'
-					<a href="'.$url.'" class="carousel-project__item">
-						'.$thumbnail.'
-						<div class="project-list__item-description">
-							<h2 class="post-title">
-								
-									'.$title.'
-							</h2>
-							<p>'.$description.' </p>
-						</div>
-					</a>';
-				}
-			}
-			?>
+                
+                foreach ($related_posts as $related_post) {
+                    $url = get_permalink($related_post->ID);
+                    $thumbnail = get_the_post_thumbnail($related_post->ID, 'horizontal');
+                    $title = $related_post->post_title;
+                    $description = get_the_excerpt($related_post->ID);
+
+                    echo '
+                    <a href="'.$url.'" class="project-list__item"> 
+                        <div class="post-thumbnail">
+                            '.$thumbnail.'
+                            <span></span>
+                        </div>
+                        <div class="project-list__item-description">
+                            <h2 class="post-title">'.$title.'</h2>
+                            <p>'.$description.'</p>
+                        </div>
+                    </a>';
+                }
+                ?>
 			</div>
 		</div>
 	</div>
