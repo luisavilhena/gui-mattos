@@ -965,7 +965,7 @@ header .header__content .header-content__button {
 .carousel .carousel__imgs .slick-dots {
   z-index: 1;
   width: auto;
-  height: 320px;
+  height: 405px;
   position: relative;
   display: flex;
   flex-direction: column;
