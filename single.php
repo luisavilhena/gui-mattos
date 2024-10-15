@@ -62,7 +62,7 @@ get_header(); ?>
 
                 // Filtrar categorias que têm o slug "tipologia"
         		$related_posts = [];
-                if ($tipologia_project_count>=4) {
+                if ($matching_tipologia_id) {
                     $related_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
@@ -78,18 +78,7 @@ get_header(); ?>
                     ]);
 					var_dump("numerooo maior ou =4", count($related_posts));
 
-                } elseif ($tipologia_project_count < 4) {
-                    $recent_posts = get_posts([
-                        'post_type'      => 'post',
-                        'order'          => 'DESC',
-                        'posts_per_page' => 4 - $tipologia_project_count, // Quantidade que falta
-                        'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($related_posts, 'ID')), // Exclui já encontrados
-                    ]);
-
-                    // Adiciona os posts mais recentes aos relacionados
-                    $related_posts = array_merge($related_posts, $recent_posts);
-					var_dump("numerooo menor ou =4", count($related_posts));
-                }else {
+                } else {
                     // Se não houver posts relacionados, busca os mais recentes
                     $related_posts = get_posts([
                         'post_type'      => 'post',
@@ -97,6 +86,18 @@ get_header(); ?>
                         'posts_per_page' => 4,
                         'post__not_in'   => [get_the_ID()],
                     ]);
+                }
+				if ($tipologia_project_count < 4) {
+                    $recent_posts = get_posts([
+                        'post_type'      => 'post',
+                        'order'          => 'DESC',
+                        'posts_per_page' => 5 - $tipologia_project_count, // Quantidade que falta
+                        'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($related_posts, 'ID')), // Exclui já encontrados
+                    ]);
+
+                    // Adiciona os posts mais recentes aos relacionados
+                    $related_posts = array_merge($related_posts, $recent_posts);
+					var_dump("numerooo menor ou =4", count($related_posts));
                 }
 
 
