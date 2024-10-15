@@ -67,7 +67,7 @@ get_header(); ?>
                 }
 
                 // Se não houver posts relacionados ou se forem menos que 4, buscar os mais recentes
-                if (count($related_posts) < 4) {
+                if (count($related_posts) < 5) {
                     $recent_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
