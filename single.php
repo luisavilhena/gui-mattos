@@ -50,7 +50,7 @@ get_header(); ?>
 
                 // Filtrar categorias que têm o slug "tipologia"
         		$related_posts = [];
-                if ($matching_tipologia_id) {
+                if (count($related_posts)>=4) {
                     $related_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
@@ -64,10 +64,9 @@ get_header(); ?>
                             ],
                         ],
                     ]);
-                }
+					var_dump("numerooo maior ou =4", count($related_posts));
 
-                // Se não houver posts relacionados ou se forem menos que 4, buscar os mais recentes
-                if (count($related_posts) < 5) {
+                } elseif (count($related_posts) < 4) {
                     $recent_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
@@ -77,6 +76,7 @@ get_header(); ?>
 
                     // Adiciona os posts mais recentes aos relacionados
                     $related_posts = array_merge($related_posts, $recent_posts);
+					var_dump("numerooo menor ou =4", count($related_posts));
                 }else {
                     // Se não houver posts relacionados, busca os mais recentes
                     $related_posts = get_posts([
