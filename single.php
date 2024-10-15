@@ -46,11 +46,23 @@ get_header(); ?>
                         }
                     }
                 }
-				
+				$tipologia_project_count = count(get_posts([
+                    'post_type'      => 'post',
+                    'numberposts'    => -1, // Pega todos
+                    'tax_query'      => [
+                        [
+                            'taxonomy' => 'category',
+                            'field'    => 'term_id',
+                            'terms'    => $matching_tipologia_id,
+                        ],
+                    ],
+                ]));
+				var_dump(" quantos projetos tem?",$tipologia_project_count);
+			
 
                 // Filtrar categorias que têm o slug "tipologia"
         		$related_posts = [];
-                if (count($related_posts)>=4) {
+                if ($tipologia_project_count>=4) {
                     $related_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
@@ -66,7 +78,7 @@ get_header(); ?>
                     ]);
 					var_dump("numerooo maior ou =4", count($related_posts));
 
-                } elseif (count($related_posts) < 4) {
+                } elseif ($tipologia_project_count < 4) {
                     $recent_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
