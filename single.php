@@ -40,7 +40,7 @@ get_header(); ?>
 						var_dump("COMEÇA AQUIII", $child_category, "filhos");
                         if ($current_category->term_id === $child_category->term_id) {
                             $matching_tipologia_id = $current_category->term_id; // Armazena o ID correspondente
-							var_dump($matching_tipologia_id, "TODOS OS IDS", "id deste daqui", $current_category->term_id);
+							var_dump("ID DOS FILHOS", $matching_tipologia_id, "TODOS OS IDS", "id deste daqui", $current_category->term_id);
 
 							break 2; // Sai dos dois loops
                         }
