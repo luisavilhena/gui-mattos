@@ -20,10 +20,10 @@ get_header(); ?>
 				<?php 
                 // Obter as categorias do post atual
                 $current_post_categories = get_the_category();
-				var_dump($current_post_categories, "categoria atual");
+				
 				 $matching_tipologia_id = null;
-				// var_dump($current_post_categories);
-                $tipologia_ids = [];
+
+				 $tipologia_ids = [];
 				$tipologia_category = get_category_by_slug('tipologia');
 
                 
@@ -37,10 +37,8 @@ get_header(); ?>
 
                 foreach ($current_post_categories as $current_category) {
                     foreach ($tipologia_ids as $child_category) {
-						var_dump("COMEÇA AQUIII", $child_category, "filhos");
                         if ($current_category->term_id === $child_category->term_id) {
                             $matching_tipologia_id = $current_category->term_id; // Armazena o ID correspondente
-							var_dump("ID DOS FILHOS", $matching_tipologia_id, "TODOS OS IDS", "id deste daqui", $current_category->term_id);
 
 							break 2; // Sai dos dois loops
                         }
@@ -57,7 +55,6 @@ get_header(); ?>
                         ],
                     ],
                 ]));
-				var_dump(" quantos projetos tem?",$tipologia_project_count);
 			
 
                 // Filtrar categorias que têm o slug "tipologia"
@@ -76,7 +73,7 @@ get_header(); ?>
                             ],
                         ],
                     ]);
-					var_dump("numerooo maior ou =4", count($related_posts));
+		
 
                 } else {
                     // Se não houver posts relacionados, busca os mais recentes
@@ -97,7 +94,6 @@ get_header(); ?>
 
                     // Adiciona os posts mais recentes aos relacionados
                     $related_posts = array_merge($related_posts, $recent_posts);
-					var_dump("numerooo menor ou =4", count($related_posts));
                 }
 
 
