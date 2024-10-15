@@ -37,7 +37,7 @@ get_header(); ?>
 
                 foreach ($current_post_categories as $current_category) {
                     foreach ($tipologia_ids as $child_category) {
-						var_dump($child_category, "filhos");
+						var_dump("COMEÇA AQUIII", $child_category, "filhos");
                         if ($current_category->term_id === $child_category->term_id) {
                             $matching_tipologia_id = $current_category->term_id; // Armazena o ID correspondente
 							var_dump($matching_tipologia_id, "TODOS OS IDS", "id deste daqui", $current_category->term_id);
