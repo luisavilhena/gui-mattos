@@ -20,6 +20,7 @@ get_header(); ?>
 				<?php 
                 // Obter as categorias do post atual
                 $current_post_categories = get_the_category();
+				var_dump($current_post_categories, "categoria atual");
 				 $matching_tipologia_id = null;
 				// var_dump($current_post_categories);
                 $tipologia_ids = [];
@@ -36,7 +37,9 @@ get_header(); ?>
 
                 foreach ($current_post_categories as $current_category) {
                     foreach ($tipologia_ids as $child_category) {
+						var_dump($child_category, "filhos");
                         if ($current_category->term_id === $child_category->term_id) {
+							var_dump($matching_tipologia_id, "TODOS OS IDS", "id deste daqui", $current_category->term_id);
                             $matching_tipologia_id = $current_category->term_id; // Armazena o ID correspondente
                             break 2; // Sai dos dois loops
                         }
