@@ -82,7 +82,7 @@ get_header(); ?>
                     $recent_posts = get_posts([
                         'post_type'      => 'post',
                         'order'          => 'DESC',
-                        'posts_per_page' => 4 - count($tipologia_project_count), // Quantidade que falta
+                        'posts_per_page' => 4 - $tipologia_project_count, // Quantidade que falta
                         'post__not_in'   => array_merge([get_the_ID()], wp_list_pluck($related_posts, 'ID')), // Exclui já encontrados
                     ]);
 
