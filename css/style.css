@@ -38,6 +38,10 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .text-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .text-list p {
     margin-right: 0px;
     min-width: auto;
@@ -1580,6 +1584,11 @@ footer .footer-about a:hover {
 .filter input[type="checkbox"]:checked::before {
   background-color: black;
   /* Cor de fundo quando marcado */
+}
+@media screen and (max-width: 650px) {
+  .filter {
+    margin-top: 32px;
+  }
 }
 .bold {
   font-weight: bold;

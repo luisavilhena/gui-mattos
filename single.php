@@ -118,6 +118,29 @@ get_header(); ?>
                 }
                 ?>
 			</div>
+            <div id="carousel-project">
+                    <?php	
+                        foreach ($related_posts as $related_post) {
+                            $url = get_permalink($related_post->ID);
+                            $thumbnail = get_the_post_thumbnail($related_post->ID, 'horizontal');
+                            $title = $related_post->post_title;
+                            $description = get_the_excerpt($related_post->ID);
+
+                            echo'
+                            <a href="'.$url.'" class="carousel-project__item">
+                                '.$thumbnail.'
+                                <div class="project-list__item-description">
+                                    <h2 class="post-title">
+                                        
+                                            '.$title.'
+                                    </h2>
+                                    <p>'.$description.' </p>
+                                </div>
+                            </a>';
+                    
+                        }
+                    ?>
+                </div>
 		</div>
 	</div>
 </main>
