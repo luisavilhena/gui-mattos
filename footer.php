@@ -80,7 +80,7 @@ $imgUrlPrev = get_template_directory_uri().'/resources/icons/arrow-prev.png';
 ?>
 
 <script>
-    //add ícone de arrow dentro do carrossel
+    //footer
     jQuery(document).ready(function($) {
         $('#carousel-arrow .slick-next').html('<img src="<?php echo $imgUrl; ?>">');
 		$('#carousel-arrow .slick-prev').html('<img src="<?php echo $imgUrlPrev; ?>">');
