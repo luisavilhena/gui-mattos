@@ -180,56 +180,58 @@ $(document).ready(function(){
 
 ///////////////////CAROUSEL/////////////////////////////
 $(document).ready(function(){
-	function initializeCarousel() {
-		$('.carousel__imgs').slick({
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			autoplay: true,
-			speed: 1000,
-			autoplaySpeed: 3000, // Alterei para 3 segundos para uma transição mais suave
-			dots: true,
-			fade: true,
-			waitForAnimate: false,
-		});
-  
-		setTimeout(function() {
-			var dots = $('.slick-dots li');
-			dots.each(function(k, v){
-			$(this).find('button').addClass('heading' + k);
+	if($('.carousel__imgs')){
+		function initializeCarousel() {
+			$('.carousel__imgs').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				speed: 1000,
+				autoplaySpeed: 3000, // Alterei para 3 segundos para uma transição mais suave
+				dots: true,
+				fade: true,
+				waitForAnimate: false,
 			});
 	
-			var items = $('.carousel__imgs').slick('getSlick').$slides;
-			items.each(function(k, v){
-			var text = $(this).find('h2').text();
-			$('.heading' + k).text(text);
-			});
-		}, 2000);
-  
-		$('.carousel__imgs__item__img').on('click', function(e){
-			$('.carousel__imgs').slick('slickPause');
-		});
+			setTimeout(function() {
+				var dots = $('.slick-dots li');
+				dots.each(function(k, v){
+				$(this).find('button').addClass('heading' + k);
+				});
+		
+				var items = $('.carousel__imgs').slick('getSlick').$slides;
+				items.each(function(k, v){
+				var text = $(this).find('h2').text();
+				$('.heading' + k).text(text);
+				});
+			}, 2000);
 	
-		$('.slick-dots li button').on('click', function(e){
-			$('.carousel__imgs').slick('slickPause');
-			console.log("clicou em cima");
-		});
-	  	$('.slick-dots li button').mouseenter(function() {
-			$(this).click();
-		});
-		$('.slick-dots li button').mouseleave(function() {
-			$('.carousel__imgs').slick('slickPlay');
-		});
-	}
-  
-	function checkScreenWidth() {
-	  if ($(window).width() > 850) {
-		initializeCarousel();
-	  } else {
-		// Se a largura da tela for menor que 850px, destrua o carrossel se estiver inicializado
-		if ($('.carousel__imgs').hasClass('slick-initialized')) {
-		  $('.carousel__imgs').slick('unslick');
+			$('.carousel__imgs__item__img').on('click', function(e){
+				$('.carousel__imgs').slick('slickPause');
+			});
+		
+			$('.slick-dots li button').on('click', function(e){
+				$('.carousel__imgs').slick('slickPause');
+				console.log("clicou em cima");
+			});
+			$('.slick-dots li button').mouseenter(function() {
+				$(this).click();
+			});
+			$('.slick-dots li button').mouseleave(function() {
+				$('.carousel__imgs').slick('slickPlay');
+			});
 		}
-	  }
+	
+		function checkScreenWidth() {
+		if ($(window).width() > 850) {
+			initializeCarousel();
+		} else {
+			// Se a largura da tela for menor que 850px, destrua o carrossel se estiver inicializado
+			if ($('.carousel__imgs').hasClass('slick-initialized')) {
+			$('.carousel__imgs').slick('unslick');
+			}
+		}
+		}
 	}
   
 	// Chamar a função ao carregar a página e redimensionar a tela
