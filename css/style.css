@@ -2541,6 +2541,9 @@ figure figcaption a,
   font-size: 18px;
   font-weight: 300;
 }
+.mwl__slider__image__thumbnail img {
+  object-fit: contain;
+}
 .template-tc {
   padding-right: 10%;
   padding-left: 10%;
