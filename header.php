@@ -48,7 +48,30 @@
           aria-label="ir para home"
           id="logo-anchor"
           href="<?php echo get_home_url(); ?>">
-          <img alt="logo Gui Mattos" width="166" height="36" src="<?php echo get_template_directory_uri() ?>/resources/icons/logo-gui-mattos.png">
+          <?php
+            $logo_id = carbon_get_theme_option('logo');
+
+            if ( $logo_id ) {
+                echo wp_get_attachment_image(
+                    $logo_id,
+                    'full',
+                    false,
+                    [
+                        'alt'    => 'Logo Gui Mattos',
+                    ]
+                );
+            } else {
+                ?>
+                <img
+                    alt="Logo Gui Mattos"
+                    width="166"
+                    height="36"
+                    src="<?php echo get_template_directory_uri(); ?>/resources/icons/logo-gui-mattos.png"
+                >
+                <?php
+            }
+            ?>
+
         </a>
 
       </div>
