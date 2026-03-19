@@ -671,6 +671,7 @@ header ul li {
 }
 header #logo-anchor img {
   width: auto;
+  max-height: 36px;
 }
 header .header__content {
   padding-top: 15px;
@@ -2122,6 +2123,8 @@ footer .footer-about a:hover {
 }
 .project-list .project-list__item img {
   width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 .project-list .project-list__item a span {
   background-color: transparent;
@@ -2264,6 +2267,8 @@ footer .footer-about a:hover {
 #carousel-project .slick-slide img {
   margin: 0 auto 5px auto;
   width: 92%;
+  height: 200px;
+  object-fit: cover;
 }
 #carousel-project .slick-slide .project-list__item-description {
   width: 92%;
