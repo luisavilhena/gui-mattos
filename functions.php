@@ -48,7 +48,7 @@ function crb_attach_theme_options() {
 
             Field::make( 'text', 'instagram', 'Instagram' ),
             Field::make( 'text', 'youtube', 'Youtube' ),
-            Field::make( 'text', 'facebook', 'Facebook' ),
+            Field::make( 'text', 'news', 'News' ),
             Field::make( 'text', 'linkedin', 'Linkedin' ),
 
         ) );

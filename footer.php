@@ -40,28 +40,52 @@
 			</nav>
 		</div>
 		<div class="footer-about">
-			<ul class="social-media">
-				<li>
-					<a target="_blank" href="<?php echo carbon_get_theme_option('facebook'); ?>">
-						Newsletter
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="<?php echo carbon_get_theme_option('linkedin'); ?>">
-						Linkedin
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="<?php echo carbon_get_theme_option('youtube'); ?>">
-						Youtube
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="<?php echo carbon_get_theme_option('instagram'); ?>">
-						Instagram
-					</a>
-				</li>
-			</ul>
+		<?php
+$news  = carbon_get_theme_option('news');
+$linkedin  = carbon_get_theme_option('linkedin');
+$youtube   = carbon_get_theme_option('youtube');
+$instagram = carbon_get_theme_option('instagram');
+
+// Verifica se pelo menos um existe
+if ($news || $linkedin || $youtube || $instagram): ?>
+    
+    <ul class="social-media">
+        
+        <?php if ($news): ?>
+            <li>
+                <a target="_blank" href="<?php echo esc_url($news); ?>">
+                    Newsletter
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php if ($linkedin): ?>
+            <li>
+                <a target="_blank" href="<?php echo esc_url($linkedin); ?>">
+                    Linkedin
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php if ($youtube): ?>
+            <li>
+                <a target="_blank" href="<?php echo esc_url($youtube); ?>">
+                    Youtube
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php if ($instagram): ?>
+            <li>
+                <a target="_blank" href="<?php echo esc_url($instagram); ?>">
+                    Instagram
+                </a>
+            </li>
+        <?php endif; ?>
+
+    </ul>
+
+<?php endif; ?>
 		</div>
 	</div>
 
