@@ -671,7 +671,7 @@ header ul li {
 }
 header #logo-anchor img {
   width: auto;
-  max-height: 36px;
+  max-height: 36px !important;
 }
 header .header__content {
   padding-top: 15px;
@@ -2125,6 +2125,7 @@ footer .footer-about a:hover {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  max-height: 15vw;
 }
 .project-list .project-list__item a span {
   background-color: transparent;
