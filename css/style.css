@@ -671,7 +671,7 @@ header ul li {
 }
 header #logo-anchor img {
   width: auto;
-  max-height: 36px !important;
+  max-height: 28px;
 }
 header .header__content {
   padding-top: 15px;
@@ -728,6 +728,10 @@ header .header__content .header-content__button {
   }
   header .header-2 {
     align-items: center;
+  }
+  header #logo-anchor img {
+    width: auto;
+    max-height: 25px;
   }
   .corner-element.right,
   .corner-element.left {
